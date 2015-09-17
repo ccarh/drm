@@ -5,18 +5,18 @@
 }
 
 body {
-	counter-reset: level1;
+	counter-reset: catagory;
 }
 
-summary.level1:before {
-	counter-increment: level1;
-	content: counter(level1) ". ";
+summary.category:before {
+	counter-increment: catagory;
+	content: counter(catagory) ". ";
 	display: inline-block;
 	width: 2.5rem;
 	text-align: center;
 }
 
-summary.level1 {
+summary.category {
 	color: #159957;
 	font-size: 1.3rem;
 }

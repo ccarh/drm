@@ -1,7 +1,10 @@
 // vim: ts=3
 
-var HEADINGS = [];
-var TEMPLATE = [];
+
+var prefaceID     = 'preface';
+var categoryID    = 'categories';
+var categoryClass = 'category';
+
 
 document.addEventListener('DOMContentLoaded', function() {
    getHeadings('/source/main.wiki');
@@ -40,24 +43,32 @@ function getHeadings(file) {
 
 function extractHeadings(content) {
 	var result;
-	HEADINGS = [];
-	TEMPLATES = [];
-	var output = '';
+	var headings  = [];
+	var templates = [];
+	var output    = '';
 
 	var reg = new RegExp(/==\s(.*?)\s*==/g);
 	while((result = reg.exec(content)) !== null) {
-		HEADINGS.push(result[1]);
-		output += '<details><summary class="level1">' + result[1] + '</summary></details>';
+		headings.push(result[1]);
+		output += '<details><summary class="' + categoryClass + '">';
+		output += result[1];
+		output += '</summary></details>';
 	}
 
 	reg = new RegExp(/{{(.*?)}}/g);
 	while((result = reg.exec(content)) !== null) {
-		TEMPLATES.push(result[1]);
+		templates.push(result[1]);
 	}
 
-	var element = document.querySelector('#list-content');
+	var element = document.querySelector('#' + categoryID);
+	if (!element) {
+		console.log('Cannot find ' + categoryID + ' ID');
+		return;
+	}
 	element.innerHTML = output;
-	for (var i=0; i<HEADINGS.length; i++) {
+	clearLinkCategories();
+	for (var i=0; i<headings.length; i++) {
+		addLinkCategory(headings[i], templates[i]);
 		fillContent(i);
 	}
 }
@@ -71,11 +82,10 @@ function extractHeadings(content) {
 
 function fillContent(index) {
 	var request = new XMLHttpRequest();
-	var file = TEMPLATES[index];
+	var file = getTemplateFilename(index);
 	if (!file) {
 		return;
 	}
-	file = '/source/' + file + '.template';
 	request.open('GET', file);
 	request.addEventListener('load', function () {
 		fillContent2(index, this.responseText);
@@ -94,17 +104,38 @@ function fillContent(index) {
 //
 
 function fillContent2(index, content) {
+	var entry = setCategoryRaw(index, content);
 	var details = document.querySelectorAll('details');
 	if (!details[index]) {
 		return;
 	}
+	var output;
 	var span = details[index].querySelector('span');
 	if (!span) {
 		span = document.createElement('span');
+		output = '';
+		var links = entry.links;
+		for (var i=0; i<links.length; i++) {
+console.log(links[i].type);
+			if (links[i].type === 'heading') {
+				continue;
+			}
+			output += '<details open class="link">';
+			output += '<summary>'
+			output += links[i].title;
+			output += '</summary>';
+			output += '<span class="link=text">';
+			output += links[i].text;
+			output += '</span>';
+			output += '</details>';
+		}
+		span.innerHTML = output;
 		details[index].appendChild(span);
 	}
-	span.innerHTML = '<pre>' + content + '</pre>';
 }
+
+
+
 
 
 
