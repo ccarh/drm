@@ -1,0 +1,71 @@
+__NOTOC__
+
+This is a partitioned version of our [[Links_for_Digital_Musicology|
+Links for Digital Musicology]]. This view is not well suited to websites with heterogeneous material (a composer's letters, diary, photographs, etc.), which can be listed in multiple ways, but early users found it better for general navigation.   
+
+This wiki provides links to substantial open-access projects of use to musicians and musicologists. For curated digital and hybrid editions, see [http://wiki.ccarh.org/wiki/EVE_%28Electronic_and_Virtual_Editions%29 EVE: Electronic and Virtual Editions]. For older projects that are not readily accessible online see [[ADAM|ADAM: Archive of Digital Applications in Musicology]].
+
+== Digitized Music Manuscripts ==
+ &lt;div class="mw-collapsible mw-collapsed">
+{{DRM_manuscripts}}
+ &lt;/div>
+
+== Digital Score Reprints ==
+ &lt;div class="mw-collapsible mw-collapsed">
+{{DRM_reprints}}
+ &lt;/div>
+
+== Repertory- and Genre-Based Projects ==
+&lt;div class="mw-collapsible mw-collapsed">
+{{DRM_genre}}
+ &lt;/div>
+
+== Structured Databases ==
+&lt;div class="mw-collapsible mw-collapsed">
+{{DRM_databases}}
+ &lt;/div>
+
+== Portals and Search Engines for Music ==
+&lt;div class="mw-collapsible mw-collapsed">
+{{DRM_portals}}
+ &lt;/div>
+
+== Resources for Music Theory ==
+&lt;div class="mw-collapsible mw-collapsed">
+{{DRM_music_theory}}
+ &lt;/div>
+
+== Historical Audio and Video ==
+&lt;div class="mw-collapsible mw-collapsed">
+{{DRM_audio_video}}
+ &lt;/div>
+
+== Historical Maps ==
+&lt;div class="mw-collapsible mw-collapsed">
+{{DRM_maps}}
+ &lt;/div>
+
+== Early Newspapers ==
+&lt;div class="mw-collapsible mw-collapsed">
+{{DRM_newspapers}}
+ &lt;/div>
+
+== Music Magazines ==
+&lt;div class="mw-collapsible mw-collapsed">
+{{DRM_magazines}}
+ &lt;/div>
+
+== Large Humanities Text Corpora ==
+&lt;div class="mw-collapsible mw-collapsed">
+{{DRM_texts}}
+ &lt;/div>
+
+== Image Banks ==
+&lt;div class="mw-collapsible mw-collapsed">
+{{DRM_images}}
+ &lt;/div>
+
+== Credits ==
+&lt;div class="mw-collapsible mw-collapsed">
+{{DRM_credits}}
+ &lt;/div>
