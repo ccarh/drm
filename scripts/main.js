@@ -15,6 +15,82 @@ document.addEventListener('DOMContentLoaded', function() {
 
 //////////////////////////////
 //
+// doSearch --
+//
+// #search-text
+// #search-scope
+//
+
+function doSearch(event) {
+	var search = document.querySelector("#search-text");
+	if (!search) {
+		console.log("Empty search");
+	}
+	var searchstring = search.value;
+	if (!searchstring) {
+		console.log("Empty search");
+	} else {
+		console.log("SEARCH", searchstring);
+	}
+
+   var scope = document.querySelector("#search-scope");
+	if (scope) {
+		scope = scope.checked;
+	} else {
+		scope = false;
+	}
+
+   var matches = getLinkMatches(searchstring, scope);
+
+	displaySearchResults(matches);
+}
+
+
+
+///////////////////////////////
+//
+// displaySearchResults --
+//
+
+function displaySearchResults(links) {
+	var categories = document.querySelector('#categories');
+	if (!categories) {
+		return;
+	}
+	var lastheading = '';
+	var heading = '';
+	var output = '';
+	for (var i=0; i<links.length; i++) {
+		var link = links[i];
+		heading = link.heading;
+		if (heading !== lastheading) {
+			if (i > 0) {
+				output += '</details>';
+			}
+			output += '<details open>';
+			output += '<summary class="category">';
+			output += wiki2html(link.heading);
+			output += '</summary>';
+			lastheading = heading;
+		}
+		output += '<details class="link">'
+		output += '<summary>';
+		output += wiki2html(link.title);
+		output += '</summary>';
+		output += '<span class="link-text">';
+		output += wiki2html(link.text);
+		output += '</span>';
+		output += '</details>';
+		
+	}
+
+	categories.innerHTML = output;
+}
+
+
+
+//////////////////////////////
+//
 // fillSearchForm --
 //
 
@@ -24,11 +100,22 @@ function fillSearchForm(elementId) {
 		return;
 	}
    output = '';
-	output += '<input type="text" width="20" ';
-	output += 'class="form-control" placeholder="Search">';
+	output += '<form class="form-inline">';
+	output += ' <div class="form-group">';
+	output += '  <input id="search-text" onkeyup="doSearch(this);" type="text" width="20" ';
+	output += '    class="form-control" placeholder="Search">';
+	output += ' </div>';
+	output += ' <div class="form-group">';
+	output += '<div class="checkbox"><label>';
+	output += '<input id="search-scope" onclick="doSearch(this);" type="checkbox" value="">Titles only</label></div>';
+	output += '</div>';
+	output += '</form>';
 	element.innerHTML = output;
 	element.style['padding-bottom'] = '25px';
 	element.style['padding-top']    = '25px';
+
+	element.querySelector("#search-text").focus();
+	
 }
 
 
@@ -175,7 +262,6 @@ function fillContent2(index, content) {
 		output = '';
 		var links = entry.links;
 		for (var i=0; i<links.length; i++) {
-console.log(links[i].type);
 			if (links[i].type === 'heading') {
 				continue;
 			}
@@ -183,7 +269,7 @@ console.log(links[i].type);
 			output += '<summary>'
 			output += links[i].title;
 			output += '</summary>';
-			output += '<span class="link=text">';
+			output += '<span class="link-text">';
 			output += links[i].text;
 			output += '</span>';
 			output += '</details>';
@@ -192,7 +278,6 @@ console.log(links[i].type);
 		details[index].appendChild(span);
 	}
 }
-
 
 
 

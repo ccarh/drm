@@ -4,6 +4,15 @@
 	box-sizing: border-box; 
 }
 
+details.link {
+	margin-left: 45px;
+}
+
+details.link > summary {
+	color: #d77942;
+
+}
+
 
 body {
 	counter-reset: category;
@@ -88,6 +97,8 @@ table > tbody > tr > td {
 .page-header {
 	color: #fff;
 	text-align: center;
+	margin-top: 0;
+	padding-top: 40px;
 }
 
 .project-name {
@@ -286,6 +297,38 @@ table > tbody > tr > td {
 	color: white;
 	opacity: 0.4;
 }
+
+
+/* WIKI classes */
+
+div.thumbinner {
+	border: 1px solid #ccc;
+	padding: 3px;
+	background-color: #f9f9f9;
+	font-size: 94%;
+	text-align: center;
+	overflow: hidden;
+}
+
+
+div.thumb {
+	margin-bottom: .5em;
+	width: auto;
+	background-color: transparent;
+}
+
+div.tright {
+	clear: right;
+	float: right;
+}
+
+
+
+
+
+
+
+
 
 
 
