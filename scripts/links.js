@@ -1,5 +1,7 @@
 // vim: ts=3
 
+var baseurl = "http://wiki.ccarh.org/wiki";
+
 var LINKS = {
    category: []
 }
@@ -32,6 +34,18 @@ function addLinkCategory(heading, template) {
 function clearLinkCategories() {
 	var cat = getCategories();
 	cat = [];
+}
+
+
+
+//////////////////////////////
+//
+// setMainPreface --
+//
+
+function setMainPreface(content) {
+	LINKS.prefaceRaw = content;
+	LINKS.preface = wiki2html(content);
 }
 
 
@@ -84,6 +98,17 @@ function getTemplateFilename(index) {
 }
 
 
+//////////////////////////////
+//
+// getMainPreface --
+//
+
+function getMainPreface() {
+	return LINKS.preface;
+}
+
+
+
 ///////////////////////////////////////////////////////////////////////////
 
 
@@ -125,6 +150,19 @@ function setCategoryRaw(index, content) {
 
 //////////////////////////////
 //
+// displayMainPreface --
+//
+
+function displayMainPreface(preface) {
+	console.log(preface);
+
+
+}
+
+
+
+//////////////////////////////
+//
 // setLinkEntry --
 //
 
@@ -157,6 +195,63 @@ function setLinkEntry(link) {
 	link.type = 'link';
 	link.text = text;
 }
+
+
+
+/////////////////////////////
+//
+// wiki2html -- convert mediawiki text to HTML.
+//
+
+function wiki2html(content) {
+	output = content.replace(/__NOTOC__/, '');
+	var swaping;
+	var matches;
+	var temp;
+	var m2;
+	var url;
+	var link;
+	var text;
+	var newtext;
+   var counter = 0;
+	while (matches = output.match(/\[\[(.*?)\]\]/m)) {
+		temp = matches[1];
+		if (m2 = temp.match(/^\s*([^\s]+)\s*\|\s*(.*)\s*$/m)) {
+			link = m2[1];
+			text = m2[2];
+         link = link.replace(/\s/g, '_');
+			url  = baseurl + '/' + link;
+			newtext = '<a href="' + url + '">' + text + '</a>';
+			output = output.replace('[[' + temp + ']]', newtext);
+		} else {
+			text = temp;
+         var xurl = temp.replace(/\s+$/m, '');
+         xurl = xurl.replace(/^\s+/m, '');
+         xurl = xurl.replace(/^\s/m, '_');
+			url  = baseurl + '/' + xurl;
+			newtext = '<a href="' + url + '">' + text + '</a>';
+			output = output.replace(temp, newtext);
+		}
+		counter++;
+		if (counter > 10) {
+			break;
+		}
+	}
+	while (matches = output.match(/\[(.*?)\]/m)) {
+		temp = matches[1];
+		temp = temp.replace(/^\s+/, '');
+		temp = temp.replace(/\s+$/, '');
+		if (m2 = temp.match(/^(.*?)\s+(.*)$/)) {
+			link = m2[1];
+			text = m2[2];
+		}
+		output = output.replace('[' + matches[1] + ']', 
+					'<a href="' + link + '">' + tex + '</a>');
+	}
+
+	return output;
+}
+
 
 
 

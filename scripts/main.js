@@ -7,8 +7,29 @@ var categoryClass = 'category';
 
 
 document.addEventListener('DOMContentLoaded', function() {
+	fillSearchForm('search');
    getHeadings('/source/main.wiki');
 });
+
+
+
+//////////////////////////////
+//
+// fillSearchForm --
+//
+
+function fillSearchForm(elementId) {
+	var element = document.querySelector('#' + elementId);
+	if (!element) {
+		return;
+	}
+   output = '';
+	output += '<input type="text" width="20" ';
+	output += 'class="form-control" placeholder="Search">';
+	element.innerHTML = output;
+	element.style['padding-bottom'] = '25px';
+	element.style['padding-top']    = '25px';
+}
 
 
 
@@ -47,6 +68,10 @@ function extractHeadings(content) {
 	var templates = [];
 	var output    = '';
 
+	var matches;
+   setMainPreface(extractPreface(content));
+	displayMainPreface(getMainPreface());
+
 	var reg = new RegExp(/==\s(.*?)\s*==/g);
 	while((result = reg.exec(content)) !== null) {
 		headings.push(result[1]);
@@ -71,6 +96,40 @@ function extractHeadings(content) {
 		addLinkCategory(headings[i], templates[i]);
 		fillContent(i);
 	}
+}
+
+
+
+//////////////////////////////
+//
+// extractPreface --
+//
+
+function extractPreface(content) {
+	var lines = content.match(/[^\r\n]+/g);
+   var output = '';
+	for (var i=0; i<lines.length; i++) {
+		if (lines[i].match(/^=/)) {
+			break;
+		}
+		output += lines[i] + '\n';
+	}
+	return output;
+}
+
+
+
+//////////////////////////////
+//
+// displayMainPreface --
+//
+
+function displayMainPreface(text) {
+	var element = document.querySelector('#' + prefaceID);
+	if (!element) {
+		return;
+	}
+	element.innerHTML = text;
 }
 
 

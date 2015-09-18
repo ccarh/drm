@@ -4,21 +4,29 @@
 	box-sizing: border-box; 
 }
 
+
 body {
-	counter-reset: catagory;
+	counter-reset: category;
+	padding: 0;
+	margin: 0;
+	margin-bottom: 200px;
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 2.0rem;
+	line-height: 1.5;
+	color: #606c71; 
 }
 
 summary.category:before {
-	counter-increment: catagory;
-	content: counter(catagory) ". ";
+	counter-increment: category;
+	content: counter(category) ". ";
 	display: inline-block;
-	width: 2.5rem;
+	width: 4.5rem;
 	text-align: center;
 }
 
 summary.category {
 	color: #159957;
-	font-size: 1.3rem;
+	font-size: 2.0rem;
 }
 
 .page-header {
@@ -31,16 +39,6 @@ summary.category {
 .top-bread {
 	opacity: 0.2;
 	word-spacing: 0.6rem;
-}
-
-body {
-	padding: 0;
-	margin: 0;
-	margin-bottom: 200px;
-	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 16px;
-	line-height: 1.5;
-	color: #606c71; 
 }
 
 summary { 
@@ -87,55 +85,10 @@ table > tbody > tr > td {
 	border-color: rgba(255, 255, 255, 0.3); 
 }
 
-@media screen and (min-width: 64em) {
-	.btn {
-		padding: 0.75rem 1rem; 
-	} 
-}
-
-@media screen and (min-width: 42em) and (max-width: 64em) {
-	.btn {
-		padding: 0.6rem 0.9rem;
-		font-size: 0.9rem; 
-	} 
-}
-
-@media screen and (max-width: 42em) {
-	.btn {
-		display: block;
-		width: 100%;
-		padding: 0.75rem;
-		font-size: 0.9rem; }
-
-	.btn + .btn {
-		margin-top: 1rem;
-		margin-left: 0; 
-	} 
-}
-
 .page-header {
 	color: #fff;
 	text-align: center;
-/*
-	background-color: #159957;
-	background-image: linear-gradient(120deg, #255799, #157957); 
-*/
 }
-
-@media screen and (min-width: 64em) {
-	.page-header {
-		padding: 1rem 1rem; } 
-}
-
-@media screen and (min-width: 42em) and (max-width: 64em) {
-	.page-header {
-		padding: 1rem 1rem; 
-	} 
-}
-
-@media screen and (max-width: 42em) {
-	.page-header {
-		padding: 1rem 1rem; } }
 
 .project-name {
 	margin-top: 0;
@@ -143,18 +96,6 @@ table > tbody > tr > td {
 	text-shadow: 4px 4px 14px #000;
 
 }
-
-@media screen and (min-width: 64em) {
-	.project-name {
-		font-size: 3.25rem; } }
-
-@media screen and (min-width: 42em) and (max-width: 64em) {
-	.project-name {
-		font-size: 2.25rem; } }
-
-@media screen and (max-width: 42em) {
-	.project-name {
-		font-size: 1.75rem; } }
 
 .project-name2 a:hover {
 	text-decoration: none !important;
@@ -182,19 +123,6 @@ table > tbody > tr > td {
 	font-weight: normal;
 	opacity: 0.7; }
 
-@media screen and (min-width: 64em) {
-	.project-tagline {
-		font-size: 1.25rem; } }
-
-@media screen and (min-width: 42em) and (max-width: 64em) {
-	.project-tagline {
-		font-size: 1.15rem; } }
-
-@media screen and (max-width: 42em) {
-	.project-tagline {
-		font-size: 1rem; } }
-
-
 .main-content > :first-child {
 	margin-top: 20px; }
 
@@ -218,7 +146,6 @@ table > tbody > tr > td {
 .main-content code {
 	padding: 2px 4px;
 	font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
-	font-size: 0.9rem;
 	color: #383e41;
 	background-color: #f3f6fa;
 	border-radius: 0.3rem; }
@@ -237,7 +164,6 @@ table > tbody > tr > td {
 .main-content pre > code {
 		padding: 0;
 		margin: 0;
-		font-size: 0.9rem;
 		color: #567482;
 		word-break: normal;
 		white-space: pre;
@@ -257,7 +183,6 @@ table > tbody > tr > td {
 .main-content .highlight pre, .main-content pre {
 	padding: 0.8rem;
 	overflow: auto;
-	font-size: 0.9rem;
 	line-height: 1.45;
 	border-radius: 0.3rem; }
 
@@ -310,7 +235,6 @@ table > tbody > tr > td {
 	.main-content dl dt {
 		padding: 0;
 		margin-top: 1rem;
-		font-size: 1rem;
 		font-weight: bold; }
 	.main-content dl dd {
 		padding: 0;
@@ -335,30 +259,16 @@ table > tbody > tr > td {
 .site-footer-credits {
 	color: #819198; }
 
-@media screen and (min-width: 64em) {
-	.site-footer {
-		font-size: 1rem; } }
-
-@media screen and (min-width: 42em) and (max-width: 64em) {
-	.site-footer {
-		font-size: 1rem; } }
-
-@media screen and (max-width: 42em) {
-	.site-footer {
-		font-size: 0.9rem; } }
-
 .main-content {
-		max-width: 64rem;
+		max-width: 92rem;
 		padding: 1rem 2rem;
 		margin: 10px auto;
-		font-size: 1.1rem;
 }
 
 #main_content {
-		max-width: 64rem;
+		max-width: 92rem;
 		padding: 1rem 2rem;
 		margin: 10px auto;
-		font-size: 1.1rem;
 }
 
 
