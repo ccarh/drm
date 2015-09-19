@@ -4,15 +4,23 @@
 	box-sizing: border-box; 
 }
 
-details.link {
+details.link-entry {
 	margin-left: 45px;
 }
 
-details.link > summary {
+details.link-entry > summary {
 	color: #d77942;
 
 }
 
+.segment {
+	color: #d77942;
+	font-weight: bold;
+}
+.level1 { margin-left:   0px; }
+.level2 { margin-left:  35px; }
+.level3 { margin-left:  70px; }
+.level4 { margin-left: 105px; }
 
 body {
 	counter-reset: category;

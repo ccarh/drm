@@ -1,0 +1,106 @@
+<script>
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Fri Sep 18 21:15:35 PDT 2015
+// Last Modified: Fri Sep 18 21:15:42 PDT 2015
+// Filename:      scripts/templates.js
+// Syntax:        JavaScript 1.8.5/ECMAScript 5.1
+// vim:           ts=3 hlsearch
+//
+// Description:   Handlebars templates and helper functions.
+//
+
+var renderLinkEntry     = null;
+var renderSearchForm    = null;
+
+document.addEventListener('DOMContentLoaded', function() {
+	renderLinkEntry = Handlebars.compile(
+		document.querySelector('#link-entry-template').innerHTML);
+	renderSearchForm = Handlebars.compile(
+		document.querySelector('#search-form-template').innerHTML);
+});
+
+</script>
+
+
+<!--
+//////////////////////////////
+//
+// search-form-template --
+//
+-->
+
+{% raw %}
+<script id="search-form-template" type="text/x-handlebars-template">
+
+<form class="form-inline">
+	<div class="form-group">
+		<input id="search-text" onkeypress="suppressEnter(event);" 
+			onkeyup="doSearch(event);" type="text" width="20" 
+			class="form-control" placeholder="Search">
+	</div>
+	<div class="form-group">
+		<div style="margin-left:1em;" class="checkbox"><label>
+			<input id="search-scope" onkeypress="suppressEnter(event); 
+				onclick="doSearch(event);" type="checkbox" 
+				value="">Titles only</label></div>
+	</div>
+	<div style="float:right; display:inline;" id="link-count"></div>
+</form>
+
+</script>
+{% endraw %}
+
+
+<!--
+//////////////////////////////
+//
+// link-entry-template -- Template for displaying a link entry in
+//    the closed state (but Firefox will always open <details>).
+// Input object parameters:
+//    .title = title of the link
+//    .text = text description of the link
+//
+-->
+
+{% raw %}
+<script id="link-entry-template" type="text/x-handlebars-template">
+
+{{#ifCond type "heading"}}
+	<span class="segment level{{level}}">{{wiki title}}</span>
+{{else}}
+	<details class="link-entry level{{level}}">
+		<summary>{{wiki title}}</summary>
+		<span class="link-text">
+			{{wiki text}}
+		</span>
+	</details>
+{{/ifCond}}
+
+</script>
+{% endraw %}
+
+
+<script>
+///////////////////////////////////////////////////////////////////////////
+//
+// Helper functions for handlebars-js.
+//
+
+Handlebars.registerHelper('wiki', function(text, options) {
+	return new Handlebars.SafeString(wiki2html(text));
+});
+
+
+Handlebars.registerHelper('ifCond', function(v1, v2, options) {
+  if(v1 === v2) {
+    return options.fn(this);
+  }
+  return options.inverse(this);
+});
+
+
+</script>
+
+
+

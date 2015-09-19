@@ -1,25 +1,79 @@
-// vim: ts=3
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Fri Sep 18 21:45:53 PDT 2015
+// Last Modified: Fri Sep 18 21:45:58 PDT 2015
+// Filename:      scripts/links.js
+// Syntax:        JavaScript 1.8.5/ECMAScript 5.1
+// vim:           ts=3 hlsearch
+//
+// Description:   Manipulation functions for accessing the LINKS
+//                object.
+//
+// Structure of the LINKS object
+//		.preface:     Summary at the start of the page.
+//		.prefaceRaw:  Summary in wiki form.
+//    .category[]:  List of categories.
+// 		.heading:  Name of the category.
+//       .index:    Index of category in list.
+//			.number:   Number of category in list.
+//			.preface:  Introduction to category.
+//			.raw:      Wiki text for category.
+//			.templ:    Name of the original wiki template
+//			.links[]   Array of link entries.
+//				.heading: Name of catetory for link.
+//				.hnumber: Link number in list.
+//				.level:   Indentation level.
+//				.number:  Category number link belongs in.
+//				.raw:     Wiki text for link entry.
+//				.title:   Title of link entry.
+//				.type:    link|heading
+//								link = actual entry
+//								heading = segmentation text
+//
 
-var baseurl = "http://wiki.ccarh.org/wiki";
+var baseurl     = 'http://wiki.ccarh.org';
+var baseurlwiki = baseurl + '/wiki';
 
 var LINKS = {
    category: []
 }
 
 
+//////////////////////////////
+//
+// getLinkCount --
+//
+
+function getLinkCount() {
+	var cat = getCategories();
+	var count = 0;
+	for (var i=0; i<cat.length; i++) {
+		if (!cat[i].links) {
+			continue;
+		}
+		for (var j=0; j<cat[i].links.length; j++) {
+			if (cat[i].links[j].type === "link") {
+				count++;
+			}
+		}
+	}
+
+	return count;
+}
+
 
 
 //////////////////////////////
 //
-// addLinkCategory --
+// addLinkCategory -- 
 //
 
-function addLinkCategory(heading, template) {
+function addLinkCategory(heading, templ) {
 	var entry = {
 		heading: heading,
-		template: template,
+		templ: templ,
 		index: LINKS.category.length,
-		preface: "",
+		preface: '',
 		links: []
 	}
 	LINKS.category.push(entry);
@@ -91,9 +145,9 @@ function getCategoryCount() {
 
 function getTemplateFilename(index) {
 	var cat      = getCategories();
-	var filename = cat[index].template;
+	var filename = cat[index].templ;
 	if (!filename) {
-		return "";
+		return '';
 	}
 	return '/source/' + filename + '.template';
 }
@@ -174,7 +228,7 @@ function setLinkEntry(link) {
 	var lines = raw.match(/[^\r\n]+/g);
 	var hasContent = 0;
 	var matches;
-	var text = "";
+	var text = '';
 	for (var i=0; i<lines.length; i++) {
 		if (!lines[i].match(/^\s*$/)) {
 			if (!hasContent) {
@@ -186,9 +240,9 @@ function setLinkEntry(link) {
 		if (matches = lines[i].match(/^(=+)\s*(.*)/)) {
 			link.level = matches[1].length;
 			// have to remove equals signs at end here for some reason:
-			link.title = matches[2].replace(/\s*=+\s*$/, "");
+			link.title = matches[2].replace(/\s*=+\s*$/, '');
 		} else if (hasContent) {
-			text += lines[i] + "\n";
+			text += lines[i] + '\n';
 		}
 	}
 	if (!hasContent) {
@@ -203,148 +257,6 @@ function setLinkEntry(link) {
 
 /////////////////////////////
 //
-// wiki2html -- convert mediawiki text to HTML.
-//
-
-function wiki2html(content) {
-	output = content.replace(/__NOTOC__/, '');
-	output = output.replace(/&lt;/gm, "<");
-	output = output.replace(/\b--\b/gm, "&ndash;");
-	var swaping;
-	var matches;
-	var temp;
-	var m2;
-	var url;
-	var link;
-	var text;
-	var newtext;
-   var counter = 0;
-	if (matches = output.match(/Website:\s*\[([^]]+)\]/)) {
-		temp = matches[1];
-		if (m2 = temp.match(/([^\s]+)/)) {
-			link = $m2[1];
-			output.replace(temp, '<a href="' + link + '">' + link + '</a><br>');
-		}
-		
-	}
-
-	while (matches = output.match(/\[\[File:(.*?)\]\]/m)) {
-console.log("FILE       ============ ", matches[1]);
-		var imagedata = getImageContent(matches[1]);
-		output = output.replace('[[File:' + matches[1] + ']]', imagedata);
-	}
-	
-	while (matches = output.match(/\[\[(.*?)\]\]/m)) {
-		temp = matches[1];
-		if (m2 = temp.match(/^\s*([^\s]+)\s*\|\s*(.*)\s*$/m)) {
-			link = m2[1];
-			text = m2[2];
-         link = link.replace(/\s/g, '_');
-			url  = baseurl + '/' + link;
-			newtext = '<a href="' + url + '">' + text + '</a>';
-			output = output.replace('[[' + matches[1] + ']]', newtext);
-		} else {
-			text = temp;
-         var xurl = temp.replace(/\s+$/m, '');
-         xurl = xurl.replace(/^\s+/m, '');
-         xurl = xurl.replace(/^\s/m, '_');
-			url  = baseurl + '/' + xurl;
-			newtext = '<a href="' + url + '">' + text + '</a>';
-			output = output.replace('[[' + matches[1] + ']]', newtext);
-		}
-		if (counter++ > 20) { break; }
-	}
-	counter = 0;
-	while (matches = output.match(/\[(.*?)\]/m)) {
-		temp = matches[1];
-		temp = temp.replace(/^\s+/, '');
-		temp = temp.replace(/\s+$/, '');
-		if (m2 = temp.match(/^(.*?)\s+(.*)$/)) {
-			link = m2[1];
-			text = m2[2];
-		}
-		output = output.replace('[' + matches[1] + ']', 
-					'<a href="' + link + '">' + text + '</a>');
-		if (counter++ > 20) { break; }
-	}
-
-	return output;
-}
-
-
-
-//////////////////////////////
-//
-// getImageContent --
-//
-// deal with images:
-// [[File:BW_FedRovelli-BernhardApel.png
-//     |500px
-//     |350px
-//     |thumb
-//     |right
-//     |<small>Federica Rovelli and Bernhard Apel examine a 
-//          digitized Beethoven sketch at the Beethoven-Haus on 
-//          Nov. 30, 2014. Image from the Forschung in Bonn column 
-//          of [http://www.ksta.de/bonn/forschung-in-bonn-wie-ludwig-van-beethoven-mit-den-noten-kaempfte,15189200,29195530.html?piano_t=1 
-//          Nachrichten und Bilder aus Bonn].</small>]]
-// 
-// <div class="thumb tright">
-//    <div class="thumbinner" style="width:352px;">
-//       <a href="/wiki/File:BW_FedRovelli-BernhardApel.png" class="image">
-//          <img alt="" src="/images/thumb/2/29/BW_FedRovelli-BernhardApel.png/350px-BW_FedRovelli-BernhardApel.png" width="350" height="187" class="thumbimage" srcset="/images/2/29/BW_FedRovelli-BernhardApel.png 1.5x, /images/2/29/BW_FedRovelli-BernhardApel.png 2x" /></a>  
-//          <div class="thumbcaption">
-//             <div class="magnify">
-//                <a href="/wiki/File:BW_FedRovelli-BernhardApel.png" class="internal" title="Enlarge"></a>
-//             </div>
-//                <small>Federica Rovelli and Bernhard Apel examine a 
-//                digitized Beethoven sketch at the Beethoven-Haus on 
-//                Nov. 30, 2014. Image from the Forschung in Bonn column 
-//                of <a rel="nofollow" class="external text" 
-//                href="http://www.ksta.de/bonn/forschung-in-bonn-wie-ludwig-van-beethoven-mit-den-noten-kaempfte,15189200,29195530.html?piano_t=1">Nachrichten und Bilder aus Bonn</a>.
-//                </small>
-//            </div>
-//     </div>
-// </div>
-//
-// CryptoJS.MD5(filename);
-//
-
-function getImageContent(input) {
-	var parameters = input.split(/\|/);
-	var filename = parameters[0].replace(/^\s+/, "").replace(/\s+$/, "");
-	var md5sum = CryptoJS.MD5(filename).toString(CryptoJS.enc.Hex);
-	var first = md5sum.substr(0, 1);
-	var second = md5sum.substr(0, 2);
-	console.log(md5sum);
-	var output = "";
-	output += '<div class="thumb tright">';
-	output += '<div class="thumbinner">';
-
-	output += '<img ';
-	output += 'src="http://wiki.ccarh.org/images/' + first + 
-			'/' + second + '/' + filename + '"';
-	output += ' style="';
-	// style goes here
-   output += '"';
-	output += '>';
-
-	output += '<div class="thumbcaption">';
-	output += parameters[parameters.length-1];
-	output += '</div>';
-
-	output += '</div>';
-	output += '</div>';
-
-	return output;
-}
-
-
-///////////////////////////////////////////////////////////////////////////
-
-
-/////////////////////////////
-//
 // getLinkMatches -- 
 //
 
@@ -352,11 +264,11 @@ function getLinkMatches(searchstring, scope)  {
 	var output = [];
 	var categories = getCategories();
 	var links;
-	var re = new RegExp(searchstring, "im");
+	var re = new RegExp(searchstring, 'im');
 	for (var i=0; i<categories.length; i++) {
 		links = categories[i].links;
 		for (var j=0; j<links.length; j++) {
-			if (links[j].type !== "link") {
+			if (links[j].type !== 'link') {
 				continue;
 			}
 			if (scope) {

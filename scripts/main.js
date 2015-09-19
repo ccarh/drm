@@ -1,5 +1,62 @@
-// vim: ts=3
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Fri Sep 18 21:15:35 PDT 2015
+// Last Modified: Fri Sep 18 21:15:42 PDT 2015
+// Filename:      scripts/main.js
+// Syntax:        JavaScript 1.8.5/ECMAScript 5.1
+// vim:           ts=3 hlsearch
+//
+// Description:   Main functions for managing DRM.
+//
 
+// event keyCodes.  See: http://www.javascripter.net/faq/keycodes.htm
+var TabKey       =   9;
+var BackspaceKey =   8;
+var EnterKey     =  13;
+var ShiftKey     =  16;
+var CommaKey     = 188;
+var PeriodKey    = 190;
+var PeriodKeyNumberPad = 110; // Number Pad Minus Key;
+var AKey         =  65;
+var BKey         =  66;
+var CKey         =  67;
+var DKey         =  68;
+var EKey         =  69;
+var FKey         =  70;
+var GKey         =  71;
+var HKey         =  72;
+var IKey         =  73;
+var JKey         =  74;
+var KKey         =  75;
+var LKey         =  76;
+var MKey         =  77;
+var NKey         =  78;
+var OKey         =  79;
+var PKey         =  80;
+var QKey         =  81;
+var RKey         =  82;
+var SKey         =  83;
+var TKey         =  84;
+var UKey         =  85;
+var VKey         =  86;
+var WKey         =  87;
+var XKey         =  88;
+var PlusKey      = 187;
+var MinusKey     = 189;
+var MinusKey2    = 173;      // Firefox MinusKey
+var MinusKeyNumberPad = 109; // Number Pad Minus Key;
+var ZeroKey      =  48;
+var OneKey       =  49;
+var TwoKey       =  50;
+var ThreeKey     =  51;
+var FourKey      =  52;
+var FiveKey      =  53;
+var SixKey       =  54;
+var SevenKey     =  55;
+var EightKey     =  56;
+var NineKey      =  57;
+var QuestionKey  = 191;
+var EscKey       =  27;
 
 var prefaceID     = 'preface';
 var categoryID    = 'categories';
@@ -15,13 +72,34 @@ document.addEventListener('DOMContentLoaded', function() {
 
 //////////////////////////////
 //
-// doSearch --
+// suppressEnter -- Prevent the enter key from doing anything in the
+//     search query field.
 //
-// #search-text
-// #search-scope
+
+function suppressEnter(event) {
+	if (event.keyCode == EnterKey) {
+		event.stopPropagation();
+		event.preventDefault();
+		return;
+	}
+}
+
+//////////////////////////////
+//
+// doSearch -- Perform a search on the link entries and 
+//   update the list of links with the search results.
+//
+// #search-text   = ID of search query field.
+// #search-scope  = ID of title-only search option.
 //
 
 function doSearch(event) {
+	if (event.keyCode == EnterKey) {
+		event.preventDefault();
+		event.stopPropagation();
+		return;
+	}
+
 	var search = document.querySelector("#search-text");
 	if (!search) {
 		console.log("Empty search");
@@ -29,8 +107,6 @@ function doSearch(event) {
 	var searchstring = search.value;
 	if (!searchstring) {
 		console.log("Empty search");
-	} else {
-		console.log("SEARCH", searchstring);
 	}
 
    var scope = document.querySelector("#search-scope");
@@ -41,7 +117,6 @@ function doSearch(event) {
 	}
 
    var matches = getLinkMatches(searchstring, scope);
-
 	displaySearchResults(matches);
 }
 
@@ -49,7 +124,9 @@ function doSearch(event) {
 
 ///////////////////////////////
 //
-// displaySearchResults --
+// displaySearchResults -- Display search results, which are a list
+//   of link entries.  The link entries belong to various categories,
+//   so show the category when a new one appears in the list.
 //
 
 function displaySearchResults(links) {
@@ -73,15 +150,7 @@ function displaySearchResults(links) {
 			output += '</summary>';
 			lastheading = heading;
 		}
-		output += '<details class="link">'
-		output += '<summary>';
-		output += wiki2html(link.title);
-		output += '</summary>';
-		output += '<span class="link-text">';
-		output += wiki2html(link.text);
-		output += '</span>';
-		output += '</details>';
-		
+		output += renderLinkEntry(link);
 	}
 
 	categories.innerHTML = output;
@@ -99,23 +168,10 @@ function fillSearchForm(elementId) {
 	if (!element) {
 		return;
 	}
-   output = '';
-	output += '<form class="form-inline">';
-	output += ' <div class="form-group">';
-	output += '  <input id="search-text" onkeyup="doSearch(this);" type="text" width="20" ';
-	output += '    class="form-control" placeholder="Search">';
-	output += ' </div>';
-	output += ' <div class="form-group">';
-	output += '<div class="checkbox"><label>';
-	output += '<input id="search-scope" onclick="doSearch(this);" type="checkbox" value="">Titles only</label></div>';
-	output += '</div>';
-	output += '</form>';
-	element.innerHTML = output;
 	element.style['padding-bottom'] = '25px';
 	element.style['padding-top']    = '25px';
-
+	element.innerHTML = renderSearchForm();
 	element.querySelector("#search-text").focus();
-	
 }
 
 
@@ -246,11 +302,61 @@ function fillContent(index) {
 
 //////////////////////////////
 //
+// showLinkCount -- Show total number of links;
+//
+
+function showLinkCount() {
+	var linkcount = document.querySelector('#link-count');
+	if (linkcount) {
+		var count = getLinkCount();
+		var content = '';
+		content += '(' + count;
+		if (count != 1) {
+			content += ' entries';
+		} else {
+			content += ' entry';
+		}
+		content += ')';
+		linkcount.innerHTML = content;
+	}
+}
+
+
+
+//////////////////////////////
+//
+// showMatchCount -- Show number of matched links;
+//
+
+function showMatchCount(name) {
+	var linkcount = document.querySelector('#link-count');
+	if (linkcount) {
+		var count = getLinkCount();
+		var content = '';
+		content += '(' + count;
+		if (name) {
+			if (count != 1) {
+				content += ' entries';
+			} else {
+				content += ' entry';
+			}
+		}
+		content += ')';
+		linkcount.innerHTML = content;
+	}
+}
+
+
+
+//////////////////////////////
+//
 // fillContent2 --
 //
 
 function fillContent2(index, content) {
 	var entry = setCategoryRaw(index, content);
+	showLinkCount();
+
 	var details = document.querySelectorAll('details');
 	if (!details[index]) {
 		return;
@@ -262,17 +368,7 @@ function fillContent2(index, content) {
 		output = '';
 		var links = entry.links;
 		for (var i=0; i<links.length; i++) {
-			if (links[i].type === 'heading') {
-				continue;
-			}
-			output += '<details open class="link">';
-			output += '<summary>'
-			output += links[i].title;
-			output += '</summary>';
-			output += '<span class="link-text">';
-			output += links[i].text;
-			output += '</span>';
-			output += '</details>';
+			output += renderLinkEntry(links[i]);
 		}
 		span.innerHTML = output;
 		details[index].appendChild(span);
