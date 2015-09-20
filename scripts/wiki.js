@@ -22,6 +22,7 @@ function wiki2html(content) {
 	output = content.replace(/__NOTOC__/, '');
 	output = output.replace(/&lt;/gm, "<");
 	output = output.replace(/\b--\b/gm, "&ndash;");
+
 	var swaping;
 	var matches;
 	var temp;
@@ -31,13 +32,29 @@ function wiki2html(content) {
 	var text;
 	var newtext;
    var counter = 0;
-	if (matches = output.match(/Website:\s*\[([^]]+)\]/)) {
+
+	if (matches = output.match(/Website:\s*\[(.*?)\]/i)) {
 		temp = matches[1];
-		if (m2 = temp.match(/([^\s]+)/)) {
-			link = $m2[1];
-			output.replace(temp, '<a href="' + link + '">' + link + '</a><br>');
+		if (m2 = temp.match(/^([^\s]+)/)) {
+			link = m2[1];
+			link = link.replace(/\/$/, "");
+			var len = link.length;
+			var regexp = new RegExp('Website:\s*\[' + escapeRegExp(temp) + 
+					'\]', 'i');
+			if (len > 70) {
+				output = output.replace(regexp, 
+						'<div style="margin-bottom:10px;">' +
+						'<small>' + 
+						'<a href="' + link + '">' + link + '</a>' +
+						'</small>' +
+						'</div>');
+			} else {
+				output = output.replace(regexp, 
+						'<div style="margin-bottom:10px;">' +
+						'<a href="' + link + '">' + link + '</a>' + 
+						'</div>');
+			}
 		}
-		
 	}
 
 	while (matches = output.match(/\[\[File:(.*?)\]\]/m)) {
@@ -150,7 +167,9 @@ function getImageContent(input) {
 }
 
 
-///////////////////////////////////////////////////////////////////////////
+function escapeRegExp(str) {
+  return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+}
 
 
 

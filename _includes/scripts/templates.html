@@ -53,7 +53,25 @@ document.addEventListener('DOMContentLoaded', function() {
 			</label>
 		</div>
 	</div>
-	<div style="float:right; display:inline;" id="link-count"></div>
+
+	<div style="float:right; display:inline;">
+		<table><tr><td>
+			<div style="display:inline;" id="link-count"></div>
+		</td><td>
+			<div style="display:inline" class="btn-group" 
+					role="group" aria-label="...">
+  				<button type="button" class="btn btn-default btn-open"
+						onclick="openAllLinks();">
+					open
+				</button>
+  				<button type="button" class="btn btn-default btn-close"
+						onclick="closeAllLinks();">
+					close
+				</button>
+		</div>
+		</td></tr></table>
+	</div>
+
 </form>
 
 </script>
@@ -75,13 +93,13 @@ document.addEventListener('DOMContentLoaded', function() {
 <script id="link-entry-template" type="text/x-handlebars-template">
 
 {{#ifCond type "heading"}}
-	<span class="segment level{{level}}">{{wiki title}}</span>
+	<span class="segment level{{level}}">{{title}}</span>
 {{else}}
 	<details class="link-entry level{{level}}">
-		<summary>{{wiki title}}</summary>
-		<span class="link-text">
-			{{wiki text}}
-		</span>
+		<summary>{{{title}}}</summary>
+		<div class="link-text">
+			{{{text}}}
+		</div>
 	</details>
 {{/ifCond}}
 
@@ -104,10 +122,35 @@ document.addEventListener('DOMContentLoaded', function() {
 {% raw %}
 <script id="category-entry-template" type="text/x-handlebars-template">
 
+
+	<div style="float:right; display:inline;">
+		<table><tr><td>
+			<div style="display:inline;" id="link-count"></div>
+		</td><td>
+			<div style="display:inline" class="btn-group" 
+					role="group" aria-label="...">
+  				<button type="button" class="btn btn-default btn-small btn-open"
+						onclick="openCategoryLinks();">
+					<span style="position:relative; top:-5px">
+						open
+					</span>
+				</button>
+  				<button type="button" class="btn btn-default btn-small btn-close"
+						onclick="closeCategoryLinks();">
+					<span style="position:relative; top:-5px">
+						close
+					</span>
+				</button>
+		</div>
+		</td></tr></table>
+	</div>
+
 <details>
-		<summary class="category category{{number}}">
-			{{heading}}
-		</summary>
+
+	<summary class="category category{{number}}">
+		{{heading}}
+	</summary>
+
 </details>
 
 </script>

@@ -6,6 +6,7 @@
 
 details.link-entry {
 	margin-left: 45px;
+	width: 100%;
 }
 
 details.link-entry > summary {
@@ -79,7 +80,7 @@ table > tbody > tr > td {
 	border: 0 !important;
 }
 
-.btn {
+.submitbtn {
 	display: inline-block;
 	margin-bottom: 1rem;
 	color: rgba(255, 255, 255, 0.7);
@@ -91,11 +92,11 @@ table > tbody > tr > td {
 	transition: color 0.2s, background-color 0.2s, border-color 0.2s; 
 }
 
-.btn + .btn {
+.submitbtn + .submitbtn {
 		margin-left: 1rem; 
 }
 
-.btn:hover {
+.submitbtn:hover {
 	color: rgba(255, 255, 255, 0.8);
 	text-decoration: none;
 	background-color: rgba(255, 255, 255, 0.2);
@@ -331,10 +332,55 @@ div.tright {
 }
 
 
+/* Bootstrap button styling */
+/*
+ 
+.btn {
+    padding: 14px 24px;
+    border: 0 none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+ 
+.btn:focus, .btn:active:focus, .btn.active:focus {
+    outline: 0 none;
+}
+ 
+.btn-primary {
+    background: #0099cc;
+    color: #ffffff;
+}
+ 
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+    background: #33a6cc;
+}
+ 
+.btn-primary:active, .btn-primary.active {
+    background: #007299;
+    box-shadow: none;
+}
+
+*/
+
+.btn-open {
+	background-color: #f6fff6;
+}
+
+.btn-close {
+	background-color: #fff6f6;
+}
+
+.btn-small {
+	font-size:70%;
+	height: 20px;
+	padding: 4px 4px;
+}
 
 
-
-
+.link-text {
+	margin-bottom: 40px;
+}
 
 
 

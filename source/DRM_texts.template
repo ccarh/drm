@@ -31,11 +31,13 @@ Website: [http://www.perseus.tufts.edu/hopper/ &lt;i>Perseus&lt;/i>]
 Perseus was originally developed by Gregory Crane at Tufts University with the aim of enabling students to explore the classical literature encoded by Packard Humanities Institute and the [http://www.tlg.uci.edu/ Thesaurus Linguae Graecae]. It subsequently expanded to incorporate many other aspects of classical civilization, including graphical explanations of textual references, as for example [http://www.perseus.tufts.edu/hopper/artifact?name=Aegina,+Temple+of+Aphaia&amp;object=Building here].  It now extends to research in other languages and later periods.  Its catalogue is [http://catalog.perseus.org/ online].  A separate digital lexicon (e.g. this one, for [http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:2002.02.0015 Arabic-English] translation), 
 is available for each one.
 
-===Packard Humanities Institute Latin Texts===
+===Packard Humanities Institute Early Texts===
 
-Website: [http://latin.packhum.org/browse PHI Latin Texts]
+The Packard Humanities Institute has encoded and in some cases translated a large quantity of text from Roman antiquity and the Persian middle ages. Texts are indexed and are easily browsed and searched.  Musical references are incidental.   
 
-These classical Latin texts (200-c. 600 CE) encoded by the Packard Humanities Institute are easy to search. The search engine (also developed in-house) is focused on letter combinations and word proximity (see the and/or/near operators).
+* [http://latin.packhum.org/browse PHI Latin Texts] (200 - &lt;i>c&lt;/i> 600 CE)
+
+* [http://persian.packhum.org/persian//main PHI Persian Literature in Translation]
 
 ===Rousseau Online===
 

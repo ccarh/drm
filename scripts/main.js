@@ -58,10 +58,6 @@ var NineKey      =  57;
 var QuestionKey  = 191;
 var EscKey       =  27;
 
-var prefaceID     = 'preface';
-var categoryID    = 'categories';
-var categoryClass = 'category';
-
 
 //////////////////////////////
 //
@@ -127,14 +123,7 @@ function doSearch(event) {
 	}
 
 	var search = document.querySelector("#search-text");
-	if (!search) {
-		console.log("Empty search");
-	}
 	var searchstring = search.value;
-	if (!searchstring) {
-		console.log("Empty search");
-	}
-
    var scope = document.querySelector("#search-scope");
 	if (scope) {
 		scope = scope.checked;
@@ -144,6 +133,7 @@ function doSearch(event) {
 
 	if (searchstring.match(/^\s*$/)) {
 		displayAllLinks();
+		showLinkCount();
 		return;
 	}
 
@@ -185,6 +175,7 @@ function displaySearchResults(links) {
 	}
 
 	categories.innerHTML = output;
+	showLinkCount(links.length);
 }
 
 
@@ -234,7 +225,7 @@ function extractPreface(content) {
 //
 
 function displayMainPreface(text) {
-	var element = document.querySelector('#' + prefaceID);
+	var element = document.querySelector('#preface');
 	if (!element) {
 		return;
 	}
@@ -250,19 +241,14 @@ function displayMainPreface(text) {
 // showLinkCount -- Show total number of links;
 //
 
-function showLinkCount() {
+function showLinkCount(count) {
 	var linkcount = document.querySelector('#link-count');
 	if (linkcount) {
-		var count = getLinkCount();
-		var content = '';
-		content += '(' + count;
-		if (count != 1) {
-			content += ' entries';
+		if (typeof count !== 'undefined') {
+			linkcount.innerHTML = count;
 		} else {
-			content += ' entry';
+			linkcount.innerHTML = getLinkCount();
 		}
-		content += ')';
-		linkcount.innerHTML = content;
 	}
 }
 
@@ -290,4 +276,71 @@ function showMatchCount(name) {
 		linkcount.innerHTML = content;
 	}
 }
+
+
+
+//////////////////////////////
+//
+// openAllLinks --
+//
+
+function openAllLinks() {
+	var details = document.querySelectorAll("details");
+	for (var i=0; i<details.length; i++) {
+		details[i].open = true;
+	}
+}
+
+
+
+//////////////////////////////
+//
+// closeAllLinks --
+//
+
+function closeAllLinks() {
+	var details = document.querySelectorAll("details");
+	for (var i=0; i<details.length; i++) {
+		details[i].open = false;
+	}
+}
+
+
+
+//////////////////////////////
+//
+// openCategoryLinks --
+//
+
+function openCategoryLinks(index) {
+	var details = document.querySelectorAll("details.category" + index + 
+		" details");
+console.log("DETAILS", details.length);
+	for (var i=0; i<details.length; i++) {
+		details[i].open = true;
+	}
+}
+
+
+
+//////////////////////////////
+//
+// closeCategoryLinks --
+//
+
+function closeCategoryLinks(index) {
+	var details = document.querySelectorAll("details.category" + index + 
+		" details");
+console.log("XDETAILS", details.length);
+	for (var i=0; i<details.length; i++) {
+		details[i].open = false;
+	}
+}
+
+
+
+
+
+
+
 

@@ -260,7 +260,7 @@ function setLinkEntry(link) {
 		if (matches = lines[i].match(/^(=+)\s*(.*)/)) {
 			link.level = matches[1].length;
 			// have to remove equals signs at end here for some reason:
-			link.title = matches[2].replace(/\s*=+\s*$/, '');
+			link.title = wiki2html(matches[2].replace(/\s*=+\s*$/, ''));
 		} else if (hasContent) {
 			text += lines[i] + '\n';
 		}
@@ -270,7 +270,7 @@ function setLinkEntry(link) {
 		return;
 	} 
 	link.type = 'link';
-	link.text = text;
+	link.text = wiki2html(text);
 }
 
 
@@ -444,7 +444,6 @@ function displayCategoryHeadings() {
 	}
 
 	var cat = getCategories();
-console.log("GOT HERE", cat[0]);
 	var output = "";
 	for (var i=0; i<cat.length; i++) {
 		output += renderCategoryEntry(cat[i]);
