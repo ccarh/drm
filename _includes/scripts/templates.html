@@ -12,12 +12,15 @@
 
 var renderLinkEntry     = null;
 var renderSearchForm    = null;
+var renderCategoryEntry = null;
 
 document.addEventListener('DOMContentLoaded', function() {
 	renderLinkEntry = Handlebars.compile(
 		document.querySelector('#link-entry-template').innerHTML);
 	renderSearchForm = Handlebars.compile(
 		document.querySelector('#search-form-template').innerHTML);
+	renderCategoryEntry = Handlebars.compile(
+		document.querySelector('#category-entry-template').innerHTML);
 });
 
 </script>
@@ -33,17 +36,22 @@ document.addEventListener('DOMContentLoaded', function() {
 {% raw %}
 <script id="search-form-template" type="text/x-handlebars-template">
 
-<form class="form-inline">
+<form class="form-inline" style="margin-bottom:30px;">
 	<div class="form-group">
-		<input id="search-text" onkeypress="suppressEnter(event);" 
-			onkeyup="doSearch(event);" type="text" width="20" 
-			class="form-control" placeholder="Search">
+		<input id="search-text" onkeypress="suppressEnter(event);"
+			style="width:30em;" onkeyup="doSearch(event);"
+			type="text" width="20" class="form-control" placeholder="Search">
 	</div>
 	<div class="form-group">
-		<div style="margin-left:1em;" class="checkbox"><label>
-			<input id="search-scope" onkeypress="suppressEnter(event); 
-				onclick="doSearch(event);" type="checkbox" 
-				value="">Titles only</label></div>
+		<div style="margin-left:10px;" class="checkbox">
+			<label>
+				<input id="search-scope" onkeypress="suppressEnter(event);
+						onclick="doSearch(event);" type="checkbox" value="">
+				<span style="margin-left:3px;">
+					Titles only
+				</span>
+			</label>
+		</div>
 	</div>
 	<div style="float:right; display:inline;" id="link-count"></div>
 </form>
@@ -79,6 +87,33 @@ document.addEventListener('DOMContentLoaded', function() {
 
 </script>
 {% endraw %}
+
+
+
+<!--
+//////////////////////////////
+//
+// category-entry-template -- Template for displaying a category of
+//    links.
+// Input object parameters:
+//    .title  = title of the category.
+//    .number = the sequence number for the category.
+//
+-->
+
+{% raw %}
+<script id="category-entry-template" type="text/x-handlebars-template">
+
+<details>
+		<summary class="category category{{number}}">
+			{{heading}}
+		</summary>
+</details>
+
+</script>
+{% endraw %}
+
+
 
 
 <script>

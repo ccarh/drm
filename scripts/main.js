@@ -1,7 +1,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Fri Sep 18 21:15:35 PDT 2015
-// Last Modified: Fri Sep 18 21:15:42 PDT 2015
+// Last Modified: Sat Sep 19 12:07:12 PDT 2015
 // Filename:      scripts/main.js
 // Syntax:        JavaScript 1.8.5/ECMAScript 5.1
 // vim:           ts=3 hlsearch
@@ -63,10 +63,34 @@ var categoryID    = 'categories';
 var categoryClass = 'category';
 
 
+//////////////////////////////
+//
+// event listener DOMContentLoaded -- What to do once all resource files
+//    have been loaded for the page.
+//
+
 document.addEventListener('DOMContentLoaded', function() {
 	fillSearchForm('search');
-   getHeadings('/source/main.wiki');
+	displayAllLinks();
 });
+
+
+
+//////////////////////////////
+//
+// displayAllLinks -- Show a complete list of all links.
+//
+
+function displayAllLinks() {
+	var html = getLinkListHTML();
+	if (html) {
+		var element = document.querySelector("#categories");
+		if (!element) {
+			return;
+		}
+		element.innerHTML = html;
+	}
+}
 
 
 
@@ -83,6 +107,8 @@ function suppressEnter(event) {
 		return;
 	}
 }
+
+
 
 //////////////////////////////
 //
@@ -116,6 +142,11 @@ function doSearch(event) {
 		scope = false;
 	}
 
+	if (searchstring.match(/^\s*$/)) {
+		displayAllLinks();
+		return;
+	}
+
    var matches = getLinkMatches(searchstring, scope);
 	displaySearchResults(matches);
 }
@@ -146,7 +177,7 @@ function displaySearchResults(links) {
 			}
 			output += '<details open>';
 			output += '<summary class="category">';
-			output += wiki2html(link.heading);
+			output += heading;
 			output += '</summary>';
 			lastheading = heading;
 		}
@@ -160,7 +191,7 @@ function displaySearchResults(links) {
 
 //////////////////////////////
 //
-// fillSearchForm --
+// fillSearchForm -- Load the searching interface onto the page.
 //
 
 function fillSearchForm(elementId) {
@@ -175,71 +206,6 @@ function fillSearchForm(elementId) {
 }
 
 
-
-//////////////////////////////
-//
-// getHeadings --
-//
-
-function getHeadings(file) {
-	var request = new XMLHttpRequest();
-	request.open('GET', file);
-	request.addEventListener('load', function () {
-		extractHeadings(this.responseText);
-	});
-	request.addEventListener('error', function () {
-		console.error(this.statusText);
-	});
-	request.send();
-}
-
-
-
-//////////////////////////////
-//
-// extractHeadings --
-//
-// == Digitized Music Manuscripts ==
-//  &lt;div class="mw-collapsible mw-collapsed">
-// {{DRM_manuscripts}}
-//  &lt;/div>
-//
-
-function extractHeadings(content) {
-	var result;
-	var headings  = [];
-	var templates = [];
-	var output    = '';
-
-	var matches;
-   setMainPreface(extractPreface(content));
-	displayMainPreface(getMainPreface());
-
-	var reg = new RegExp(/==\s(.*?)\s*==/g);
-	while((result = reg.exec(content)) !== null) {
-		headings.push(result[1]);
-		output += '<details><summary class="' + categoryClass + '">';
-		output += result[1];
-		output += '</summary></details>';
-	}
-
-	reg = new RegExp(/{{(.*?)}}/g);
-	while((result = reg.exec(content)) !== null) {
-		templates.push(result[1]);
-	}
-
-	var element = document.querySelector('#' + categoryID);
-	if (!element) {
-		console.log('Cannot find ' + categoryID + ' ID');
-		return;
-	}
-	element.innerHTML = output;
-	clearLinkCategories();
-	for (var i=0; i<headings.length; i++) {
-		addLinkCategory(headings[i], templates[i]);
-		fillContent(i);
-	}
-}
 
 
 
@@ -276,27 +242,6 @@ function displayMainPreface(text) {
 }
 
 
-
-//////////////////////////////
-//
-// fillContent --
-//
-
-function fillContent(index) {
-	var request = new XMLHttpRequest();
-	var file = getTemplateFilename(index);
-	if (!file) {
-		return;
-	}
-	request.open('GET', file);
-	request.addEventListener('load', function () {
-		fillContent2(index, this.responseText);
-	});
-	request.addEventListener('error', function () {
-		console.error(this.statusText);
-	});
-	request.send();
-}
 
 
 
@@ -345,37 +290,4 @@ function showMatchCount(name) {
 		linkcount.innerHTML = content;
 	}
 }
-
-
-
-//////////////////////////////
-//
-// fillContent2 --
-//
-
-function fillContent2(index, content) {
-	var entry = setCategoryRaw(index, content);
-	showLinkCount();
-
-	var details = document.querySelectorAll('details');
-	if (!details[index]) {
-		return;
-	}
-	var output;
-	var span = details[index].querySelector('span');
-	if (!span) {
-		span = document.createElement('span');
-		output = '';
-		var links = entry.links;
-		for (var i=0; i<links.length; i++) {
-			output += renderLinkEntry(links[i]);
-		}
-		span.innerHTML = output;
-		details[index].appendChild(span);
-	}
-}
-
-
-
-
 

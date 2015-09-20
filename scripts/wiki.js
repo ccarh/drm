@@ -41,7 +41,6 @@ function wiki2html(content) {
 	}
 
 	while (matches = output.match(/\[\[File:(.*?)\]\]/m)) {
-console.log("FILE       ============ ", matches[1]);
 		var imagedata = getImageContent(matches[1]);
 		output = output.replace('[[File:' + matches[1] + ']]', imagedata);
 	}
@@ -128,7 +127,6 @@ function getImageContent(input) {
 	var md5sum = CryptoJS.MD5(filename).toString(CryptoJS.enc.Hex);
 	var first = md5sum.substr(0, 1);
 	var second = md5sum.substr(0, 2);
-	console.log(md5sum);
 	var output = "";
 	output += '<div class="thumb tright">';
 	output += '<div class="thumbinner">';
