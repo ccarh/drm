@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <script id="link-entry-template" type="text/x-handlebars-template">
 
 {{#ifCond type "heading"}}
-	<span class="segment level{{level}}">{{title}}</span>
+	<span class="segment level{{level}}">{{{title}}}</span>
 {{else}}
 	<details class="link-entry level{{level}}">
 		<summary>{{{title}}}</summary>

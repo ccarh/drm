@@ -41,7 +41,12 @@ function wiki2html(content) {
 			var len = link.length;
 			var regexp = new RegExp('Website:\s*\[' + escapeRegExp(temp) + 
 					'\]', 'i');
-			if (len > 70) {
+			if (len < 70 ) {
+				output = output.replace(regexp, 
+						'<div style="margin-bottom:10px;">' +
+						'<a href="' + link + '">' + link + '</a>' + 
+						'</div>');
+			} else if (len < 100) {
 				output = output.replace(regexp, 
 						'<div style="margin-bottom:10px;">' +
 						'<small>' + 
@@ -49,9 +54,14 @@ function wiki2html(content) {
 						'</small>' +
 						'</div>');
 			} else {
+				var linkname = 'Website';
+				var matches;
+				if (matches = link.match(/^(.*:\/\/[^\/]+)/)) {
+					linkname = matches[1];
+				}
 				output = output.replace(regexp, 
 						'<div style="margin-bottom:10px;">' +
-						'<a href="' + link + '">' + link + '</a>' + 
+						'<a href="' + link + '">' + linkname + '</a>' +
 						'</div>');
 			}
 		}
@@ -144,11 +154,27 @@ function getImageContent(input) {
 	var md5sum = CryptoJS.MD5(filename).toString(CryptoJS.enc.Hex);
 	var first = md5sum.substr(0, 1);
 	var second = md5sum.substr(0, 2);
+	var width = getWidth(parameters);
 	var output = "";
-	output += '<div class="thumb tright">';
-	output += '<div class="thumbinner">';
+	var width = getWidth(parameters);
+	var placement = getPlacement(parameters);
+	output += '<div class="thumb ';
+	if (placement === 'right') {
+		output += 'tright';
+	} else {
+		output += 'tleft';
+	}
+	output += '">';
+	output += '<div class="thumbinner"'
+	if (width) {
+		output += 'style="width:' + (parseInt(width)+2) + 'px;"';
+	}
+	output += '>';
 
 	output += '<img ';
+	if (width) {
+		output += 'width="' + width + '" ';
+	}
 	output += 'src="http://wiki.ccarh.org/images/' + first + 
 			'/' + second + '/' + filename + '"';
 	output += ' style="';
@@ -167,11 +193,53 @@ function getImageContent(input) {
 }
 
 
-function escapeRegExp(str) {
-  return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+
+//////////////////////////////
+//
+// getWidth --
+//
+
+function getWidth(parameters) {
+	var output = "";
+	var matches;
+	for (var i=0; i<parameters.length; i++) {
+		if (matches = parameters[i].match(/^\s*(\d+)px\s*$/)) {
+			output = matches[1];
+			break;
+		}
+	}
+	return output;
 }
 
 
+
+//////////////////////////////
+//
+// getPlacement --
+//
+
+function getPlacement(parameters) {
+	var output = "";
+	var matches;
+	for (var i=0; i<parameters.length; i++) {
+		if (matches = parameters[i].match(/^\s*(right)\s*$/)) {
+			output = matches[1];
+			break;
+		}
+	}
+	return output;
+}
+
+
+
+//////////////////////////////
+//
+// escapeRegExp --
+//
+
+function escapeRegExp(str) {
+  return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+}
 
 
 

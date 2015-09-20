@@ -10,54 +10,9 @@
 //
 
 // event keyCodes.  See: http://www.javascripter.net/faq/keycodes.htm
-var TabKey       =   9;
-var BackspaceKey =   8;
 var EnterKey     =  13;
-var ShiftKey     =  16;
-var CommaKey     = 188;
-var PeriodKey    = 190;
-var PeriodKeyNumberPad = 110; // Number Pad Minus Key;
-var AKey         =  65;
-var BKey         =  66;
-var CKey         =  67;
-var DKey         =  68;
-var EKey         =  69;
-var FKey         =  70;
-var GKey         =  71;
-var HKey         =  72;
-var IKey         =  73;
-var JKey         =  74;
-var KKey         =  75;
-var LKey         =  76;
-var MKey         =  77;
-var NKey         =  78;
-var OKey         =  79;
-var PKey         =  80;
-var QKey         =  81;
-var RKey         =  82;
-var SKey         =  83;
-var TKey         =  84;
-var UKey         =  85;
-var VKey         =  86;
-var WKey         =  87;
-var XKey         =  88;
-var PlusKey      = 187;
-var MinusKey     = 189;
-var MinusKey2    = 173;      // Firefox MinusKey
-var MinusKeyNumberPad = 109; // Number Pad Minus Key;
-var ZeroKey      =  48;
-var OneKey       =  49;
-var TwoKey       =  50;
-var ThreeKey     =  51;
-var FourKey      =  52;
-var FiveKey      =  53;
-var SixKey       =  54;
-var SevenKey     =  55;
-var EightKey     =  56;
-var NineKey      =  57;
-var QuestionKey  = 191;
-var EscKey       =  27;
-
+var CKey         =  99;
+var OKey         = 111;
 
 //////////////////////////////
 //
@@ -70,6 +25,29 @@ document.addEventListener('DOMContentLoaded', function() {
 	displayAllLinks();
 });
 
+
+document.addEventListener('keypress', function(event) {
+console.log(event.charCode);
+console.log(event);
+	if (event.srcElement.target && 
+			event.srcElement.target.id &&
+			event.srcElement.target.id.match(/search-text/i)) {
+console.log("GOT HERE XX");
+		// don't process the keyboard command if searching for text
+		return;
+	}
+console.log("GOT HERE YYY");
+	switch (event.keyCode) {
+		case OKey:
+console.log("GOT HERE OPENING LISTS");
+			openAllLinks();
+			break;
+		case CKey:
+			closeAllLinks();
+			break;
+		
+	}
+});
 
 
 //////////////////////////////
@@ -336,11 +314,5 @@ console.log("XDETAILS", details.length);
 		details[i].open = false;
 	}
 }
-
-
-
-
-
-
 
 

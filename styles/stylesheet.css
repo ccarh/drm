@@ -322,13 +322,28 @@ div.thumbinner {
 
 div.thumb {
 	margin-bottom: .5em;
+	margin-top: .5em;
+	margin-right: 10px;
+	margin-left: 10px;
 	width: auto;
 	background-color: transparent;
+}
+
+.thumbcaption {
+	line-height: 95%;
+	font-family: Palatino, Times-Roman, serif;
+	color: #aaa;
+	text-align: left;
 }
 
 div.tright {
 	clear: right;
 	float: right;
+}
+
+div.tleft {
+	clear: left;
+	float: left;
 }
 
 
@@ -375,6 +390,10 @@ div.tright {
 	font-size:70%;
 	height: 20px;
 	padding: 4px 4px;
+}
+
+.btn:focus {
+	outline: none;
 }
 
 
