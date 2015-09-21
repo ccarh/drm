@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <script id="all-links-template" type="text/x-handlebars-template">
 
 {{#each category}}
-	<details>
+	<details class="category">
 		{{> categoryEntry}}
 		<span class="category-contents">
 			{{#each links}}
@@ -114,14 +114,16 @@ document.addEventListener('DOMContentLoaded', function() {
 				<div style="display:inline" class="btn-group" 
 						role="group" aria-label="...">
   					<button type="button" class="btn btn-default btn-small btn-open"
-							onclick="openCategoryLinks();">
-						<span style="position:relative; top:-5px">
+							onclick="openCategoryLinks(event);">
+						<span class="category-open" style="position:relative; 
+								top:-5px">
 							open
 						</span>
 					</button>
   					<button type="button" class="btn btn-default btn-small btn-close"
-							onclick="closeCategoryLinks();">
-						<span style="position:relative; top:-5px">
+							onclick="closeCategoryLinks(event);">
+						<span class="category-close" style="position:relative; 
+								top:-5px">
 							close
 						</span>
 					</button>
@@ -146,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
 {% raw %}
 <script id="search-form-template" type="text/x-handlebars-template">
 
-<form class="form-inline" style="margin-bottom:30px;">
+<form class="form-inline no-print" style="margin-bottom:30px;">
 	<div class="form-group">
 		<input id="search-text" onkeypress="suppressEnter(event);"
 			style="width:30em;" onkeyup="doSearch(event);"
@@ -157,7 +159,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			<label>
 				<input id="search-scope" onkeypress="suppressEnter(event);
 						onclick="doSearch(event);" type="checkbox" value="">
-				<span style="margin-left:3px;;">
+				<span style="margin-left:3px; position:relative; top:2px;">
 					Titles only
 				</span>
 			</label>

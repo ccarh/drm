@@ -1,5 +1,6 @@
 /* vim: set ts=3 : */
 
+
 * {
 	box-sizing: border-box; 
 }
@@ -445,6 +446,35 @@ dl.qtip-dl dd {
 	margin: 0 0 0 60px;
 	padding: 0 0 0.25em 0;
 }
+
+
+/* Hide uninersting stuff when printing */
+
+
+@media print {    
+
+	body {
+		font-size: 13pt !important; 
+		line-spacing: 2;
+	}
+	.thumb, .thumb * { display: none !important; }
+	.myButton, .myButton * { display: none !important; }
+	.btn, .btn * { display: none !important; }
+	.glyphicon-th, .glyphicon-th * { display: none !important; }
+	.no-print, .no-print * { display: none !important; }
+	a.website[href]:after {
+		content: none !important;
+	}
+	.print-url:before {
+		content: "http://drm.ccarh.org";
+		font-size: 24pt;
+	}
+
+}
+
+
+
+
 
 
 

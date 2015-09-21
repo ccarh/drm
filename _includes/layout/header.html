@@ -44,12 +44,23 @@
 </style>
 <script>function goToSubmitForm() { document.location.href="https://docs.google.com/forms/d/1Y79amjULO2B0R_QGsMucdScuU7F9keuAnI2ll6M9YPg/viewform";}</script>
 <br>
-    <span class="myButton" onclick="goToSubmitForm();">Submit an entry</span>
-<span style="float:right; padding-right:2cm;">
+<span class="print-url"></span>
+<span class="myButton" onclick="goToSubmitForm();">
+	Submit an entry
+</span>
+<span class="no-print" style="float:right; padding-right:2cm;">
 	<span class="keyboard-help">
 		<span class="glyphicon glyphicon-th"></span>
 	</span>
+	<span onclick="printPage(event);" title="print" 
+			style="padding-left:10px; cursor:pointer;" 
+			class="print-help">
+		<span onclick="printPage(event);"
+			class="glyphicon glyphicon-print">
+		</span>
+	</span>
 </span>
+
 <br>
 <br>
 

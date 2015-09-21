@@ -151,9 +151,14 @@ function clearSearch() {
 //
 
 function doSearch(event) {
-	if (event.keyCode == EnterKey) {
-		suppressEnter(event);
-		return;
+	if (event) {
+		if (event.keyCode == EnterKey) {
+			suppressEnter(event);
+			return;
+		}
+		if (event.metaKey) {
+			return;
+		}
 	}
 
 	var search = document.querySelector('#search-text');
@@ -184,8 +189,8 @@ function doSearch(event) {
 
 function displaySearchResults(links) {
 	var tempLINKS = buildSearchCategories(links);
-	var categories = document.querySelector('#categories');
 	displayAllLinks(tempLINKS);
+	showMatchCount(tempLINKS);
 	openCategoryDetails();
 }
 
@@ -264,21 +269,13 @@ function displayMainPreface(text) {
 // showMatchCount -- Show number of matched links;
 //
 
-function showMatchCount(name) {
+function showMatchCount(object) {
+	if (typeof object === 'undefined') {
+		object = LINKS;
+	}
 	var linkcount = document.querySelector('#link-count');
 	if (linkcount) {
-		var count = getLinkCount();
-		var content = '';
-		content += '(' + count;
-		if (name) {
-			if (count != 1) {
-				content += ' entries';
-			} else {
-				content += ' entry';
-			}
-		}
-		content += ')';
-		linkcount.innerHTML = content;
+		linkcount.innerHTML = getLinkCount(object);
 	}
 }
 
@@ -345,10 +342,24 @@ function closeAllLinks() {
 // openCategoryLinks --
 //
 
-function openCategoryLinks(index) {
-	var details = document.querySelectorAll('details.category' + index + 
-		' details');
-console.log('DETAILS', details.length);
+function openCategoryLinks(event) {
+
+	// don't let the click directly affect the category details click toggle:
+	event.stopPropagation();
+	event.preventDefault();
+	var element = event.target;
+	while (element.parentNode) {
+		if (element.nodeName === 'DETAILS') {
+			break;
+		}
+		element = element.parentNode;
+	}
+	if (element.nodeName !== 'DETAILS') {
+		return;
+	}
+	element.open = 'open';
+
+	var details = element.querySelectorAll('details.link-entry');
 	for (var i=0; i<details.length; i++) {
 		details[i].open = true;
 	}
@@ -362,9 +373,24 @@ console.log('DETAILS', details.length);
 //
 
 function closeCategoryLinks(index) {
-	var details = document.querySelectorAll('details.category' + index + 
-		' details');
-console.log('XDETAILS', details.length);
+	// don't let the click directly affect the category details click toggle:
+	event.stopPropagation();
+	event.preventDefault();
+	var element = event.target;
+	while (element.parentNode) {
+		if (element.nodeName === 'DETAILS') {
+			break;
+		}
+		element = element.parentNode;
+	}
+	if (element.nodeName !== 'DETAILS') {
+		return;
+	}
+	if (element.open) {
+		element.removeAttribute('open');
+	}
+
+	var details = element.querySelectorAll('details.link-entry');
 	for (var i=0; i<details.length; i++) {
 		details[i].open = false;
 	}
@@ -409,6 +435,24 @@ $(document).ready(function() {
 	});
 });
 
+
+
+//////////////////////////////
+//
+// printPage --
+//
+
+
+function printPage(event) {
+	event.preventDefault();
+	event.stopPropagation();
+	// Useful to open all links, but seems to cause
+	// printing problems.  Also someone might only
+	// want to print a single category.
+	// openAllLinks();
+	window.print();
+	
+}
 
 
 

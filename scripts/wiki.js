@@ -56,24 +56,22 @@ function convertWebsiteLinks(output) {
 	var matches;
 	var m2;
 	var link;
-	if (matches = output.match(/Website:\s*\[(.*?)\]/i)) {
+	while (matches = output.match(/Website:\s*\[(.*?)\]/i)) {
 		temp = matches[1];
 		if (m2 = temp.match(/^([^\s]+)/)) {
 			link = m2[1];
 			link = link.replace(/\/$/, "");
 			var len = link.length;
-			var regexp = new RegExp('Website:\s*\[' + escapeRegExp(temp) + 
-					'\]', 'i');
 			if (len < 70 ) {
-				output = output.replace(regexp, 
+				output = output.replace(/Website.*?\]/,
 						'<div style="margin-bottom:10px;">' +
-						'<a href="' + link + '">' + link + '</a>' + 
+						'<a class="website" href="' + link + '">' + link + '</a>' + 
 						'</div>');
 			} else if (len < 100) {
-				output = output.replace(regexp, 
+				output = output.replace(/Website.*?\]/,
 						'<div style="margin-bottom:10px;">' +
 						'<small>' + 
-						'<a href="' + link + '">' + link + '</a>' +
+						'<a class="website" href="' + link + '">' + link + '</a>' +
 						'</small>' +
 						'</div>');
 			} else {
@@ -82,9 +80,10 @@ function convertWebsiteLinks(output) {
 				if (matches = link.match(/^(.*:\/\/[^\/]+)/)) {
 					linkname = matches[1];
 				}
-				output = output.replace(regexp, 
+				output = output.replace(/Website.*?\]/,
 						'<div style="margin-bottom:10px;">' +
-						'<a href="' + link + '">' + linkname + '</a>' +
+						'<a class="website-long" href="' + link + '">' + 
+							linkname + '</a>' +
 						'</div>');
 			}
 		}
