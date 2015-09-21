@@ -106,10 +106,12 @@ document.addEventListener('DOMContentLoaded', function() {
 <script id="category-entry-template" type="text/x-handlebars-template">
 
 	<summary class="category category{{number}}">
-		{{heading}}
+		{{{heading}}}
 		<div style="float:right; display:inline;">
-			<table><tr><td>
-				<div style="display:inline;" id="link-count"></div>
+			<table><tr><td style="padding:0;">
+				<span style="color: #909ca1; font-size:80%; display:inline; position:relative; top:-2px;" 
+						class="category-link-count">
+				</span>
 			</td><td>
 				<div style="display:inline" class="btn-group" 
 						role="group" aria-label="...">
@@ -159,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			<label>
 				<input id="search-scope" onkeypress="suppressEnter(event);
 						onclick="doSearch(event);" type="checkbox" value="">
-				<span style="margin-left:3px; position:relative; top:2px;">
+				<span style="color:#909ca1; margin-left:3px; position:relative; top:2px;">
 					Titles only
 				</span>
 			</label>
@@ -168,7 +170,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	<div style="float:right; display:inline;">
 		<table style="padding-top:-6px;" class="search-navigator"><tr><td>
-			<div style="padding-right:10px; display:inline;" id="link-count"></div>
+			<div style="color: #909ca1; padding-right:10px; display:inline;" 
+					id="link-count">
+			</div>
 		</td><td>
 			<div style="display:inline" class="btn-group" 
 					role="group" aria-label="...">

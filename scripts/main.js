@@ -78,34 +78,16 @@ document.addEventListener('keypress', function(event) {
 //  of the LINKS object is expected to be complete.
 //
 
-function displayAllLinks(displayLinks) {
+function displayAllLinks(object) {
 	var element = document.querySelector('#categories');
 	if (element) {
-		var html = renderAllLinks(displayLinks);
+		var html = renderAllLinks(object);
 		element.innerHTML = html;
-		showLinkCount(displayLinks);
+		showMatchCounts(object);
 	}
 	// The categories should be closed, but they are not.
 	// close them now:
 	closeAllLinks();
-}
-
-
-
-//////////////////////////////
-//
-// showLinkCount --
-//
-
-function showLinkCount(object) {
-	if (typeof object === 'undefined') {
-		object = LINKS;
-	}
-	var element = document.querySelector('#link-count');
-	if (!element) {
-		return;
-	}
-	element.innerHTML = getLinkCount(object);
 }
 
 
@@ -190,7 +172,7 @@ function doSearch(event) {
 function displaySearchResults(links) {
 	var tempLINKS = buildSearchCategories(links);
 	displayAllLinks(tempLINKS);
-	showMatchCount(tempLINKS);
+	showMatchCounts(tempLINKS);
 	openCategoryDetails();
 }
 
@@ -266,17 +248,31 @@ function displayMainPreface(text) {
 
 //////////////////////////////
 //
-// showMatchCount -- Show number of matched links;
+// showMatchCounts -- Show number of matched links: the sum at the
+//   top of the list, then for each individual list.
 //
 
-function showMatchCount(object) {
+function showMatchCounts(object) {
 	if (typeof object === 'undefined') {
 		object = LINKS;
 	}
+
+	// show the sum:
 	var linkcount = document.querySelector('#link-count');
 	if (linkcount) {
 		linkcount.innerHTML = getLinkCount(object);
 	}
+
+	// show counts for each category
+	var slots = document.querySelectorAll('.category-link-count');
+	var cat = getCategories(object);
+	if (cat.length != slots.length) {
+		// These should match, give up otherwise
+	}
+	for (var i=0; i<slots.length; i++) {
+		slots[i].innerHTML = cat[i].links.length;
+	}
+
 }
 
 

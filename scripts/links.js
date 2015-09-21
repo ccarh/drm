@@ -648,7 +648,7 @@ function loadCategoryContent(index) {
 
 function parseCategoryContent(index, content) {
 	var entry = setCategoryRaw(index, content);
-	showLinkCount();
+	showMatchCounts();
 
 	var categories = document.querySelectorAll('#categories > details');
 	if (!categories[index]) {
