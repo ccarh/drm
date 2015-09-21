@@ -40,11 +40,8 @@ document.addEventListener('DOMContentLoaded', function() {
 //
 
 document.addEventListener('keypress', function(event) {
-console.log("keyCode", event.keyCode);
-console.log("event", event);
-	if (event.srcElement.target && 
-			event.srcElement.target.id &&
-			event.srcElement.target.id.match(/search-text/i)) {
+	if ((typeof event.target.id !== 'undefined') &&
+			event.target.id.match(/search-text/i)) {
 		// don't process the keyboard command if searching for text
 		return;
 	}
@@ -187,6 +184,7 @@ function doSearch(event) {
 
 function displaySearchResults(links) {
 	var tempLINKS = buildSearchCategories(links);
+	var categories = document.querySelector('#categories');
 	displayAllLinks(tempLINKS);
 	openCategoryDetails();
 }
