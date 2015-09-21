@@ -311,9 +311,9 @@ table > tbody > tr > td {
 /* WIKI classes */
 
 div.thumbinner {
-	border: 1px solid #ccc;
+	/* border: 1px solid #ccc; */
 	padding: 3px;
-	background-color: #f9f9f9;
+	/* background-color: #f9f9f9; */
 	font-size: 94%;
 	text-align: center;
 	overflow: hidden;
@@ -330,6 +330,7 @@ div.thumb {
 }
 
 .thumbcaption {
+	margin-top: 2px;
 	line-height: 95%;
 	font-family: Palatino, Times-Roman, serif;
 	color: #aaa;
@@ -386,6 +387,15 @@ div.tleft {
 	background-color: #fff6f6;
 }
 
+.btn-clear {
+	background-color: #f0f0ff;
+}
+
+table.search-navigator td {
+	padding: 0;
+}
+
+
 .btn-small {
 	font-size:70%;
 	height: 20px;
@@ -402,6 +412,39 @@ div.tleft {
 }
 
 
+/* Qtip help stylings */
+
+span.myqtip {
+	font-size: 2rem;
+	line-height: 1;
+}
+
+span.myqtip > h2 {
+	font-size: 2.1rem;
+	padding-left: 0;
+	color: green;
+}
+
+dl.qtip-dl {
+	padding: 0.5em;
+}
+
+dl.qtip-dl dt {
+	font-family: Palatino, Time-Roman, serif;
+	float: left;
+	clear: left;
+	width: 50px;
+	text-align: right;
+	font-weight: bold;
+	color: green;
+}
+dl.qtip-dl dt:after {
+	content: ":";
+}
+dl.qtip-dl dd {
+	margin: 0 0 0 60px;
+	padding: 0 0 0.25em 0;
+}
 
 
 

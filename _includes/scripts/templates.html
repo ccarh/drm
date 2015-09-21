@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Fri Sep 18 21:15:35 PDT 2015
-// Last Modified: Fri Sep 18 21:15:42 PDT 2015
+// Last Modified: Sun Sep 20 17:23:01 PDT 2015
 // Filename:      scripts/templates.js
 // Syntax:        JavaScript 1.8.5/ECMAScript 5.1
 // vim:           ts=3 hlsearch
@@ -13,69 +13,50 @@
 var renderLinkEntry     = null;
 var renderSearchForm    = null;
 var renderCategoryEntry = null;
+var renderAllLinks      = null;
 
 document.addEventListener('DOMContentLoaded', function() {
+
 	renderLinkEntry = Handlebars.compile(
 		document.querySelector('#link-entry-template').innerHTML);
 	renderSearchForm = Handlebars.compile(
 		document.querySelector('#search-form-template').innerHTML);
 	renderCategoryEntry = Handlebars.compile(
 		document.querySelector('#category-entry-template').innerHTML);
+	renderAllLinks = Handlebars.compile(
+		document.querySelector('#all-links-template').innerHTML);
+
 });
 
 </script>
 
 
+
 <!--
 //////////////////////////////
 //
-// search-form-template --
+// all-links-template -- Display the entire list of link entries, 
+//    organized by category.
 //
 -->
 
 {% raw %}
-<script id="search-form-template" type="text/x-handlebars-template">
+<script id="all-links-template" type="text/x-handlebars-template">
 
-<form class="form-inline" style="margin-bottom:30px;">
-	<div class="form-group">
-		<input id="search-text" onkeypress="suppressEnter(event);"
-			style="width:30em;" onkeyup="doSearch(event);"
-			type="text" width="20" class="form-control" placeholder="Search">
-	</div>
-	<div class="form-group">
-		<div style="margin-left:10px;" class="checkbox">
-			<label>
-				<input id="search-scope" onkeypress="suppressEnter(event);
-						onclick="doSearch(event);" type="checkbox" value="">
-				<span style="margin-left:3px;">
-					Titles only
-				</span>
-			</label>
-		</div>
-	</div>
-
-	<div style="float:right; display:inline;">
-		<table><tr><td>
-			<div style="display:inline;" id="link-count"></div>
-		</td><td>
-			<div style="display:inline" class="btn-group" 
-					role="group" aria-label="...">
-  				<button type="button" class="btn btn-default btn-open"
-						onclick="openAllLinks();">
-					open
-				</button>
-  				<button type="button" class="btn btn-default btn-close"
-						onclick="closeAllLinks();">
-					close
-				</button>
-		</div>
-		</td></tr></table>
-	</div>
-
-</form>
+{{#each category}}
+	<details>
+		{{> categoryEntry}}
+		<span class="category-contents">
+			{{#each links}}
+				{{> linkEntry}}
+			{{/each}}
+		</span>
+	</details>
+{{/each}}
 
 </script>
 {% endraw %}
+
 
 
 <!--
@@ -117,45 +98,102 @@ document.addEventListener('DOMContentLoaded', function() {
 //    .title  = title of the category.
 //    .number = the sequence number for the category.
 //
+// You have to provide the enclosing <details> element.
+//
 -->
 
 {% raw %}
 <script id="category-entry-template" type="text/x-handlebars-template">
 
-
-	<div style="float:right; display:inline;">
-		<table><tr><td>
-			<div style="display:inline;" id="link-count"></div>
-		</td><td>
-			<div style="display:inline" class="btn-group" 
-					role="group" aria-label="...">
-  				<button type="button" class="btn btn-default btn-small btn-open"
-						onclick="openCategoryLinks();">
-					<span style="position:relative; top:-5px">
-						open
-					</span>
-				</button>
-  				<button type="button" class="btn btn-default btn-small btn-close"
-						onclick="closeCategoryLinks();">
-					<span style="position:relative; top:-5px">
-						close
-					</span>
-				</button>
-		</div>
-		</td></tr></table>
-	</div>
-
-<details>
-
 	<summary class="category category{{number}}">
 		{{heading}}
+		<div style="float:right; display:inline;">
+			<table><tr><td>
+				<div style="display:inline;" id="link-count"></div>
+			</td><td>
+				<div style="display:inline" class="btn-group" 
+						role="group" aria-label="...">
+  					<button type="button" class="btn btn-default btn-small btn-open"
+							onclick="openCategoryLinks();">
+						<span style="position:relative; top:-5px">
+							open
+						</span>
+					</button>
+  					<button type="button" class="btn btn-default btn-small btn-close"
+							onclick="closeCategoryLinks();">
+						<span style="position:relative; top:-5px">
+							close
+						</span>
+					</button>
+			</div>
+			</td></tr></table>
+		</div>
 	</summary>
-
-</details>
 
 </script>
 {% endraw %}
 
+
+
+<!--
+//////////////////////////////
+//
+// search-form-template -- Template for the search form at the top
+//    of the page.
+//
+-->
+
+{% raw %}
+<script id="search-form-template" type="text/x-handlebars-template">
+
+<form class="form-inline" style="margin-bottom:30px;">
+	<div class="form-group">
+		<input id="search-text" onkeypress="suppressEnter(event);"
+			style="width:30em;" onkeyup="doSearch(event);"
+			type="text" width="15" class="form-control" placeholder="Search">
+	</div>
+	<div style="position:relative; top:-6px" class="form-group">
+		<div style="margin-left:10px;" class="checkbox">
+			<label>
+				<input id="search-scope" onkeypress="suppressEnter(event);
+						onclick="doSearch(event);" type="checkbox" value="">
+				<span style="margin-left:3px;;">
+					Titles only
+				</span>
+			</label>
+		</div>
+	</div>
+
+	<div style="float:right; display:inline;">
+		<table style="padding-top:-6px;" class="search-navigator"><tr><td>
+			<div style="padding-right:10px; display:inline;" id="link-count"></div>
+		</td><td>
+			<div style="display:inline" class="btn-group" 
+					role="group" aria-label="...">
+
+  				<button type="button" class="btn btn-default btn-open"
+						onclick="openAllLinks();">
+					open
+				</button>
+
+  				<button type="button" class="btn btn-default btn-clear"
+						onclick="clearSearch();">
+					clear
+				</button>
+
+  				<button type="button" class="btn btn-default btn-close"
+						onclick="closeAllLinks();">
+					close
+				</button>
+
+		</div>
+		</td></tr></table>
+	</div>
+
+</form>
+
+</script>
+{% endraw %}
 
 
 
@@ -165,9 +203,13 @@ document.addEventListener('DOMContentLoaded', function() {
 // Helper functions for handlebars-js.
 //
 
-Handlebars.registerHelper('wiki', function(text, options) {
-	return new Handlebars.SafeString(wiki2html(text));
-});
+
+Handlebars.registerPartial('categoryEntry', 
+	document.querySelector('#category-entry-template').innerHTML);
+
+
+Handlebars.registerPartial('linkEntry', 
+	document.querySelector('#link-entry-template').innerHTML);
 
 
 Handlebars.registerHelper('ifCond', function(v1, v2, options) {

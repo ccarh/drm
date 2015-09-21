@@ -1,7 +1,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Fri Sep 18 21:43:49 PDT 2015
-// Last Modified: Fri Sep 18 21:43:52 PDT 2015
+// Last Modified: Sun Sep 20 20:10:37 PDT 2015
 // Filename:      scripts/wiki.js
 // Syntax:        JavaScript 1.8.5/ECMAScript 5.1
 // vim:           ts=3 hlsearch
@@ -32,7 +32,30 @@ function wiki2html(content) {
 	var text;
 	var newtext;
    var counter = 0;
+	output = convertWebsiteLinks(output);
 
+	while (matches = output.match(/\[\[File:(.*?)\]\]/m)) {
+		var imagedata = getImageContent(matches[1]);
+		output = output.replace('[[File:' + matches[1] + ']]', imagedata);
+	}
+
+	output = convertInternalLinksToHyperlinks(output);
+	output = convertExternalLinksToHyperlinks(output);
+
+	return output;
+}
+
+
+
+//////////////////////////////
+//
+// convertWebsiteLinks --
+//
+
+function convertWebsiteLinks(output) {
+	var matches;
+	var m2;
+	var link;
 	if (matches = output.match(/Website:\s*\[(.*?)\]/i)) {
 		temp = matches[1];
 		if (m2 = temp.match(/^([^\s]+)/)) {
@@ -66,13 +89,50 @@ function wiki2html(content) {
 			}
 		}
 	}
+	return output;
+}
 
-	while (matches = output.match(/\[\[File:(.*?)\]\]/m)) {
-		var imagedata = getImageContent(matches[1]);
-		output = output.replace('[[File:' + matches[1] + ']]', imagedata);
+
+
+//////////////////////////////
+//
+// convertExternalLinksToHyperlinks --
+//
+
+function convertExternalLinksToHyperlinks(output) {
+	var counter = 0;
+	while (matches = output.match(/\[([^\]]+)\]/m)) {
+		temp = matches[1];
+		temp = temp.replace(/^\s+/, '');
+		temp = temp.replace(/\s+$/, '');
+		if (m2 = temp.match(/^(.*?)\s+(.*)$/)) {
+			link = m2[1];
+			text = m2[2];
+		}
+		output = output.replace('[' + matches[1] + ']', 
+					'<a href="' + link + '">' + text + '</a>');
+		if (counter++ > 100) { break; }
 	}
-	
-	while (matches = output.match(/\[\[(.*?)\]\]/m)) {
+	return output;
+}
+
+
+
+
+//////////////////////////////
+//
+// convertInteralLinksToHyperlinks --
+//
+
+function convertInternalLinksToHyperlinks(output) {
+	var counter = 0;
+	var matches;
+	var m2;
+   var link;
+	var text;
+	var url;
+	var newtext;
+	while (matches = output.match(/\[\[([^\]]+)\]\]/)) {
 		temp = matches[1];
 		if (m2 = temp.match(/^\s*([^\s]+)\s*\|\s*(.*)\s*$/m)) {
 			link = m2[1];
@@ -90,22 +150,9 @@ function wiki2html(content) {
 			newtext = '<a href="' + url + '">' + text + '</a>';
 			output = output.replace('[[' + matches[1] + ']]', newtext);
 		}
-		if (counter++ > 20) { break; }
+		// prevent any possible infinite loops
+		if (counter++ > 100) { break; }
 	}
-	counter = 0;
-	while (matches = output.match(/\[(.*?)\]/m)) {
-		temp = matches[1];
-		temp = temp.replace(/^\s+/, '');
-		temp = temp.replace(/\s+$/, '');
-		if (m2 = temp.match(/^(.*?)\s+(.*)$/)) {
-			link = m2[1];
-			text = m2[2];
-		}
-		output = output.replace('[' + matches[1] + ']', 
-					'<a href="' + link + '">' + text + '</a>');
-		if (counter++ > 20) { break; }
-	}
-
 	return output;
 }
 

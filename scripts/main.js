@@ -12,7 +12,14 @@
 // event keyCodes.  See: http://www.javascripter.net/faq/keycodes.htm
 var EnterKey     =  13;
 var CKey         =  99;
+var HKey         = 104;
+var IKey         = 105;
 var OKey         = 111;
+var TKey         = 116;
+
+// state variables:
+Images = true;
+
 
 //////////////////////////////
 //
@@ -22,48 +29,86 @@ var OKey         = 111;
 
 document.addEventListener('DOMContentLoaded', function() {
 	fillSearchForm('search');
-	displayAllLinks();
+	loadLinkListFromServer();
 });
 
-
-document.addEventListener('keypress', function(event) {
-console.log(event.charCode);
-console.log(event);
-	if (event.srcElement.target && 
-			event.srcElement.target.id &&
-			event.srcElement.target.id.match(/search-text/i)) {
-console.log("GOT HERE XX");
-		// don't process the keyboard command if searching for text
-		return;
-	}
-console.log("GOT HERE YYY");
-	switch (event.keyCode) {
-		case OKey:
-console.log("GOT HERE OPENING LISTS");
-			openAllLinks();
-			break;
-		case CKey:
-			closeAllLinks();
-			break;
-		
-	}
-});
 
 
 //////////////////////////////
 //
-// displayAllLinks -- Show a complete list of all links.
+// event listener keypress -- Perform keyboard commands.
 //
 
-function displayAllLinks() {
-	var html = getLinkListHTML();
-	if (html) {
-		var element = document.querySelector("#categories");
-		if (!element) {
-			return;
-		}
-		element.innerHTML = html;
+document.addEventListener('keypress', function(event) {
+console.log("keyCode", event.keyCode);
+console.log("event", event);
+	if (event.srcElement.target && 
+			event.srcElement.target.id &&
+			event.srcElement.target.id.match(/search-text/i)) {
+		// don't process the keyboard command if searching for text
+		return;
 	}
+	switch (event.keyCode) {
+
+		case OKey:             // open all categories
+			openAllLinks();
+			break;
+
+		case CKey:             // close all categories
+			closeAllLinks();
+			break;
+
+		case IKey:             // toggle display of images
+			if (Images) {
+				hideImages();
+			} else {
+				showImages();
+			}
+			break;
+
+		case TKey:             // go to top of page
+			window.scrollTo(0, 0);
+			break;
+
+	}
+});
+
+
+
+//////////////////////////////
+//
+// displayAllLinks -- Show a complete list of all links.  The contents
+//  of the LINKS object is expected to be complete.
+//
+
+function displayAllLinks(displayLinks) {
+	var element = document.querySelector('#categories');
+	if (element) {
+		var html = renderAllLinks(displayLinks);
+		element.innerHTML = html;
+		showLinkCount(displayLinks);
+	}
+	// The categories should be closed, but they are not.
+	// close them now:
+	closeAllLinks();
+}
+
+
+
+//////////////////////////////
+//
+// showLinkCount --
+//
+
+function showLinkCount(object) {
+	if (typeof object === 'undefined') {
+		object = LINKS;
+	}
+	var element = document.querySelector('#link-count');
+	if (!element) {
+		return;
+	}
+	element.innerHTML = getLinkCount(object);
 }
 
 
@@ -86,6 +131,21 @@ function suppressEnter(event) {
 
 //////////////////////////////
 //
+// clearSearch -- Clear the search query and the search results.
+//
+
+function clearSearch() {
+	var element = document.querySelector('#search-text');
+	if (element) {
+		element.value = '';
+		displayAllLinks(LINKS);
+	}
+}
+
+
+
+//////////////////////////////
+//
 // doSearch -- Perform a search on the link entries and 
 //   update the list of links with the search results.
 //
@@ -95,14 +155,13 @@ function suppressEnter(event) {
 
 function doSearch(event) {
 	if (event.keyCode == EnterKey) {
-		event.preventDefault();
-		event.stopPropagation();
+		suppressEnter(event);
 		return;
 	}
 
-	var search = document.querySelector("#search-text");
+	var search = document.querySelector('#search-text');
 	var searchstring = search.value;
-   var scope = document.querySelector("#search-scope");
+   var scope = document.querySelector('#search-scope');
 	if (scope) {
 		scope = scope.checked;
 	} else {
@@ -110,13 +169,11 @@ function doSearch(event) {
 	}
 
 	if (searchstring.match(/^\s*$/)) {
-		displayAllLinks();
-		showLinkCount();
-		return;
+		clearSearch();
+	} else {
+   	var matches = getLinkMatches(searchstring, scope);
+		displaySearchResults(matches);
 	}
-
-   var matches = getLinkMatches(searchstring, scope);
-	displaySearchResults(matches);
 }
 
 
@@ -129,31 +186,23 @@ function doSearch(event) {
 //
 
 function displaySearchResults(links) {
-	var categories = document.querySelector('#categories');
-	if (!categories) {
-		return;
-	}
-	var lastheading = '';
-	var heading = '';
-	var output = '';
-	for (var i=0; i<links.length; i++) {
-		var link = links[i];
-		heading = link.heading;
-		if (heading !== lastheading) {
-			if (i > 0) {
-				output += '</details>';
-			}
-			output += '<details open>';
-			output += '<summary class="category">';
-			output += heading;
-			output += '</summary>';
-			lastheading = heading;
-		}
-		output += renderLinkEntry(link);
-	}
+	var tempLINKS = buildSearchCategories(links);
+	displayAllLinks(tempLINKS);
+	openCategoryDetails();
+}
 
-	categories.innerHTML = output;
-	showLinkCount(links.length);
+
+
+//////////////////////////////
+//
+// openCateogryDetails --
+//
+
+function openCategoryDetails() {
+	var list = document.querySelectorAll('#categories > details');
+	for (var i=0; i<list.length; i++) {
+		list[i].open = true;
+	}
 }
 
 
@@ -171,7 +220,7 @@ function fillSearchForm(elementId) {
 	element.style['padding-bottom'] = '25px';
 	element.style['padding-top']    = '25px';
 	element.innerHTML = renderSearchForm();
-	element.querySelector("#search-text").focus();
+	element.querySelector('#search-text').focus();
 }
 
 
@@ -212,26 +261,6 @@ function displayMainPreface(text) {
 
 
 
-
-
-//////////////////////////////
-//
-// showLinkCount -- Show total number of links;
-//
-
-function showLinkCount(count) {
-	var linkcount = document.querySelector('#link-count');
-	if (linkcount) {
-		if (typeof count !== 'undefined') {
-			linkcount.innerHTML = count;
-		} else {
-			linkcount.innerHTML = getLinkCount();
-		}
-	}
-}
-
-
-
 //////////////////////////////
 //
 // showMatchCount -- Show number of matched links;
@@ -263,7 +292,7 @@ function showMatchCount(name) {
 //
 
 function openAllLinks() {
-	var details = document.querySelectorAll("details");
+	var details = document.querySelectorAll('details');
 	for (var i=0; i<details.length; i++) {
 		details[i].open = true;
 	}
@@ -273,11 +302,39 @@ function openAllLinks() {
 
 //////////////////////////////
 //
+// hideImages --
+//
+
+function hideImages() {
+	var images = document.querySelectorAll('.thumb');
+	for (var i=0; i<images.length; i++) {
+		images[i].style.display = 'none';
+	}
+	Images = false;
+}
+
+
+
+//////////////////////////////
+//
+// showImages --
+//
+
+function showImages() {
+	var images = document.querySelectorAll('.thumb');
+	for (var i=0; i<images.length; i++) {
+		images[i].style.display = 'inline';
+	}
+	Images = true;
+}
+
+//////////////////////////////
+//
 // closeAllLinks --
 //
 
 function closeAllLinks() {
-	var details = document.querySelectorAll("details");
+	var details = document.querySelectorAll('details');
 	for (var i=0; i<details.length; i++) {
 		details[i].open = false;
 	}
@@ -291,9 +348,9 @@ function closeAllLinks() {
 //
 
 function openCategoryLinks(index) {
-	var details = document.querySelectorAll("details.category" + index + 
-		" details");
-console.log("DETAILS", details.length);
+	var details = document.querySelectorAll('details.category' + index + 
+		' details');
+console.log('DETAILS', details.length);
 	for (var i=0; i<details.length; i++) {
 		details[i].open = true;
 	}
@@ -307,12 +364,53 @@ console.log("DETAILS", details.length);
 //
 
 function closeCategoryLinks(index) {
-	var details = document.querySelectorAll("details.category" + index + 
-		" details");
-console.log("XDETAILS", details.length);
+	var details = document.querySelectorAll('details.category' + index + 
+		' details');
+console.log('XDETAILS', details.length);
 	for (var i=0; i<details.length; i++) {
 		details[i].open = false;
 	}
 }
+
+
+
+//////////////////////////////
+//
+//
+// jQuery event ready -- Create the tooltips only when document ready.
+//
+
+$(document).ready(function() {
+	var help = '';
+	help += '<span class="myqtip">';
+	help += '<h2>keyboard shortcuts</h2>';
+	help += '(when focus is not on search field)';
+	help += '<dl class="qtip-dl">';
+	help += '<dt>T</dt>';
+	help += '<dd>Go to the top of the page</dd>';
+	help += '<dt>I</dt>';
+	help += '<dd>Toggle display of images</dd>';
+	help += '<dt>O</dt>';
+	help += '<dd>Open the contents of all categories</dd>';
+	help += '<dt>C</dt>';
+	help += '<dd>Close the contents of all categories</dd>';
+	help += '</dl>';
+	help += '</span>';
+
+	$('.keyboard-help').qtip({
+		content: {
+				text: help
+			},
+		style: { classes: 'qtip-dark' },
+		position: {
+				viewport: $(window),
+				at: 'bottom right',
+				my: 'top right'
+			},
+		style: 'qtip-wiki'
+	});
+});
+
+
 
 

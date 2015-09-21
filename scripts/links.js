@@ -45,7 +45,7 @@ var LINKS = {
 // storeLinks -- Store LINKS structure in sessionStorage.
 //
 
-function storeLinks() {
+function storeLinks(object) {
 	sessionStorage.LINKS = JSON.stringify(LINKS);
 }
 
@@ -71,15 +71,18 @@ function loadLinks() {
 //   entries which are section headings.
 //
 
-function getLinkCount() {
-	var cat = getCategories();
+function getLinkCount(object) {
+	if (typeof object === 'undefined') {
+		object = LINKS;
+	}
+	var cat = getCategories(object);
 	var count = 0;
 	for (var i=0; i<cat.length; i++) {
 		if (!cat[i].links) {
 			continue;
 		}
 		for (var j=0; j<cat[i].links.length; j++) {
-			if (cat[i].links[j].type === "link") {
+			if (cat[i].links[j].type === 'link') {
 				count++;
 			}
 		}
@@ -92,17 +95,22 @@ function getLinkCount() {
 //////////////////////////////
 //
 // addLinkCategory -- Append a new category to the LINKS object.
+//    If the third parameter is empty, then assign to LINKS; otherwise,
+//    assign new category to input object.
 //
 
-function addLinkCategory(heading, templ) {
+function addLinkCategory(heading, templ, object) {
+	if (typeof object === 'undefined') {
+		object = LINKS;	
+	}
 	var entry = {
 		heading: heading,
 		templ: templ,
-		index: LINKS.category.length,
+		index: object.category.length,
 		preface: '',
 		links: []
-	}
-	LINKS.category.push(entry);
+	};
+	object.category.push(entry);
 }
 
 
@@ -113,8 +121,11 @@ function addLinkCategory(heading, templ) {
 //    inside of them).
 //
 
-function clearLinkCategories() {
-	var cat = getCategories();
+function clearLinkCategories(object) {
+	if (typeof object === 'undefined') {
+		object = LINKS;
+	}
+	var cat = getCategories(object);
 	cat = [];
 }
 
@@ -125,9 +136,12 @@ function clearLinkCategories() {
 // setMainPreface -- Store the text preface for the entire list.
 //
 
-function setMainPreface(content) {
-	LINKS.prefaceRaw = content;
-	LINKS.preface = wiki2html(content);
+function setMainPreface(content, object) {
+	if (typeof object === 'undefined') {
+		object = LINKS;
+	}
+	object.prefaceRaw = content;
+	object.preface = wiki2html(content);
 }
 
 
@@ -137,8 +151,11 @@ function setMainPreface(content) {
 // getMainPreface -- Return the introductory text for the list of links.
 //
 
-function getMainPreface() {
-	return LINKS.preface;
+function getMainPreface(object) {
+	if (typeof object === 'undefined') {
+		object = LINKS;
+	}
+	return object.preface;
 }
 
 
@@ -148,8 +165,11 @@ function getMainPreface() {
 // getCategories -- Return an array of all link categories.
 //
 
-function getCategories() {
-	return LINKS.category;
+function getCategories(object) {
+	if (typeof object === 'undefined') {
+		object = LINKS;
+	}
+	return object.category;
 }
 
 
@@ -160,7 +180,10 @@ function getCategories() {
 //
 
 function getCategory(index) {
-	return getCategories()[index];
+	if (typeof object === 'undefined') {
+		object = LINKS;
+	}
+	return getCategories(object)[index];
 }
 
 
@@ -170,8 +193,11 @@ function getCategory(index) {
 // getCategoryCount -- Return the number of link categories.
 //
 
-function getCategoryCount() {
-	return LINKS.category.length;
+function getCategoryCount(object) {
+	if (typeof object === 'undefined') {
+		object = LINKS;
+	}
+	return object.category.length;
 }
 
 
@@ -323,29 +349,18 @@ function getLinkMatches(searchstring, scope)  {
 //    LINKS object.
 //
 
-function getLinkListHTML() {
-	if (LINKS.category.length != 0) {
-		loadLinks();
-		return links2html();
+function loadLinkListFromServer(object) {
+	if (typeof object === 'undefined') {
+		object = LINKS;
+	}
+	if (object.category.length != 0) {
+		displayAllLinks();
 	} else {
 		// need to load link entries from the server (also
 		// displays the list as it downloads):
    	getHeadings('/source/main.wiki');
-		return "";
+		return '';
 	}
-}
-
-
-
-///////////////////////////////
-//
-// links2html -- convert LINKS structure into a list of links
-//    by category.  The LINKS is expected to be completely filled
-//    with data.
-//
-
-function links2html() {
-	displayCategoryHeadings();
 }
 
 
@@ -444,9 +459,13 @@ function displayCategoryHeadings() {
 	}
 
 	var cat = getCategories();
-	var output = "";
+	var output = '';
 	for (var i=0; i<cat.length; i++) {
+		output += '<details>';
 		output += renderCategoryEntry(cat[i]);
+		output += '<span class="category-contents">';
+		output += '</span>';
+		output += '</details>';
 	}
 
 	element.innerHTML = output;
@@ -490,22 +509,51 @@ function parseCategoryContent(index, content) {
 	var entry = setCategoryRaw(index, content);
 	showLinkCount();
 
-	var details = document.querySelectorAll('#categories > details');
-	if (!details[index]) {
+	var categories = document.querySelectorAll('#categories > details');
+	if (!categories[index]) {
 		return;
 	}
 	var output;
-	var span = details[index].querySelector('span');
+	var span = categories[index].querySelector('.category-contents');
 	if (!span) {
 		span = document.createElement('span');
-		output = '';
-		var links = entry.links;
-		for (var i=0; i<links.length; i++) {
-			output += renderLinkEntry(links[i]);
-		}
-		span.innerHTML = output;
-		details[index].appendChild(span);
+		categories[index].appendChild(span);
 	}
+	output = '';
+	var links = entry.links;
+	for (var i=0; i<links.length; i++) {
+		output += renderLinkEntry(links[i]);
+	}
+	span.innerHTML = output;
+	categories[index].appendChild(span);
+}
+
+
+
+//////////////////////////////
+//
+// buildSearchCategories -- Create a temporary LINKS-like structure
+//    and store link matches in it (so that the link list template
+//    can be used to print the matches).
+//
+
+function buildSearchCategories(inlinks) {
+	var tempLINKS = {
+   	category: []
+	}
+	var cat = tempLINKS.category;
+	var lastheading = '';
+	var heading = '';
+	for (var i=0; i<inlinks.length; i++) {
+		heading = inlinks[i].heading;
+		if (heading !== lastheading) {
+			addLinkCategory(heading, 'dummy', tempLINKS);
+			cat[cat.length - 1].heading = heading;
+		}
+		lastheading = heading;
+		cat[cat.length - 1].links.push(inlinks[i]);
+	}
+	return tempLINKS;
 }
 
 
