@@ -28,10 +28,11 @@ body {
 	padding: 0;
 	margin: 0;
 	margin-bottom: 200px;
-	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+	font-weight: 300;
 	font-size: 2.0rem;
 	line-height: 1.5;
-	color: #606c71; 
+	color: #606c71;
 }
 
 summary.category:before {
@@ -166,6 +167,7 @@ table > tbody > tr > td {
 .main-content code {
 	padding: 2px 4px;
 	font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+	font-weight: 300;
 	color: #383e41;
 	background-color: #f3f6fa;
 	border-radius: 0.3rem; }
