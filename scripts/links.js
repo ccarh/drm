@@ -12,6 +12,7 @@
 // Structure of the LINKS object
 //		.preface:     Summary at the start of the page.
 //		.prefaceRaw:  Summary in wiki form.
+//    .credits:     Credit footer
 //    .category[]:  List of categories.
 // 		.heading:  Name of the category.
 //       .index:    Index of category in list.
@@ -572,14 +573,19 @@ function extractCategoryHeadings(content) {
 	var i;
 	clearLinkCategories();
 	for (i=0; i<headings.length; i++) {
-		addLinkCategory(headings[i], templates[i]);
+		if (headings[i].match(/Credits/)) {
+			loadCreditsContent(templates[i]);
+		} else {
+			addLinkCategory(headings[i], templates[i]);
+		}
 	}
 
 	// Display the main category list
 	displayCategoryHeadings();
 
 	// Load link entry contents for each cateogry from server.
-	for (i=0; i<headings.length; i++) {
+	var cat = getCategories();
+	for (i=0; i<cat.length; i++) {
 		loadCategoryContent(i);
 	}
 }
@@ -616,6 +622,26 @@ function displayCategoryHeadings() {
 
 //////////////////////////////
 //
+// loadCreditsContent -- Load the credits section and store in LINKS.credit.
+//
+
+function loadCreditsContent(filebase) {
+	var request = new XMLHttpRequest();
+	var file = '/source/' + filebase + '.template';
+	request.open('GET', file);
+	request.addEventListener('load', function () {
+		parseCreditsContent(this.responseText);
+	});
+	request.addEventListener('error', function () {
+		console.error(this.statusText);
+	});
+	request.send();
+}
+
+
+
+//////////////////////////////
+//
 // loadCategoryContent -- Send a request to the server for a 
 //   particular category WIKI template file.
 //
@@ -634,6 +660,34 @@ function loadCategoryContent(index) {
 		console.error(this.statusText);
 	});
 	request.send();
+}
+
+
+
+//////////////////////////////
+//
+// parseCreditsContent --
+//
+
+function parseCreditsContent(content) {
+	var credits = wiki2html(content);
+	credits = credits.replace(/<\/?small>/g, '');
+	credits = '<b>Credits:</b>' + credits;
+	setCredits(credits);
+}
+
+
+
+//////////////////////////////
+//
+// setCredits --
+//
+
+function setCredits(credits, object) {
+	if (typeof object === 'undefined') {
+		object = LINKS;
+	}
+	object.credits = credits;
 }
 
 

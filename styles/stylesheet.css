@@ -22,6 +22,15 @@ details.link-entry > summary {
 .level3 { margin-left:  70px; }
 .level4 { margin-left: 105px; }
 
+.credits {
+	color: #aaa;
+	line-height: 1.25;
+	padding-top: 50px;
+	padding-left: 80px;
+	padding-right: 80px;
+	font-size: 90%;
+}
+
 body {
 	counter-reset: category;
 	padding: 0;
