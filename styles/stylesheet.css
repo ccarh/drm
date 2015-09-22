@@ -11,7 +11,6 @@ details.link-entry {
 
 details.link-entry > summary {
 	color: #d77942;
-
 }
 
 .segment {
@@ -455,21 +454,26 @@ dl.qtip-dl dd {
 @media print {    
 
 	body {
-		font-size: 13pt !important; 
-		line-spacing: 2;
+		font-size: 12pt !important; 
+		line-spacing: 1.75;
 	}
 	.thumb, .thumb * { display: none !important; }
 	.myButton, .myButton * { display: none !important; }
 	.btn, .btn * { display: none !important; }
 	.glyphicon-th, .glyphicon-th * { display: none !important; }
 	.no-print, .no-print * { display: none !important; }
-	a.website[href]:after {
-		content: none !important;
-	}
+	a.website[href]:after { content: none !important; }
 	.print-url:before {
 		content: "http://drm.ccarh.org";
 		font-size: 24pt;
 	}
+	details.category { display: none !important; }
+	details[open].category { display: block !important;; }
+	.link-text { margin-bottom: 10px !important; }
+	.body { margin-bottom: 0 !important; }
+	footer { display: none !important; }
+	body:last-child { page-break-after: auto !important; }
+	html, body { height: 99% !important; }
 
 }
 

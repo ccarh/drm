@@ -602,7 +602,7 @@ function displayCategoryHeadings() {
 	var cat = getCategories();
 	var output = '';
 	for (var i=0; i<cat.length; i++) {
-		output += '<details>';
+		output += '<details class="category">';
 		output += renderCategoryEntry(cat[i]);
 		output += '<span class="category-contents">';
 		output += '</span>';
@@ -647,28 +647,18 @@ function loadCategoryContent(index) {
 //
 
 function parseCategoryContent(index, content) {
+console.log("PARSING", index);
 	var entry = setCategoryRaw(index, content);
-	showMatchCounts();
-
-	var categories = document.querySelectorAll('#categories > details');
-	if (!categories[index]) {
-		return;
+	var html = renderAllLinks(object);
+	element = document.querySelector('#cagegories');
+	if (element) {
+		element.innerHTML = html;
+		showMatchCounts(LINKS);
 	}
-	var output;
-	var span = categories[index].querySelector('.category-contents');
-	if (!span) {
-		span = document.createElement('span');
-		categories[index].appendChild(span);
-	}
-	output = '';
-	var links = entry.links;
-	for (var i=0; i<links.length; i++) {
-		output += renderLinkEntry(links[i]);
-	}
-	span.innerHTML = output;
-	categories[index].appendChild(span);
 	if (location.hash) {
 		doHashSearch(location.hash.substr(1));
+	} else {
+		console.log(location.hash, "= hash");
 	}
 }
 
@@ -680,12 +670,17 @@ function parseCategoryContent(index, content) {
 //
 
 function doHashSearch(hash) {
+console.log("DOING HASH SEARCH ON ", hash);
 	var search = document.querySelector("#search-text");
 	if (!search) {
 		return;
 	}
 	search.value = hash;
 	doSearch();
+	var entries = document.querySelectorAll('details.link-entry');
+	for (var i=0; i<entries.length; i++) {
+		entries[i].open = true;
+	}
 }
 
 
