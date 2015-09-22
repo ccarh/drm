@@ -647,26 +647,24 @@ function loadCategoryContent(index) {
 //
 
 function parseCategoryContent(index, content) {
-console.log("PARSING", index);
 	var entry = setCategoryRaw(index, content);
 	var html = renderAllLinks(object);
-	element = document.querySelector('#cagegories');
+	element = document.querySelector('#categories');
 	if (element) {
 		element.innerHTML = html;
 		showMatchCounts(LINKS);
 	}
-	if (location.hash) {
+	if (location.hash.match(/^#.+/)) {
 		doHashSearch(location.hash.substr(1));
-	} else {
-		console.log(location.hash, "= hash");
-	}
+	} 
 }
 
 
 
 //////////////////////////////
 //
-// doHashSearch --
+// doHashSearch -- Run a search automatically with the contents of
+//   any anchor tag found in the URL.
 //
 
 function doHashSearch(hash) {
