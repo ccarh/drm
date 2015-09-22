@@ -250,7 +250,7 @@ function setCategoryRaw(index, content) {
 		rawlinks[counter] += lines[i] + '\n';
 	}
 
-	entry.preface = rawlinks[0];
+	entry.preface = wiki2html(rawlinks[0]);
 	var lentry;
 	for (i=1; i<rawlinks.length; i++) {
 		lentry = {

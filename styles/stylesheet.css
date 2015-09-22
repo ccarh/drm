@@ -20,7 +20,6 @@ details.link-entry > summary {
 .level1 { margin-left:   0px; }
 .level2 { margin-left:  35px; }
 .level3 { margin-left:  70px; }
-.level4 { margin-left: 105px; }
 
 .credits {
 	color: #aaa;
@@ -28,6 +27,15 @@ details.link-entry > summary {
 	padding-top: 50px;
 	padding-left: 80px;
 	padding-right: 80px;
+	font-size: 90%;
+}
+
+.preface {
+	color: #aaa;
+	line-height: 1.25;
+	padding-bottom: 10px;
+	padding-left: 75px;
+	padding-right: 125px;
 	font-size: 90%;
 }
 
