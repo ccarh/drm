@@ -31,6 +31,13 @@ Preface = true;
 document.addEventListener('DOMContentLoaded', function() {
 	fillSearchForm('search');
 	loadLinkListFromServer();
+	var time = document.querySelector("time");
+	if (time) {
+		time.style.display = "none";
+		var curdate = new Date();
+		time.innerHTML = curdate.getFullYear() + '/' + 
+				(curdate.getMonth()+1) + '/' + curdate.getDay();
+	}
 });
 
 
@@ -405,7 +412,7 @@ $(document).ready(function() {
 	var help = '';
 	help += '<span class="myqtip">';
 	help += '<h2>keyboard shortcuts</h2>';
-	help += '(when focus is not on search field)';
+	help += '<center style="color:#ddd;">(when focus is not on search field)</center>';
 	help += '<dl class="qtip-dl">';
 	help += '<dt>T</dt>';
 	help += '<dd>Go to the top of the page</dd>';
@@ -422,13 +429,12 @@ $(document).ready(function() {
 		content: {
 				text: help
 			},
-		style: { classes: 'qtip-dark' },
+		style: { classes: 'qtip-bootstrap' },
 		position: {
 				viewport: $(window),
-				at: 'bottom right',
+				at: 'bottom left',
 				my: 'top right'
 			},
-		style: 'qtip-wiki'
 	});
 });
 

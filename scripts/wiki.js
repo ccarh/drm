@@ -65,13 +65,13 @@ function convertWebsiteLinks(output) {
 			if (len < 70 ) {
 				output = output.replace(/Website.*?\]/,
 						'<div style="margin-bottom:10px;">' +
-						'<a class="website" href="' + link + '">' + link + '</a>' + 
+						'<a class="website" target="_new" href="' + link + '">' + link + '</a>' + 
 						'</div>');
 			} else if (len < 100) {
 				output = output.replace(/Website.*?\]/,
 						'<div style="margin-bottom:10px;">' +
 						'<small>' + 
-						'<a class="website" href="' + link + '">' + link + '</a>' +
+						'<a class="website" target="_new" href="' + link + '">' + link + '</a>' +
 						'</small>' +
 						'</div>');
 			} else {
@@ -82,7 +82,7 @@ function convertWebsiteLinks(output) {
 				}
 				output = output.replace(/Website.*?\]/,
 						'<div style="margin-bottom:10px;">' +
-						'<a class="website-long" href="' + link + '">' + 
+						'<a class="website-long" target="_new" href="' + link + '">' + 
 							linkname + '</a>' +
 						'</div>');
 			}
@@ -109,7 +109,7 @@ function convertExternalLinksToHyperlinks(output) {
 			text = m2[2];
 		}
 		output = output.replace('[' + matches[1] + ']', 
-					'<a href="' + link + '">' + text + '</a>');
+					'<a target="_new" href="' + link + '">' + text + '</a>');
 		if (counter++ > 100) { break; }
 	}
 	return output;
@@ -138,7 +138,7 @@ function convertInternalLinksToHyperlinks(output) {
 			text = m2[2];
          link = link.replace(/\s/g, '_');
 			url  = baseurlwiki + '/' + link;
-			newtext = '<a href="' + url + '">' + text + '</a>';
+			newtext = '<a target="_new" href="' + url + '">' + text + '</a>';
 			output = output.replace('[[' + matches[1] + ']]', newtext);
 		} else {
 			text = temp;
@@ -146,7 +146,7 @@ function convertInternalLinksToHyperlinks(output) {
          xurl = xurl.replace(/^\s+/m, '');
          xurl = xurl.replace(/^\s/m, '_');
 			url  = baseurlwiki + '/' + xurl;
-			newtext = '<a href="' + url + '">' + text + '</a>';
+			newtext = '<a target="_new" href="' + url + '">' + text + '</a>';
 			output = output.replace('[[' + matches[1] + ']]', newtext);
 		}
 		// prevent any possible infinite loops

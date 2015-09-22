@@ -421,7 +421,9 @@ span.myqtip {
 }
 
 span.myqtip > h2 {
+	text-align: center;
 	font-size: 2.1rem;
+	font-weight: bold;
 	padding-left: 0;
 	color: green;
 }
@@ -431,16 +433,14 @@ dl.qtip-dl {
 }
 
 dl.qtip-dl dt {
-	font-family: Palatino, Time-Roman, serif;
 	float: left;
 	clear: left;
-	width: 50px;
-	text-align: right;
+	width: 25px;
+	text-align: center;
 	font-weight: bold;
 	color: green;
-}
-dl.qtip-dl dt:after {
-	content: ":";
+	background-color: orange;
+	border-radius: 5px;
 }
 dl.qtip-dl dd {
 	margin: 0 0 0 60px;
@@ -457,6 +457,7 @@ dl.qtip-dl dd {
 		font-size: 12pt !important; 
 		line-spacing: 1.75;
 	}
+	time { display: block !important; }
 	.thumb, .thumb * { display: none !important; }
 	.myButton, .myButton * { display: none !important; }
 	.btn, .btn * { display: none !important; }
