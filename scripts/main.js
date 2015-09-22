@@ -277,8 +277,15 @@ function showMatchCounts(object) {
 	if (cat.length != slots.length) {
 		// These should match, give up otherwise
 	}
+	var counter;
 	for (var i=0; i<slots.length; i++) {
-		slots[i].innerHTML = cat[i].links.length;
+		counter = 0;
+		for (var j=0; j<cat[i].links.length; j++) {
+			if (cat[i].links[j].type === 'link') {
+				counter++;
+			}
+		}
+		slots[i].innerHTML = counter;
 	}
 
 }
