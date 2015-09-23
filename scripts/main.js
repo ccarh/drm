@@ -516,13 +516,12 @@ function printPage(event) {
 
 //////////////////////////////
 //
-// toggleHeadingEntries -- For the given heading link which was 
+// toggleHeadingEntries -- For the given heading element which was 
 //    clicked on, toggle all of the entries for that heading
 //    until the next heading.
 //
 
 function toggleHeadingEntries(event) {
-console.log("GOT HERE");
 	var element = event.target;
 	event.preventDefault();
 	event.stopPropagation();
@@ -533,14 +532,31 @@ console.log("GOT HERE");
 	if (!element) {
 		return;
 	}
+	var level = 0;
+	var testlevel = 0;
+	var matches;
+	if (matches = element.className.match(/level(\d+)/)) {
+		level = parseInt(matches[1]);
+	}
 	while (element.nextSibling) {
 		element = element.nextSibling;
+		if (!element) {
+			break;
+		}
 		if (element.nodeType != 1) {
 			continue;
 		}
 		if (element.className.match(/link-entry/)) {
 			if (element.nodeName === 'DETAILS') {
 				element.open = !element.open;
+			}
+		} else if (element.className.match(/segment-heading/)) {
+			testlevel = 0;
+			if (matches = element.className.match(/level(\d+)/)) {
+				testlevel = parseInt(matches[1]);
+			}
+			if (testlevel <= level) {
+				break;
 			}
 		}
 	}
