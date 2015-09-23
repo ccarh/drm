@@ -82,7 +82,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <script id="link-entry-template" type="text/x-handlebars-template">
 
 {{#ifCond type "heading"}}
-	<div class="segment-heading level{{level}}">
+	<div onclick="toggleHeadingEntries(event);"
+			class="segment-heading level{{level}}">
 		{{{title}}}
 	</div>
 {{else}}

@@ -30,6 +30,7 @@ details[open] > summary::-webkit-details-marker {display: none; }
 	color: #c76932;
 	font-style: italic;
 	font-weight:400;
+	cursor: pointer;
 }
 
 .level1 { margin-left:   0px; }
@@ -477,11 +478,14 @@ dl.qtip-dl dt {
 	font-weight: bold;
 	color: green;
 	background-color: orange;
-	border-radius: 5px;
+	border-radius: 4px;
 }
 dl.qtip-dl dd {
 	margin: 0 0 0 60px;
-	padding: 0 0 0.25em 0;
+	padding: 0 0 0.35em 0;
+	min-height: 40px;
+	font-size: 90%;
+	line-height: 1.25;
 }
 
 

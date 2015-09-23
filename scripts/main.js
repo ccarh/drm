@@ -469,6 +469,8 @@ $(document).ready(function() {
 	help += '<dl class="qtip-dl">';
 	help += '<dt>T</dt>';
 	help += '<dd>Go to the top of the page</dd>';
+	help += '<dt>B</dt>';
+	help += '<dd>Show brief listing</dd>';
 	help += '<dt>I</dt>';
 	help += '<dd>Toggle display of images</dd>';
 	help += '<dt>O</dt>';
@@ -508,6 +510,40 @@ function printPage(event) {
 	// openAllLinks();
 	window.print();
 	
+}
+
+
+
+//////////////////////////////
+//
+// toggleHeadingEntries -- For the given heading link which was 
+//    clicked on, toggle all of the entries for that heading
+//    until the next heading.
+//
+
+function toggleHeadingEntries(event) {
+console.log("GOT HERE");
+	var element = event.target;
+	event.preventDefault();
+	event.stopPropagation();
+	while (element && (typeof element.className !== 'undefined') && 
+			(!element.className.match(/segment-heading/))) {
+		element = element.parentNode;
+	}
+	if (!element) {
+		return;
+	}
+	while (element.nextSibling) {
+		element = element.nextSibling;
+		if (element.nodeType != 1) {
+			continue;
+		}
+		if (element.className.match(/link-entry/)) {
+			if (element.nodeName === 'DETAILS') {
+				element.open = !element.open;
+			}
+		}
+	}
 }
 
 
