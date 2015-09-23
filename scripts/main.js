@@ -30,6 +30,10 @@ Preface = true;
 
 document.addEventListener('DOMContentLoaded', function() {
 	fillSearchForm('search');
+	if (location.hash.match(/^#.+/)) {
+		// hide the list until the hash search has been done.
+		document.querySelector('#categories').style.display = 'none';
+	} 
 	loadLinkListFromServer();
 	var time = document.querySelector("time");
 	if (time) {
@@ -265,10 +269,15 @@ function showMatchCounts(object) {
 		object = LINKS;
 	}
 
-	// show the sum:
 	var linkcount = document.querySelector('#link-count');
 	if (linkcount) {
-		linkcount.innerHTML = getLinkCount(object);
+		var count = getLinkCount(object);
+		if (count == 1) {
+			// if there is only one match, the display the link
+			// link expanded by default.
+			document.querySelector('details.category').open = true;
+		}
+		linkcount.innerHTML = count;
 	}
 
 	// show counts for each category

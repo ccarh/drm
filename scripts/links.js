@@ -722,7 +722,6 @@ function parseCategoryContent(index, content) {
 //
 
 function doHashSearch(hash) {
-console.log("DOING HASH SEARCH ON ", hash);
 	var search = document.querySelector("#search-text");
 	if (!search) {
 		return;
@@ -733,6 +732,9 @@ console.log("DOING HASH SEARCH ON ", hash);
 	for (var i=0; i<entries.length; i++) {
 		entries[i].open = true;
 	}
+
+ 	// unhide the category list:
+	document.querySelector('#categories').style.display = 'block';
 }
 
 
