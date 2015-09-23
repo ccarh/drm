@@ -13,6 +13,8 @@ details.link-entry > summary {
 	color: #d77942;
 }
 
+details[open] > summary::-webkit-details-marker {display: none; }
+
 .segment {
 	color: #d77942;
 	font-weight: bold;
@@ -31,9 +33,9 @@ details.link-entry > summary {
 }
 
 .level1 { margin-left:   0px; }
-.level2 { margin-left:  35px; }
-.level3 { margin-left:  70px; }
-.level4 { margin-left:  70px; }
+.level2 { margin-left:  42px; }
+.level3 { margin-left:  42px; }
+.level4 { margin-left:  42px; }
 
 .credits {
 	color: #aaa;
@@ -420,6 +422,10 @@ div.tleft {
 }
 
 .btn-clear {
+	background-color: #f0f0ff;
+}
+
+.btn-brief {
 	background-color: #f0f0ff;
 }
 

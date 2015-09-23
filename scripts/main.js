@@ -131,6 +131,16 @@ function clearSearch() {
 		element.value = '';
 		displayAllLinks(LINKS);
 	}
+
+   // show a brief list of all links.
+	var details = document.querySelectorAll('details.link-entry');
+	for (var i=0; i<details.length; i++) {
+		details[i].open = false;
+	}
+	var categories = document.querySelectorAll('details.category');
+	for (var i=0; i<categories.length; i++) {
+		categories[i].open = true;
+	}
 }
 
 
@@ -350,6 +360,33 @@ function showImages() {
 
 function closeAllLinks() {
 	var details = document.querySelectorAll('details');
+	for (var i=0; i<details.length; i++) {
+		details[i].open = false;
+	}
+}
+
+
+
+//////////////////////////////
+//
+// closeEventLinks --
+//
+
+function closeEventLinks(event) {
+	// don't let the click directly affect the category details click toggle:
+	event.stopPropagation();
+	event.preventDefault();
+	var element = event.target;
+	while (element.parentNode) {
+		if (element.nodeName === 'DETAILS') {
+			break;
+		}
+		element = element.parentNode;
+	}
+	if (element.nodeName !== 'DETAILS') {
+		return;
+	}
+	var details = element.querySelectorAll('details.link-entry');
 	for (var i=0; i<details.length; i++) {
 		details[i].open = false;
 	}

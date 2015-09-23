@@ -125,6 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			</td><td>
 				<div style="display:inline" class="btn-group" 
 						role="group" aria-label="...">
+
   					<button type="button" class="btn btn-default btn-small btn-open"
 							onclick="openCategoryLinks(event);">
 						<span class="category-open" style="position:relative; 
@@ -132,6 +133,15 @@ document.addEventListener('DOMContentLoaded', function() {
 							open
 						</span>
 					</button>
+
+  					<button type="button" class="btn btn-default btn-small btn-brief"
+							onclick="openCategoryLinks(event); closeEventLinks(event);">
+						<span class="category-brief" style="position:relative; 
+								top:-5px">
+							brief
+						</span>
+					</button>
+
   					<button type="button" class="btn btn-default btn-small btn-close"
 							onclick="closeCategoryLinks(event);">
 						<span class="category-close" style="position:relative; 
