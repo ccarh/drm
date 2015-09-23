@@ -15,6 +15,7 @@ var CKey         =  99;
 var HKey         = 104;
 var IKey         = 105;
 var OKey         = 111;
+var PKey         = 112;
 var TKey         = 116;
 
 // State variables:
@@ -52,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
 //
 
 document.addEventListener('keypress', function(event) {
+console.log("keyCode =", event.keyCode);
 	if ((typeof event.target.id !== 'undefined') &&
 			event.target.id.match(/search-text/i)) {
 		// don't process the keyboard command if searching for text
@@ -59,12 +61,16 @@ document.addEventListener('keypress', function(event) {
 	}
 	switch (event.keyCode) {
 
+		case CKey:             // close all categories
+			closeAllLinks();
+			break;
+
 		case OKey:             // open all categories
 			openAllLinks();
 			break;
 
-		case CKey:             // close all categories
-			closeAllLinks();
+		case PKey:             // toggle display of prefaces
+			togglePrefaceDisplay();
 			break;
 
 		case IKey:             // toggle display of images
@@ -558,6 +564,33 @@ function toggleHeadingEntries(event) {
 			if (testlevel <= level) {
 				break;
 			}
+		}
+	}
+}
+
+
+
+//////////////////////////////
+//
+// togglePrefaceDisplay -- Show or hide all category prefaces,
+//     as well as the introductor preface on the page.
+//
+
+function togglePrefaceDisplay() {
+	Preface = !Preface;
+	var preface = document.querySelector('#preface');
+	if (Preface) {
+		preface.style.display = 'none';
+	} else {
+		preface.style.display = 'block';
+	}
+
+	var prefaces = document.querySelectorAll('.preface');
+	for (i=0; i<prefaces.length; i++) {
+		if (Preface) {
+			prefaces[i].style.display = 'none';
+		} else {
+			prefaces[i].style.display = 'block';
 		}
 	}
 }

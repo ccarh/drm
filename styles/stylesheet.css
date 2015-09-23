@@ -414,21 +414,15 @@ div.tleft {
 
 */
 
-.btn-open {
-	background-color: #f6fff6;
-}
+.btn-open  { background-color: #f6fff6; }
+.btn-close { background-color: #fff6f6; }
+.btn-clear { background-color: #f0f0ff; }
+.btn-brief { background-color: #f0f0ff; }
 
-.btn-close {
-	background-color: #fff6f6;
-}
-
-.btn-clear {
-	background-color: #f0f0ff;
-}
-
-.btn-brief {
-	background-color: #f0f0ff;
-}
+.btn-default.btn-open:hover  { background-color: #c6efc6 !important; }
+.btn-default.btn-close:hover { background-color: #f8b6b6 !important; }
+.btn-default.btn-clear:hover { background-color: #c0c0ff !important; }
+.btn-default.btn-brief:hover { background-color: #c0c0ff !important; }
 
 table.search-navigator td {
 	padding: 0;
