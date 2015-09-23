@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	<details class="category">
 		{{#if preface}}
 			<div class="preface">
-				{{preface}}
+				{{{preface}}}
 			</div>
 		{{/if}}
 		{{> categoryEntry}}
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <script id="link-entry-template" type="text/x-handlebars-template">
 
 {{#ifCond type "heading"}}
-	<div class="segment level{{level}}">
+	<div class="segment-heading level{{level}}">
 		{{{title}}}
 	</div>
 {{else}}

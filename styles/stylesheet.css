@@ -17,9 +17,22 @@ details.link-entry > summary {
 	color: #d77942;
 	font-weight: bold;
 }
+
+.segment-heading.level3 {
+	color: #b75942;
+	font-weight: bold;
+}
+
+.segment-heading {
+	color: #d77942;
+	font-style: italic;
+	font-weight:600;
+}
+
 .level1 { margin-left:   0px; }
 .level2 { margin-left:  35px; }
 .level3 { margin-left:  70px; }
+.level4 { margin-left:  70px; }
 
 .credits {
 	color: #aaa;
