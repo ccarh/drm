@@ -450,29 +450,81 @@ function setLinkEntry(link) {
 
 function getLinkMatches(searchstring, scope)  {
 	var output = [];
+	searchstring = searchstring.replace(/^\s+/, '');
+	searchstring = searchstring.replace(/\s+$/, '');
+	searchstring = searchstring.replace(/\s+/g, ' ');
+	searchstring = searchstring.replace(/ not /g, ' -');
+	searchstring = searchstring.replace(/ or /g, ' |');
+	var queries = searchstring.split(' ');
+	
 	var categories = getCategories();
 	var links;
-	var re = new RegExp(searchstring, 'im');
-	for (var i=0; i<categories.length; i++) {
+	var result = false;
+	var results = [];
+	var re = [];
+	var k;
+	var xquery;
+   for (k=0; k<queries.length; k++) {
+		xquery = queries[k];
+		xquery = xquery.replace(/^\|/, '').replace(/^-/, '');
+		re[k] = new RegExp(xquery, 'i');
+	}
+	var i;
+	var j;
+	var k;
+	var m;
+	for (i=0; i<categories.length; i++) {
 		links = categories[i].links;
-		for (var j=0; j<links.length; j++) {
+		for (j=0; j<links.length; j++) {
 			if (links[j].type !== 'link') {
 				continue;
 			}
-			if (scope) {
-				// title only search
-				if (links[j].title.match(re)) {
-					output.push(links[j]);
-				} else if (links[j].titlesearch.match(re)) {
-					output.push(links[j]);
+			results = [];
+			for (k=0; k<queries.length; k++) {
+				if (scope) {
+					// title only search
+					if (links[j].title.match(re[k])) {
+						results.push(true);
+					} else if (links[j].titlesearch.match(re[k])) {
+						results.push(true);
+					} else {
+						results.push(false);
+					}
+				} else {
+					// full entry search
+					if (links[j].raw.match(re[k])) {
+						results.push(true);
+					} else if (links[j].search.match(re[k])) {
+						results.push(true);
+					} else {
+						results.push(false);
+					}
 				}
-			} else {
-				// full entry search
-				if (links[j].raw.match(re)) {
-					output.push(links[j]);
-				} else if (links[j].search.match(re)) {
-					output.push(links[j]);
+				if (queries[k].match(/^\|?-/)) {
+					results[k] = !results[k];
 				}
+			}
+			// Do AND search: all words must match,
+			// but also keeping track of OR states.
+			var result = results[0];
+			for (k=0; k<results.length; k++) {
+				if ((k+1 < results.length) && queries[k+1].match(/^\|/)) {
+					var oresult = results[k];
+					for (m=k+1; m<results.length; m++) {
+						if (queries[m].match(/^\|/)) {
+							oresult |= results[m];
+						} else {
+							break;
+						}
+					}
+					k += m - 1;
+					result = result || oresult;
+					continue;
+				}
+				result = result && results[k];
+			}
+			if (result) {
+				output.push(links[j]);
 			}
 		}
 	}
@@ -722,6 +774,7 @@ function parseCategoryContent(index, content) {
 //
 
 function doHashSearch(hash) {
+	hash = hash.replace(/%20/g, ' ');
 	var search = document.querySelector("#search-text");
 	if (!search) {
 		return;

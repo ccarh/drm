@@ -383,8 +383,10 @@ div.thumb {
 
 .thumbcaption {
 	margin-top: 4px;
-	line-height: 95%;
-	font-family: Palatino, Times-Roman, serif;
+	line-height: 1.25;
+	font-family: "Sans Open", Helvetica, sans-serif;
+	letter-spacing: -1px;
+	word-spacing: 2px;
 	color: #aaa;
 	text-align: left;
 }
@@ -490,6 +492,7 @@ dl.qtip-dl dt {
 	color: green;
 	background-color: orange;
 	border-radius: 4px;
+	box-shadow: 2px 2px 5px #aaa;
 }
 dl.qtip-dl dd {
 	margin: 0 0 0 60px;
@@ -497,8 +500,30 @@ dl.qtip-dl dd {
 	min-height: 40px;
 	font-size: 90%;
 	line-height: 1.25;
+	letter-spacing: -1px;
+	color: #777;
 }
 
+
+dl.qtip-search {
+	padding: 0.5em;
+}
+dl.qtip-search dt {
+	font-weight: 500;
+	color: #555;
+	background: #ffe000;
+	padding-left: 5px;
+	box-shadow: 2px 2px 5px #aaa;
+	word-spacing: 8px;
+}
+dl.qtip-search dd {
+	margin: 0 0 0 0px;
+	padding: 0.5em 0 0.45em 0;
+	font-size: 90%;
+	line-height: 1.25;
+	letter-spacing: -1px;
+	color: #777;
+}
 
 /* Hide uninersting stuff when printing */
 

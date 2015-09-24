@@ -18,6 +18,8 @@ var IKey         = 105;
 var OKey         = 111;
 var PKey         = 112;
 var TKey         = 116;
+var XKey         = 120;
+var EscKey       =  27;
 
 // State variables:
 Images  = true;
@@ -50,11 +52,27 @@ document.addEventListener('DOMContentLoaded', function() {
 
 //////////////////////////////
 //
+// event listener keyup --
+//
+
+document.addEventListener("keyup", function(event) {
+	if (event.keyCode == EscKey) {
+		var s = document.querySelector('#search-text')
+		if (s) {
+			s.blur();
+		}
+	}
+});
+
+
+
+//////////////////////////////
+//
 // event listener keypress -- Perform keyboard commands.
 //
 
 document.addEventListener('keypress', function(event) {
-// console.log("keyCode =", event.keyCode);
+console.log("keyCode =", event.keyCode);
 	if ((typeof event.target.id !== 'undefined') &&
 			event.target.id.match(/search-text/i)) {
 		// don't process the keyboard command if searching for text
@@ -75,6 +93,10 @@ document.addEventListener('keypress', function(event) {
 
 		case PKey:             // toggle display of prefaces
 			togglePrefaceDisplay();
+			break;
+
+		case XKey:             // clear the search
+			clearSearch();
 			break;
 
 		case IKey:             // toggle display of images
@@ -100,15 +122,18 @@ document.addEventListener('keypress', function(event) {
 //
 
 function displayAllLinks(object) {
+	var count = 0;
 	var element = document.querySelector('#categories');
 	if (element) {
 		var html = renderAllLinks(object);
 		element.innerHTML = html;
-		showMatchCounts(object);
+		count = showMatchCounts(object);
 	}
-	// The categories should be closed, but they are not.
-	// close them now:
-	closeAllLinks();
+	if (count == 1) {
+		openAllLinks();
+	} else if (count > 1) {
+		closeAllLinks();
+	}
 }
 
 
@@ -212,7 +237,7 @@ function doSearch(event) {
 function displaySearchResults(links) {
 	var tempLINKS = buildSearchCategories(links);
 	displayAllLinks(tempLINKS);
-	showMatchCounts(tempLINKS);
+	var count = showMatchCounts(tempLINKS);
 	openCategoryDetails();
 }
 
@@ -297,9 +322,10 @@ function showMatchCounts(object) {
 		object = LINKS;
 	}
 
+	var count = 0;
 	var linkcount = document.querySelector('#link-count');
 	if (linkcount) {
-		var count = getLinkCount(object);
+		count = getLinkCount(object);
 		if (count == 1) {
 			// if there is only one match, the display the link
 			// link expanded by default.
@@ -324,7 +350,7 @@ function showMatchCounts(object) {
 		}
 		slots[i].innerHTML = counter;
 	}
-
+	return count;
 }
 
 
@@ -480,27 +506,27 @@ function closeCategoryLinks(index) {
 //
 
 $(document).ready(function() {
-	var help = '';
-	help += '<span class="myqtip">';
-	help += '<h2>keyboard shortcuts</h2>';
-	help += '<center style="color:#ddd;">(when focus is not on search field)</center>';
-	help += '<dl class="qtip-dl">';
-	help += '<dt>T</dt>';
-	help += '<dd>Go to the top of the page</dd>';
-	help += '<dt>B</dt>';
-	help += '<dd>Show brief listings</dd>';
-	help += '<dt>I</dt>';
-	help += '<dd>Toggle display of images</dd>';
-	help += '<dt>O</dt>';
-	help += '<dd>Open all categories</dd>';
-	help += '<dt>C</dt>';
-	help += '<dd>Close all categories</dd>';
-	help += '</dl>';
-	help += '</span>';
+	var keyhelp = '';
+	keyhelp += '<span class="myqtip">';
+	keyhelp += '<h2>keyboard shortcuts</h2>';
+	keyhelp += '<center style="color:#ddd;">(when focus is not on search field)</center>';
+	keyhelp += '<dl class="qtip-dl">';
+	keyhelp += '<dt>T</dt>';
+	keyhelp += '<dd>Go to top of page</dd>';
+	keyhelp += '<dt>B</dt>';
+	keyhelp += '<dd>Show brief listings</dd>';
+	keyhelp += '<dt>I</dt>';
+	keyhelp += '<dd>Toggle image display</dd>';
+	keyhelp += '<dt>O</dt>';
+	keyhelp += '<dd>Open all categories</dd>';
+	keyhelp += '<dt>C</dt>';
+	keyhelp += '<dd>Close all categories</dd>';
+	keyhelp += '</dl>';
+	keyhelp += '</span>';
 
 	$('.keyboard-help').qtip({
 		content: {
-				text: help
+				text: keyhelp
 			},
 		style: { classes: 'qtip-bootstrap' },
 		position: {
@@ -509,6 +535,41 @@ $(document).ready(function() {
 				my: 'top right'
 			},
 	});
+
+	var shelp = '';
+	shelp += '<span class="myqtip">';
+	shelp += '<h2>searching tips</h2>';
+	shelp += '<dl class=qtip-search>';
+	shelp += '<dt><i>word1</i> <i>word2</i></dt>';
+	shelp += '<dd>Both words must match (in any order)';
+	shelp += '<dt><i>word1</i> <span style="font-weight:bold; color:red;">not</span> <i>word2</i></dt>';
+	shelp += '<dd>Link description contains <i>word1</i> but not';
+	shelp += ' <i>word2</i>';
+	shelp += '<dt><i>word1</i> <span style="font-weight:bold; color:red">or</span> <i>word2</i></dt>';
+	shelp += '<dd>Entry contains either <i>word1</i> or';
+	shelp += ' <i>word2</i> (or both)';
+	shelp += '<dt><i>word1</i> <span style="font-weight:bold; color:red">or not</span> <i>word2</i></dt>';
+	shelp += '<dd>Entry contains <i>word1</i> or it does not';
+	shelp += ' contain <i>word2</i>';
+	shelp += '<dt style="font-size:90%; letter-spacing:-1px; word-spacing:2px;"><i>word1</i> <span style="font-weight:bold; color:red">not</span> <i>word2 word3</i></dt>';
+	shelp += '<dd>Entry contains <i>word1</i> as well as <i>word3</i> but not';
+	shelp += ' <i>word2</i> (<b>not</b> only applies to following word)';
+	shelp += '</dl>';
+	shelp += '</span>';
+	
+	$('.search-help').qtip({
+		content: {
+				text: shelp
+			},
+		style: { classes: 'qtip-bootstrap' },
+		position: {
+				viewport: $(window),
+				at: 'bottom left',
+				my: 'top right'
+			},
+	});
+
+
 });
 
 
