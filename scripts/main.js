@@ -11,6 +11,7 @@
 
 // event keyCodes.  See: http://www.javascripter.net/faq/keycodes.htm
 var EnterKey     =  13;
+var BKey         =  98;
 var CKey         =  99;
 var HKey         = 104;
 var IKey         = 105;
@@ -53,13 +54,16 @@ document.addEventListener('DOMContentLoaded', function() {
 //
 
 document.addEventListener('keypress', function(event) {
-console.log("keyCode =", event.keyCode);
+// console.log("keyCode =", event.keyCode);
 	if ((typeof event.target.id !== 'undefined') &&
 			event.target.id.match(/search-text/i)) {
 		// don't process the keyboard command if searching for text
 		return;
 	}
 	switch (event.keyCode) {
+		case BKey:             // show brief listing
+			showBriefListings();
+			break;
 
 		case CKey:             // close all categories
 			closeAllLinks();
@@ -84,7 +88,6 @@ console.log("keyCode =", event.keyCode);
 		case TKey:             // go to top of page
 			window.scrollTo(0, 0);
 			break;
-
 	}
 });
 
@@ -137,7 +140,16 @@ function clearSearch() {
 		element.value = '';
 		displayAllLinks(LINKS);
 	}
+	showBriefListings();
+}
 
+
+//////////////////////////////
+//
+// showBriefListings --
+//
+
+function showBriefListings() {
    // show a brief list of all links.
 	var details = document.querySelectorAll('details.link-entry');
 	for (var i=0; i<details.length; i++) {
@@ -476,13 +488,13 @@ $(document).ready(function() {
 	help += '<dt>T</dt>';
 	help += '<dd>Go to the top of the page</dd>';
 	help += '<dt>B</dt>';
-	help += '<dd>Show brief listing</dd>';
+	help += '<dd>Show brief listings</dd>';
 	help += '<dt>I</dt>';
 	help += '<dd>Toggle display of images</dd>';
 	help += '<dt>O</dt>';
-	help += '<dd>Open the contents of all categories</dd>';
+	help += '<dd>Open all categories</dd>';
 	help += '<dt>C</dt>';
-	help += '<dd>Close the contents of all categories</dd>';
+	help += '<dd>Close all categories</dd>';
 	help += '</dl>';
 	help += '</span>';
 
@@ -594,6 +606,38 @@ function togglePrefaceDisplay() {
 		}
 	}
 }
+
+
+
+//////////////////////////////
+//
+// loadImageData -- Under development.  See renderImage template.
+//
+
+function loadImageData(url) {
+	var matches;
+	var filename = '';
+	if (matches = url.match(/\/([^\/]+)$/)) {
+		filename = matches[1];
+	}
+	var type = 'image/png';
+	if (filename.match(/\.jpg$/i)) {
+		type = 'image/jpeg';
+	}
+
+	var xhr = new XMLHttpRequest();
+	xhr.open('GET', '/images/wiki/' + filename, true);
+	xhr.responseType = 'blob';
+	xhr.addEventListener('load', function() {
+		var blob = new Blob([this.response], {type: type});
+		console.log("BLOB", blob);
+	});
+	xhr.send();
+}
+
+
+
+
 
 
 

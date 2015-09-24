@@ -194,13 +194,32 @@ function convertInternalLinksToHyperlinks(output) {
 // CryptoJS.MD5(filename);
 //
 
+
 function getImageContent(input) {
+	var parameters     = input.split(/\|/);
+	var filename       = parameters[0].replace(/^\s+/, "").replace(/\s+$/, "");
+	var md5sum         = CryptoJS.MD5(filename).toString(CryptoJS.enc.Hex);
+	var first          = md5sum.substr(0, 1);
+	var second         = md5sum.substr(0, 2);
+	var settings       = {};
+	settings.width     = getWidth(parameters);
+	settings.placement = getPlacement(parameters);
+	settings.caption   = parameters[parameters.length-1];
+	settings.caption = settings.caption.replace(/<\/?small>/gi, '');
+	
+	settings.url       = 'src="http://wiki.ccarh.org/images/' + first + 
+			'/' + second + '/' + filename + '"';
+	return renderImage(settings);
+}
+
+/*
+
+function getImageContent2(input) {
 	var parameters = input.split(/\|/);
 	var filename = parameters[0].replace(/^\s+/, "").replace(/\s+$/, "");
 	var md5sum = CryptoJS.MD5(filename).toString(CryptoJS.enc.Hex);
 	var first = md5sum.substr(0, 1);
 	var second = md5sum.substr(0, 2);
-	var width = getWidth(parameters);
 	var output = "";
 	var width = getWidth(parameters);
 	var placement = getPlacement(parameters);
@@ -238,6 +257,7 @@ function getImageContent(input) {
 	return output;
 }
 
+*/
 
 
 //////////////////////////////
@@ -265,11 +285,11 @@ function getWidth(parameters) {
 //
 
 function getPlacement(parameters) {
-	var output = "";
+	var output = "tleft";
 	var matches;
 	for (var i=0; i<parameters.length; i++) {
 		if (matches = parameters[i].match(/^\s*(right)\s*$/)) {
-			output = matches[1];
+			output = "tright";
 			break;
 		}
 	}

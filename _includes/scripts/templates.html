@@ -13,7 +13,7 @@
 var renderLinkEntry     = null;
 var renderSearchForm    = null;
 var renderCategoryEntry = null;
-var renderAllLinks      = null;
+var renderImage         = null;
 
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -25,6 +25,8 @@ document.addEventListener('DOMContentLoaded', function() {
 		document.querySelector('#category-entry-template').innerHTML);
 	renderAllLinks = Handlebars.compile(
 		document.querySelector('#all-links-template').innerHTML);
+	renderImage = Handlebars.compile(
+		document.querySelector('#image-template').innerHTML);
 
 });
 
@@ -179,9 +181,9 @@ document.addEventListener('DOMContentLoaded', function() {
 	</div>
 	<div style="position:relative; top:-6px" class="form-group">
 		<div style="margin-left:10px;" class="checkbox">
-			<label>
-				<input id="search-scope" onkeypress="suppressEnter(event);
-						onclick="doSearch(event);" type="checkbox" value="">
+			<label onclick="doSearch(event);">
+				<input id="search-scope" onkeypress="suppressEnter(event)";
+						type="checkbox" value="">
 				<span style="color:#909ca1; margin-left:3px; position:relative; top:2px;">
 					Titles only
 				</span>
@@ -224,7 +226,36 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+<!--
+//////////////////////////////
+//
+// image-template -- Template for diplay images with captions.
+//
+-->
+
+{% raw %}
+<script id="image-template" type="text/x-handlebars-template">
+
+<div class="thumb {{placement}}">
+	<div class="thumbinner"
+		{{#if width}}
+			style="width:{{width}}px;"
+		{{/if}}
+				>
+		{{{image url}}}
+		<div class="thumbcaption">
+			{{{caption}}}
+		</div>
+	</div>
+</div>
+
+</script>
+{% endraw %}
+
+
+
 <script>
+
 ///////////////////////////////////////////////////////////////////////////
 //
 // Helper functions for handlebars-js.
@@ -244,6 +275,38 @@ Handlebars.registerHelper('ifCond', function(v1, v2, options) {
     return options.fn(this);
   }
   return options.inverse(this);
+});
+
+
+
+//////////////////////////////
+//
+// handlebars helper image -- process an image to be displayed.
+//
+
+Handlebars.registerHelper('image', function(url) {
+	url = url.replace(/^src="/, '');
+	url = url.replace(/"$/, '');
+	var filename = '';
+	var matches;
+	if (matches = url.match(/\/([^\/]+)?$/)) {
+		filename = matches[1];
+		filename = filename.replace(/\.png$/, '.jpg');
+		filename = filename.replace(/\.PNG$/, '.jpg');
+	}
+	var newurl = '/images/wiki/' + filename;
+	return '<a target="_new" href="' + url + '"><img src="' + newurl + '\"></a>';
+
+/*
+	if (sessionStorage[url]) {
+		output += '<img src="' + sessionStorage[url] + '">';
+	} else{
+		loadImageData(url);
+		output += '<div class="' + url + '"></div>';
+	}
+	return output;
+*/
+
 });
 
 
