@@ -45,6 +45,8 @@ details[open] > summary::-webkit-details-marker {display: none; }
 	padding-left: 80px;
 	padding-right: 80px;
 	font-size: 90%;
+	text-align: justify;
+	text-justify: auto;
 }
 
 .preface {
@@ -54,6 +56,21 @@ details[open] > summary::-webkit-details-marker {display: none; }
 	padding-left: 75px;
 	padding-right: 125px;
 	font-size: 90%;
+	text-align: justify;
+	text-justify: auto;
+}
+
+.link-text {
+	text-align: justify;
+	text-justify: auto;
+}
+
+#preface {
+	font-size: 97%;
+	color: #555;
+	line-height: 1.35;
+	text-align: justify;
+	text-justify: auto;
 }
 
 body {
@@ -365,7 +382,7 @@ div.thumb {
 }
 
 .thumbcaption {
-	margin-top: 2px;
+	margin-top: 4px;
 	line-height: 95%;
 	font-family: Palatino, Times-Roman, serif;
 	color: #aaa;
