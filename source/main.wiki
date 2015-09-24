@@ -1,9 +1,7 @@
 __NOTOC__
 
-This is a partitioned version of our [[Links_for_Digital_Musicology|
-Links for Digital Musicology]]. This view is not well suited to websites with heterogeneous material (a composer's letters, diary, photographs, etc.), which can be listed in multiple ways, but early users found it better for general navigation.   
 
-This wiki provides links to substantial open-access projects of use to musicians and musicologists. For curated digital and hybrid editions, see [http://wiki.ccarh.org/wiki/EVE_%28Electronic_and_Virtual_Editions%29 EVE: Electronic and Virtual Editions]. For older projects that are not readily accessible online see [[ADAM|ADAM: Archive of Digital Applications in Musicology]].
+This website provides links to substantial open-access projects of use to musicians and musicologists.  With a burgeoning number of digital resources available, remembering titles of sites and pathways to them can be difficult.  Digital Resources in Musicology (DRM) is organized topically and provides a rapid search tool for specialties within heterogeneous collections.  Who would have expected to find folk music in a classical collection, or Lully in Texas?  We have tried to capture some of serendipity of the web and welcome your contributions.  For curated digital and hybrid editions, see [[EVE_%28Electronic_and_Virtual_Editions%29|EVE: Electronic and Virtual Editions]]. For older projects that are not readily accessible online see [[ADAM|ADAM: Archive of Digital Applications in Musicology]].
 
 == Digitized Music Manuscripts ==
  &lt;div class="mw-collapsible mw-collapsed">
