@@ -35,6 +35,7 @@
 
 var baseurl     = 'http://wiki.ccarh.org';
 var baseurlwiki = baseurl + '/wiki';
+var wikitag     = 'drm';
 
 var LINKS = {
    category: []
@@ -220,7 +221,7 @@ function getTemplateFilename(index) {
 	if (!filename) {
 		return '';
 	}
-	return '/source/' + filename + '.template';
+	return '/source/' + wikitag + '/' + filename + '.template';
 }
 
 
@@ -553,7 +554,7 @@ function loadLinkListFromServer(object) {
 	} else {
 		// need to load link entries from the server (also
 		// displays the list as it downloads):
-   	getHeadings('/source/main.wiki');
+   	getHeadings('/source/' + wikitag + '/main.wiki');
 		return '';
 	}
 }
@@ -607,7 +608,7 @@ function extractCategoryHeadings(content) {
 	displayMainPreface(getMainPreface());
 
 	// Extract the WIKI headings for each category:
-	var reg = new RegExp(/==\s(.*?)\s*==/g);
+	var reg = new RegExp(/==\s*([^\r\n]+?)\s*==/g);
 	while((result = reg.exec(content)) !== null) {
 		headings.push(result[1]);
 	}
@@ -679,7 +680,7 @@ function displayCategoryHeadings() {
 
 function loadCreditsContent(filebase) {
 	var request = new XMLHttpRequest();
-	var file = '/source/' + filebase + '.template';
+	var file = '/source/' + wikitag + '/' + filebase + '.template';
 	request.open('GET', file);
 	request.addEventListener('load', function () {
 		parseCreditsContent(this.responseText);

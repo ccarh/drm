@@ -3,4 +3,4 @@
 .PHONY: source
 
 source:
-	(cd source ^&& $(MAKE))
+	(cd source && $(MAKE))

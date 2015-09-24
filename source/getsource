@@ -12,8 +12,13 @@
 
 use strict;
 
+my $page = $ARGV[0];
+if ($page =~ /^\s*$/) {
+	$page = "Digital_Resources_for_Musicology";
+}
+
 my $base = "http://wiki.ccarh.org/index.php?title=";
-my $basepage = "${base}Digital_Resources_for_Musicology&action=edit";
+my $basepage = "$base$page&action=edit";
 
 my $content = getRawWikiFile($basepage);
 

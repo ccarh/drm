@@ -138,6 +138,7 @@ function convertInternalLinksToHyperlinks(output) {
 			text = m2[2];
          link = link.replace(/\s/g, '_');
 			url  = baseurlwiki + '/' + link;
+			url = cleanURL(url);
 			newtext = '<a target="_new" href="' + url + '">' + text + '</a>';
 			output = output.replace('[[' + matches[1] + ']]', newtext);
 		} else {
@@ -146,6 +147,7 @@ function convertInternalLinksToHyperlinks(output) {
          xurl = xurl.replace(/^\s+/m, '');
          xurl = xurl.replace(/^\s/m, '_');
 			url  = baseurlwiki + '/' + xurl;
+			url = cleanURL(url);
 			newtext = '<a target="_new" href="' + url + '">' + text + '</a>';
 			output = output.replace('[[' + matches[1] + ']]', newtext);
 		}
@@ -153,6 +155,20 @@ function convertInternalLinksToHyperlinks(output) {
 		if (counter++ > 100) { break; }
 	}
 	return output;
+}
+
+
+
+//////////////////////////////
+//
+// cleanURL --
+//
+
+function cleanURL(url) {
+	if (url === "http://wiki.ccarh.org/wiki/EVE_%28Electronic_and_Virtual_Editions%29") {
+		url = "http://eve.ccarh.org";
+	}
+	return url;
 }
 
 
@@ -212,52 +228,6 @@ function getImageContent(input) {
 	return renderImage(settings);
 }
 
-/*
-
-function getImageContent2(input) {
-	var parameters = input.split(/\|/);
-	var filename = parameters[0].replace(/^\s+/, "").replace(/\s+$/, "");
-	var md5sum = CryptoJS.MD5(filename).toString(CryptoJS.enc.Hex);
-	var first = md5sum.substr(0, 1);
-	var second = md5sum.substr(0, 2);
-	var output = "";
-	var width = getWidth(parameters);
-	var placement = getPlacement(parameters);
-	output += '<div class="thumb ';
-	if (placement === 'right') {
-		output += 'tright';
-	} else {
-		output += 'tleft';
-	}
-	output += '">';
-	output += '<div class="thumbinner"'
-	if (width) {
-		output += 'style="width:' + (parseInt(width)+2) + 'px;"';
-	}
-	output += '>';
-
-	output += '<img ';
-	if (width) {
-		output += 'width="' + width + '" ';
-	}
-	output += 'src="http://wiki.ccarh.org/images/' + first + 
-			'/' + second + '/' + filename + '"';
-	output += ' style="';
-	// style goes here
-   output += '"';
-	output += '>';
-
-	output += '<div class="thumbcaption">';
-	output += parameters[parameters.length-1];
-	output += '</div>';
-
-	output += '</div>';
-	output += '</div>';
-
-	return output;
-}
-
-*/
 
 
 //////////////////////////////
