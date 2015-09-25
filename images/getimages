@@ -1,0 +1,105 @@
+#!/usr/bin/perl
+#
+# Programmer:    Craig Stuart Sapp <craig.stanford.edu>
+# Creation Date: Wed Sep 16 22:39:51 PDT 2015
+# Last Modified: Wed Sep 16 22:39:51 PDT 2015
+# Filename:      drm:gh-pages/source/getsource
+# Syntax:        perl 5
+# vim:           ts=3
+#
+# Description:
+#
+
+use strict;
+
+use Digest::MD5 qw(md5 md5_hex md5_base64);
+
+
+my $target = "wiki";
+my $page = $ARGV[0];
+if ($page =~ /^\s*$/) {
+	$page = "Digital_Resources_for_Musicology";
+}
+
+my $base      = "http://wiki.ccarh.org/index.php?title=";
+my $basepage  = "$base$page&action=edit";
+my $content   = getRawWikiFile($basepage);
+my @templates = getTemplates($content);
+my $file;
+my $newfile;
+my $url;
+my $hex;
+my $first;
+my $second;
+
+for (my $i=0; $i<@templates; $i++) {
+   $content = getRawWikiFile("${base}Template:$templates[$i]&action=edit");
+	while ($content =~ /File:\s*([^|]+)\s*\|/g) {
+		$file = $1;
+		$hex = md5_hex($file);
+		$hex =~ /^(.)/;
+		$first = $1;
+		$hex =~ /^(..)/;
+		$second = $1;
+
+		next if -r "$target/$file";
+		if ($file !~ /\.jpg$/i) {
+			$newfile = $file;	
+			$newfile =~ s/\.png$/.jpg/i;
+		}
+		next if -r "$target/$newfile";
+
+		# need to download file.
+		$url  = "http://wiki.ccarh.org/images";
+		$url = "$url/$first/$second/$file";
+		`wget "$url" -O "$file"`;
+
+		print "processing $file\n";
+		if ($file =~ /\.jpg$/) {
+			`mv "$file" $target`;
+			 continue;
+		} else {
+			`convert "$file" -resize 600 "$target/$newfile"`;
+			unlink($file);
+		}
+
+	}
+}
+
+exit(0);
+
+
+
+##############################
+##
+## getRawWikiFile --
+##
+
+sub getRawWikiFile {
+	my ($page) = @_;
+	my $content = `wget "$page" -O - 2> /dev/null`;
+	$content =~ s/.*<textarea[^>]*>//is;
+	$content =~ s/<\/textarea>.*//is;
+	return $content;
+}
+
+
+
+##############################
+##
+## getTemplates --
+##
+
+sub getTemplates {
+	my ($data) = @_;
+	my @contents = split(/\n/, $data);
+	my @output;
+	for (my $i=0; $i<@contents; $i++) {
+		next if $contents[$i] !~ /{{(.*)}}/;
+		$output[@output] =  $1;
+	}
+	return @output;
+}
+
+
+
