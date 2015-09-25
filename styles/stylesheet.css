@@ -4,6 +4,10 @@
 	box-sizing: border-box; 
 }
 
+details {
+	width: 100%;
+}
+
 details.link-entry {
 	margin-left: 45px;
 	width: 100%;
