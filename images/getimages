@@ -42,12 +42,17 @@ for (my $i=0; $i<@templates; $i++) {
 		$hex =~ /^(..)/;
 		$second = $1;
 
-		next if -r "$target/$file";
+		if (-r "$target/$file") {
+			next;
+		}
 		if ($file !~ /\.jpg$/i) {
 			$newfile = $file;	
 			$newfile =~ s/\.png$/.jpg/i;
+		} else {
+			$newfile = $file;
 		}
 		next if -r "$target/$newfile";
+		print "Processing $file\n";
 
 		# need to download file.
 		$url  = "http://wiki.ccarh.org/images";
@@ -57,7 +62,7 @@ for (my $i=0; $i<@templates; $i++) {
 		print "processing $file\n";
 		if ($file =~ /\.jpg$/) {
 			`mv "$file" $target`;
-			 continue;
+			 next;
 		} else {
 			`convert "$file" -resize 600 "$target/$newfile"`;
 			unlink($file);

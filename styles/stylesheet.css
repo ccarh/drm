@@ -6,7 +6,6 @@
 
 details {
 	width: 100%;
-	display: inline;
 }
 
 details.link-entry {
@@ -397,13 +396,13 @@ div.thumb {
 }
 
 div.tright {
-	clear: right;
 	float: right;
+	overflow:visible;
 }
 
 div.tleft {
-	clear: left;
 	float: left;
+	overflow:visible;
 }
 
 
