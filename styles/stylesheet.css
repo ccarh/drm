@@ -6,6 +6,7 @@
 
 details {
 	width: 100%;
+	display: inline;
 }
 
 details.link-entry {
