@@ -17,6 +17,10 @@ details.link-entry > summary {
 	color: #d77942;
 }
 
+.paragraph {
+   padding-top: 12px;
+}
+
 details[open] > summary::-webkit-details-marker {display: none; }
 
 .segment {
@@ -100,6 +104,11 @@ summary.category:before {
 summary.category {
 	color: #159957;
 	font-size: 2.0rem;
+	cursor: pointer;
+}
+
+details.link-entry > summary {
+	cursor: pointer;
 }
 
 .page-header {
@@ -527,6 +536,19 @@ dl.qtip-search dd {
 	line-height: 1.25;
 	letter-spacing: -1px;
 	color: #777;
+}
+
+
+.links-top {
+	position: absolute;
+	left: 110px;
+	top: 104px;
+	font-size: 120%;
+	text-shadow: 4px 4px 14px #000;
+}
+
+.top-icons {
+	text-shadow: 4px 4px 14px #000;
 }
 
 /* Hide uninersting stuff when printing */

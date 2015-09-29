@@ -17,11 +17,11 @@
 
 function wiki2html(content) {
 	if (!content) {
-		return "";
+		return '';
 	}
 	output = content.replace(/__NOTOC__/, '');
-	output = output.replace(/&lt;/gm, "<");
-	output = output.replace(/\b--\b/gm, "&ndash;");
+	output = output.replace(/&lt;/gm, '<');
+	output = output.replace(/\b--\b/gm, '&ndash;');
 
 	var swaping;
 	var matches;
@@ -41,7 +41,36 @@ function wiki2html(content) {
 
 	output = convertInternalLinksToHyperlinks(output);
 	output = convertExternalLinksToHyperlinks(output);
+	output = addBlankLines(output);
 
+	return output;
+}
+
+
+
+//////////////////////////////
+//
+// addBlankLines --
+//
+
+function addBlankLines(input) {
+	input = input.replace(/\s+$/, '');
+	input = input.replace(/^\s+/, '');
+	var lines = input.split(/\n/);
+	var output = '';
+	var i;
+
+	for (var i=0; i<lines.length; i++) {
+		if (lines[i].match(/^\s*$/)) {
+			if ((i < lines.length-1) && (!lines[i+1].match(/^\s*$/))) {
+				output += '<div class="paragraph"></div>\n';
+			}
+		} else if (lines[i].match(/^Return to.*Digital/)) {
+			continue;
+		} else {
+			output += lines[i] + '\n';
+		}
+	}
 	return output;
 }
 
@@ -60,16 +89,16 @@ function convertWebsiteLinks(output) {
 		temp = matches[1];
 		if (m2 = temp.match(/^([^\s]+)/)) {
 			link = m2[1];
-			link = link.replace(/\/$/, "");
+			link = link.replace(/\/$/, '');
 			var len = link.length;
 			if (len < 70 ) {
 				output = output.replace(/Website.*?\]/,
-						'<div style="margin-bottom:10px;">' +
+						'<div class="entry-link">' +
 						'<a class="website" target="_new" href="' + link + '">' + link + '</a>' + 
 						'</div>');
 			} else if (len < 100) {
 				output = output.replace(/Website.*?\]/,
-						'<div style="margin-bottom:10px;">' +
+						'<div class="entry-link">' +
 						'<small>' + 
 						'<a class="website" target="_new" href="' + link + '">' + link + '</a>' +
 						'</small>' +
@@ -81,7 +110,7 @@ function convertWebsiteLinks(output) {
 					linkname = matches[1];
 				}
 				output = output.replace(/Website.*?\]/,
-						'<div style="margin-bottom:10px;">' +
+						'<div class=entry-link">' +
 						'<a class="website-long" target="_new" href="' + link + '">' + 
 							linkname + '</a>' +
 						'</div>');
@@ -105,8 +134,8 @@ function convertExternalLinksToHyperlinks(output) {
 		temp = temp.replace(/^\s+/, '');
 		temp = temp.replace(/\s+$/, '');
 		if (m2 = temp.match(/^(.*?)\s+(.*)$/)) {
-			link = m2[1];
-			text = m2[2];
+			var link = m2[1];
+			var text = m2[2];
 		}
 		output = output.replace('[' + matches[1] + ']', 
 					'<a target="_new" href="' + link + '">' + text + '</a>');
@@ -165,8 +194,8 @@ function convertInternalLinksToHyperlinks(output) {
 //
 
 function cleanURL(url) {
-	if (url === "http://wiki.ccarh.org/wiki/EVE_%28Electronic_and_Virtual_Editions%29") {
-		url = "http://eve.ccarh.org";
+	if (url === 'http://wiki.ccarh.org/wiki/EVE_%28Electronic_and_Virtual_Editions%29') {
+		url = 'http://eve.ccarh.org';
 	}
 	return url;
 }
@@ -213,7 +242,7 @@ function cleanURL(url) {
 
 function getImageContent(input) {
 	var parameters     = input.split(/\|/);
-	var filename       = parameters[0].replace(/^\s+/, "").replace(/\s+$/, "");
+	var filename       = parameters[0].replace(/^\s+/, '').replace(/\s+$/, '');
 	var md5sum         = CryptoJS.MD5(filename).toString(CryptoJS.enc.Hex);
 	var first          = md5sum.substr(0, 1);
 	var second         = md5sum.substr(0, 2);
@@ -236,7 +265,7 @@ function getImageContent(input) {
 //
 
 function getWidth(parameters) {
-	var output = "";
+	var output = '';
 	var matches;
 	for (var i=0; i<parameters.length; i++) {
 		if (matches = parameters[i].match(/^\s*(\d+)px\s*$/)) {
@@ -255,11 +284,11 @@ function getWidth(parameters) {
 //
 
 function getPlacement(parameters) {
-	var output = "tleft";
+	var output = 'tleft';
 	var matches;
 	for (var i=0; i<parameters.length; i++) {
 		if (matches = parameters[i].match(/^\s*(right)\s*$/)) {
-			output = "tright";
+			output = 'tright';
 			break;
 		}
 	}
@@ -274,7 +303,7 @@ function getPlacement(parameters) {
 //
 
 function escapeRegExp(str) {
-  return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+  return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, '\\$&');
 }
 
 

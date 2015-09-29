@@ -283,7 +283,7 @@ function fillSearchForm(elementId) {
 //
 
 function extractPreface(content) {
-	var lines = content.match(/[^\r\n]+/g);
+	var lines = content.split('\n');
    var output = '';
 	for (var i=0; i<lines.length; i++) {
 		if (lines[i].match(/^=/)) {
