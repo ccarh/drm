@@ -6,9 +6,9 @@
 all: source images
 
 source:
-	(cd source && $(MAKE))
+	-(cd source && $(MAKE))
 
 
 images:
-	(cd source && $(MAKE))
+	-(cd images && $(MAKE))
 
