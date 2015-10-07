@@ -540,9 +540,6 @@ dl.qtip-search dd {
 
 
 .links-top {
-	position: absolute;
-	left: 110px;
-	top: 104px;
 	font-size: 120%;
 	text-shadow: 4px 4px 14px #000;
 }
