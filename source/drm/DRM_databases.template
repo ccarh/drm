@@ -20,7 +20,7 @@ The &lt;i>Calendrier électronique des spectacles sour l'ancien régime et sous 
 
 Website: [http://www.cantataitaliana.it/ http://www.cantataitaliana.it/]
 
-CLORI, which hosts cantata texts, manuscript source citations, and images that show characteristics of handwriting, has a number of sponsors and collaborators including the Italian Musicological Society (SIM in Italian), the University of Rome (Tor Vergata), the Italian Institute for Music History (IISM), and RISM.  The project is headed by Teresa M. Gialdroni.  Click the "ricerca" button to go to the search form.
+CLORI, which hosts cantata texts, manuscript source citations, and images that show characteristics of handwriting, has a number of sponsors and collaborators including the Italian Musicological Society (SIdM in Italian), the University of Rome (Tor Vergata), the Italian Institute for Music History (IISM), and RISM.  The project is headed by Teresa M. Gialdroni.  Click the "ricerca" button to go to the search form.
 
 =====Deutsches Volksliedarchiv (German Folksong Archive)=====
 
@@ -224,13 +224,25 @@ Website: [http://instrumenty.edu.pl/pl/o-projekcie Polish Folk Instruments]
 
 The Museum of Folk Instruments in Szydłowiec, established in 1968, houses the largest collection of folk instruments in Poland and documents rich musical relationships with adjacent regions. Holdings date from the seventeenth century onward and currently number more than 2,000.  The collection (which is housed in the Szydłowiecy-Radziwill Castle, is particularly rich in bowed instruments, cymbals, and bagpipes.  Some links within the site provide sound files.
 
+====Historical and Liturgical Calendars====
+
+=====Historic Calendars of Europe (HCAL)=====
+
+Website: [http://hcal.ccarh.org/ Historic Calendars of Europe (HCAL)]
+
+Those looking to reconcile modern dates with those in use before the Gregorian calendar was adopted can derive a correct translation here.  Many more calendars were in use than those indicated here.  Adoption of the Gregorian (modern Western) calendar occurred between 1582 and 1926.  Standardized tools to generate early calendars (e.g. the Unix cal tool) ignore historical change and thus render incorrect results.  
+
+=====Liturgical Calendars=====
+
+Many sights offer these modern calendars with various degrees of refinement, but they are not appropriate for historical use.  There can be local variations in the days of minor saints.  See such sites as [http://www.liturgyoffice.org.uk/Calendar/ Liturgy Office] (UK); the [https://www.cpg.org/global/online-resources/liturgical-calendar/ Liturgical Calendar Online]; [http://www.goarch.org/chapel/calendar Greek Orthodox].  Some cultures maintain separate civic and religious calendars and thus impose an additional level of complexity to the reconciliation of dates.  Orthodox Jewish culture offers one example.  In simpler circumstances, the [http://www.etz-hayim.com/calendars/ Etz Hayim] website offers instructive examples on the reconciliation of Christian and Jewish dating systems. The [http://muslimvoices.org/islamic-calendar/ Muslim calendar] is complicated in a global context because of its dependence on (the time of) the initial visibility of a new moon, in combination of adherents across many times zones.  Additional cultures and religions, including [http://utbf.org/en/resources/calendar/ Buddhism] and [http://oca.org/fs/paschal-cycle Eastern Orthodoxy], are included in Santa Clara University's [http://www.scu.edu/cas/religiousstudies/news/calendars.cfm Calendars of the World's Religions] website.
+
 ====Other Rubrics====
 
 =====Medici Archive Project=====
 
 Website: [http://www.medici.org/ Medici Archive Project]
 
-The Medici Archive Project (MAP) is an ambitious effort to focus attention on the vast archives of the Medici Principiate in the Florentine State Archives.  It is conceived as a continuing project and has spawned several quasi-independent research projects.  The online database provides short transcriptions from across the entire documentary base.  The project has thus far produced more than 300,000 digitized images from the Medici court.
+The Medici Archive Project (MAP) is an ambitious effort to focus attention on the vast archives of the Medici Principiate (which endured from the early Renaissance until 1737) in the Florentine State Archives.  It is conceived as a continuing project and has spawned several quasi-independent research projects.  The online database provides short transcriptions from across the entire documentary base.  The project has thus far produced more than 300,000 digitized images from the Medici court.
 
 ===Composer/Theorist Documentation===
 
@@ -276,7 +288,7 @@ The aim of this collaborative project, managed by Dexter Edge and David Black, i
 
 Website: [http://www.southampton.ac.uk/music/research/projects/schenker_documents_online_project.page Schenker Documents Online]
 
-Schenker Documents Online (Southampton University) provides a scholarly edition of Heinrich Schenker's correspondence, teaching notes, translations of materials in German, to show the gestation and development of his ideas. It concentrates on the period 1925-1930.
+Schenker Documents Online (Southampton University) provides a scholarly edition of Heinrich Schenker's correspondence, teaching notes, and translations of materials in German that help to show the gestation and development of his ideas. It concentrates on the period 1925-1930.
 
 ====Franz Schubert====
 
