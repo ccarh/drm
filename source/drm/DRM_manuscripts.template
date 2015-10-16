@@ -16,6 +16,11 @@ Website: [http://beethovens-werkstatt.de/demo/index.html Beethovens Werkstatt]
 
 The ambitious &lt;i>Beethovens Werkstatt&lt;/i> project, officially launched in 2014, will between now and 2030 reconstruct (with images and critical notes) the path of development of Beethoven's works from inception to completion.  This project is based on the composer's sketch books, which in the digital version are to be carefully annotated with the help of [http://music-encoding.org/home MEI] (the Music Encoding Initiative), a markup language for the encoding of musical sources facilitating their citation in critical editions.  Bernhard Apel (Beethoven-Haus, Bonn) and Joachim Veit (Musikwissenschaftliches Institut, Detmold/Padlerborn) are the project directors. Johannes Kepper ([http://muwi-detmold-paderborn.de/unser-team/kepper.html Edirom project]) is centrally involved in the technical development of both &lt;i>Werkstatt&lt;/i> and MEI.  The link above shows a prototype browser for viewing both manuscript iterations and modern notation for variants in the first movement of Beethoven's C-Minor Piano Sonata Op. 111 in Variants 14–17 (Beethoven-Haus BH 71).
 
+====Johannes Brahms (Institute)====
+Website: [http://www.brahms-institut.de/web/bihl_digital/autographe.html Johannes Brahms (Institute)]
+
+The Brahms Institute in Lübeck hosts a composite site for [http://www.brahms-institut.de/web/bihl_digital/autographe_start.html autographs], [http://www.brahms-institut.de/web/bihl_digital/erstdrucke_start.html early editions], [http://www.brahms-institut.de/web/bihl_digital/briefe_vb.html letters], and other kinds of documentation associated with Brahms.  In this last category are such things as [http://www.brahms-institut.de/web/bihl_digital/programme_datum.html concert programs] and [http://www.brahms-institut.de/web/bihl_digital/programme_datum.html fragments of music, drawings, and photographs] of and by his associates.
+
 ====The Aaron Copland Collection====
 
 Website: [http://www.loc.gov/collection/aaron-copland/about-this-collection/ The Aaron Copland Collection]
@@ -169,14 +174,15 @@ Website: [http://www.internetculturale.it/opencms/opencms/it/ricercaMag.jsp?sear
 
 [[File: Giasone-Medea_1649_Sc12_Vmn.png|440px|thumb|right|&lt;small>Start of Scene XII (Giasone, Medea) of Francesco Cavalli's &lt;i>Giasone&lt;/i>, Venice, 1649, from the Marciana National Library autograph MS [http://iccu01e.caspur.it/ms/internetCulturale.php?id=oai%3Awww.internetculturale.sbn.it%2FTeca%3A20%3ANT0000%3AIT\\ICCU\\MSM\\0160414&amp;teca=MagTeca+-+ICCU Internet Culturale, I-Vnm, 0160414, f. 103r.]&lt;/small>]]
 
-The "library of St. Mark" (i.e. the Biblioteca Nazionale "Marciana" in Venice) holds acquisitions that have been accumulating since the sixteenth century.  Following guidelines widely shared across music libraries in Italy, it has digitized music manuscripts that are most closely tied to Venice's musical history.  These include many important sources for seventeenth-century Venetian opera (Francesco Cavalli, Domenico Freschi, Giovanni Legrenzi, Carlo Pallavicino, P.A. and M.A. Ziani, and many others); 66 volumes containing cantatas of the eighteenth century by Benedetto Marcello (445 titles) and his nemesis Antonio Lotti; minuets by Baldassare Galuppi; and all the keyboard sonatas of Domenico Scarlatti (357 titles).  Operas can be accessed by act.
+The "library of St. Mark" (i.e. the Biblioteca Nazionale "Marciana" in Venice) holds acquisitions that have been accumulating since the sixteenth century.  Following guidelines widely shared across music libraries in Italy, it has digitized music manuscripts that are most closely tied to Venice's musical history.  These include many important sources for seventeenth-century Venetian opera (Francesco Cavalli, Domenico Freschi, Giovanni Legrenzi, Carlo Pallavicino, P.A. and M.A. Ziani (operas can be accessed by act); 66 volumes containing cantatas of the eighteenth century by [http://www.internetculturale.it/opencms/opencms/it/ricerca_metamag.jsp?semplice.y=0&amp;semplice.x=0&amp;q=Benedetto+Marcello++Marciana+&amp;semplice=semplice&amp;instance=mag Benedetto Marcello] (471 titles) and his nemesis Antonio Lotti; minuets by Baldassare Galuppi; and all the [http://www.internetculturale.it/opencms/opencms/it/ricerca_metamag.jsp?semplice.y=0&amp;semplice.x=0&amp;q=Domenico+Scarlatti+Marciana&amp;semplice=semplice&amp;instance=mag keyboard sonatas of Domenico Scarlatti] (358 titles).
 
 ====Music Manuscripts Online====
 
 Website: [http://www.themorgan.org/music Music Manuscripts Online]
 
-This collection of more than 500 manuscripts at the Morgan Library (New York) comes chiefly from nineteenth-century European composers.
-An integrated [http://www.themorgan.org/collection/music-manuscripts-and-printed-music browsing tool] takes the viewer through music prints and manuscripts.
+[[File:Gluck_Orphée17768.PNG|340px|thumb|left|&lt;small>First page of manuscript selections from a score for C. W. Gluck's &lt;i>Orphée et Euridice&lt;/i> (1776-78) in the [http://www.themorgan.org/music/manuscript/114540 Morgan Library 114540].&lt;/small>]]
+
+This collection of more than 500 manuscripts at the Morgan Library (New York) comes chiefly from eighteenth- to early twentieth-century composers (including but not limited to J. S. Bach, Beethoven, Brahms, Cherubini, Chopin, Debussy, Fauré, Gershwin, Glinka, Gluck, Handel, Haydn, Herbert, Liszt, Mahler, Massenet, Mendelssohn, Meyerbeer, Mozart, Mussorgsky, Paër, Pergolesi, Puccini, Saint-Saëns, Schubert, Schumann, and Wagner). An integrated [http://www.themorgan.org/collection/music-manuscripts-and-printed-music browsing tool] takes the viewer through music prints and manuscripts.
 
 ====Music Treasures Consortium====
 

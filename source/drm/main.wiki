@@ -1,7 +1,7 @@
 __NOTOC__
 
 
-This website provides links to substantial open-access projects of use to musicians and musicologists.  With a burgeoning number of digital resources available, remembering titles of sites and pathways to them can be difficult.  Digital Resources in Musicology (DRM) is organized topically and provides a rapid search tool for specialties within heterogeneous collections.  We have tried to capture some of serendipity of the web and welcome your contributions.  Neither the links or their descriptions are exhaustive.  (For older projects that are not readily accessible online see [[ADAM|ADAM: Archive of Digital Applications in Musicology]].  For curated digital and hybrid editions, see [[EVE_%28Electronic_and_Virtual_Editions%29|EVE: Electronic and Virtual Editions]].)
+This website provides links to substantial open-access projects of use to musicians and musicologists. With a burgeoning number of digital resources available, remembering titles of sites and pathways to them can be difficult. Digital Resources in Musicology (DRM) is organized topically and provides a rapid search tool for specialties within heterogeneous collections. Neither the links or their descriptions are exhaustive. Older projects predated the development of the internet are listed at [[ADAM|ADAM: Archive of Digital Applications in Musicology]]. Curated digital and hybrid editions are itemized at [[EVE_%28Electronic_and_Virtual_Editions%29|EVE: Electronic and Virtual Editions]]. Harvard's [http://guides.library.harvard.edu/onmusic/resources Online Resources for Music Scholars] offer a somewhat different, largely complementary mix of projects. 
 
 == Digitized Music Manuscripts ==
  &lt;div class="mw-collapsible mw-collapsed">

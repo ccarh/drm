@@ -3,7 +3,8 @@
 .PHONY: source images
 
 
-all: source images
+all: update
+update: source images
 
 source:
 	-(cd source && $(MAKE))
