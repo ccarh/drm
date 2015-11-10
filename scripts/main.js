@@ -245,7 +245,7 @@ function displaySearchResults(links) {
 
 //////////////////////////////
 //
-// openCateogryDetails --
+// openCategoryDetails --
 //
 
 function openCategoryDetails() {
@@ -396,6 +396,8 @@ function showImages() {
 	}
 	Images = true;
 }
+
+
 
 //////////////////////////////
 //
