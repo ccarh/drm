@@ -21,7 +21,10 @@ function wiki2html(content) {
 	}
 	output = content.replace(/__NOTOC__/, '');
 	output = output.replace(/&lt;/gm, '<');
-	output = output.replace(/\b--\b/gm, '&ndash;');
+	if (!output.match(http[^\s]+--)) {
+		// Can't mess with -- in http addresses, so don't try.
+		output = output.replace(/\b--\b/gm, '&ndash;');
+	}
 
 	var swaping;
 	var matches;
