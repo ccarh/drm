@@ -275,8 +275,6 @@ function fillSearchForm(elementId) {
 
 
 
-
-
 //////////////////////////////
 //
 // extractPreface --
@@ -571,7 +569,6 @@ $(document).ready(function() {
 			},
 	});
 
-
 });
 
 
@@ -697,10 +694,6 @@ function loadImageData(url) {
 	});
 	xhr.send();
 }
-
-
-
-
 
 
 
