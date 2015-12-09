@@ -70,7 +70,7 @@ This collection, housed at the University of Kentucky, was once owned by the dou
 
 Website: [http://musicatradicional.eu/ Música Tradicional CSIC-IMF (Traditional Music of Spain)]
 
-The &lt;i>Fondo de Música Tradicional&lt;/i>, hosted by the [http://www.imf.csic.es Institució Milá i Fontanals (IMF-CISC)] in Barcelona, includes scans of more than 20,000 melodic transcriptions collected between 1944 and 1960 from regional oral traditions throughout Spain.  Most music in the database was compiled through efforts of the former &lt;i>Instituto Español de Musicología&lt;/i> of [http://www.cisc.es CSIC]. The website/database contains 10,000 unique pieces from more than 4,500 informants at 3,000 locations within Andalusia, the Balearic Islands, Castile-La Mancha, Castile and León Region, Catalonia, Extremadura, Galicia, Murcia Region and the Valencian community.  The collection also includes old [https://www.youtube.com/channel/UCCn_cM8h49z--UnV53R6Q0Q video and audio recordings]. Additional materials are continually being incorporated by the project's team, directed by [http://csic.academia.edu/EmilioRosF%C3%A1bregas Emilio Ros-Fábregas].
+The &lt;i>Fondo de Música Tradicional&lt;/i>, hosted by the [http://www.imf.csic.es Institució Milá i Fontanals (IMF-CSIC)] in Barcelona, includes more than 20,000 melodic transcriptions collected between 1944 and 1960 from regional oral traditions throughout Spain.  Most music in the database was compiled through efforts of the former &lt;i>Instituto Español de Musicología&lt;/i> of [http://www.csic.es CSIC]. The website/database contains 10,000 unique pieces from more than 4,500 informants at 3,000 locations within Andalusia, the Balearic Islands, Castile-La Mancha, Castile and León Region, Catalonia, Extremadura, Galicia, Murcia Region and the Valencian community.  The collection also includes old [https://www.youtube.com/channel/UCCn_cM8h49z--UnV53R6Q0Q video and audio recordings]. Additional materials are continually being incorporated by the project's team, directed by [http://csic.academia.edu/EmilioRosF%C3%A1bregas Emilio Ros-Fábregas].
 
 =====VolksLiedWerke (Austrian Folksong Database)=====
 
@@ -106,6 +106,8 @@ Website: [http://www-musikwissenschaft.uni-r.de/cantus/ CANTUS Regensburg]
 
 CANTUS Regensburg is a long-established web archive for medieval chant research. It includes various databases, e.g. Post Easter and Pentecost Alleluia, Responsory of the Dead (Ottosen), Advent Responsories (Hesbert), Medieval liturgical manuscripts in German and British libraries, medieval chant bibliography, and other pertinent tools.  The project is directed by David Hiley and Robert Klugseder.
 
+=====Cantus Ultimus: See under Search Engines=====
+
 =====&lt;i>ChantDigger&lt;/i>=====
 
 Website: [http://www.oralhistoryofchant.ch/index.php/en/guided-tour ChantDigger]
@@ -136,9 +138,15 @@ This CANTUS-related project stems from the earlier CAO-ECE ([http://gradualia.eu
 
 =====Mass Database=====
 
-Website: [http://www.mdb.uni-mainz.de/ http://www.mdb.uni-mainz.de/]
+Website: [http://www.mdb.uni-mainz.de/ Mass Database (Mainz)]
 
 Records for &lt;i>c&lt;/i>.40,000 settings of the Ordinary of the Mass from 1400 to the present day. In process of migration (March 2014).
+
+=====Mass, Office, and Holy Week Music Printed in Italy (1518-1770)=====
+
+Website: [http://sscm-jscm.org/instrumenta/instrumenta-volumes/instrumenta-volume-2/ Mass, Office, and Holy Week Music Printed in Italy (1516-1770)]
+
+This online catologue by Jeffrey Kurtzman and Anne Schnoebelen in the &lt;i>Journal of Seventeenth-Century Music&lt;/i> Instrumenta series contains 2,004 listings of printed music for the Mass and Office. It includes extensive indices, diplomatic rendering of titles, transcription of dedications, indices and contents, and brief description of part-books.
 
 =====Medieval Music Database (MMD)=====
 
@@ -152,11 +160,17 @@ One of MMD's great strength, for students of liturgy, is the ability to scroll b
 
 The musical examples in MMD were originally produced with Scribe software, also developed by Stinson and Griffiths (c. 1990).  It encoded neumes and ligatures (mainly for fourteenth-century music) for printing on a color deskjet printer.  It was designed for the DOS operating system and could export to the SCORE music-notation program.  [https://jjstoessel.wordpress.com/tag/medieval-music/ Jason Stoessel] is continuing the development of the MMD.
 
-=====Motet Database=====
+=====Motet Database (1475-1600)=====
 
-Website: [http://www.arts.ufl.edu/motet/default.asp Motet Database]
+Website: [http://www.arts.ufl.edu/motet/default.asp Motet Database (1475-1600)]
 
 Jennifer Thomas's guide to motets and Mass Propers in manuscript and printed sources from the period 1475-1600.  33,000 items, indexed section by section. Excludes Magnificats, Lamentations, canticles, and strophic hymns. Offers extensive scribal and source detail.
+
+=====Motets printed in France (&lt;i>Motet imprimé en France&lt;/i> 1647-1789)=====
+
+Website: [http://neuma.huma-num.fr/scorelib/corpus &lt;i>Motet imprimé en France (1647-1789)&lt;/i>]
+
+This project within the NEUMA consortium currently contains a musical index with incipits (available in several formats) for almost 1,000 printed works. Notable composers represented in Campra, Couperin, Clérambault, and  the Dutch polymath Constantijn Huygens together with motets by many little-known composers and several anonymous Noëls. Nathalie Berton-Blivet is the curator.
 
 =====Plainchant Sources in Poland=====
 
@@ -190,13 +204,21 @@ Website: [http://quod.lib.umich.edu/r/relics/ RELICS: A Census]
 
 This database, hosted at the University of Michigan, contains entries on c. 14,000 sources of liturgical music printed through the year 1600.  Started by David Crawford (1995) and continued by James Borders, the database contains entries from publications in France, Germany, and many other European countries. Coverage extends to multiple Roman Catholic rites and to Protestant and Jewish liturgies.
 
-=====Slovak Early Music Database (Cantus Planus in Slovacia)=====
+=====Slovak Early Music Database (Cantus Planus in Slovakia)=====
 
 Website: [http://cantus.sk/ Slovak Early Music Database]
 
 This member of the CANTUS family focuses on manuscript sources (some of them fragmentary) and some early prints from the elventh to the sixteenth centuries. Based at the Slovak Academy of Sciences, it is directed by Eva Veselovska.  The database, on which other Slovak institutions collaborate, currently offers 600 items, which can be searched by title, feast, and other rubrics.  Source images are available at high resolution.
 
 ====Instrumental Music====
+
+=====The Clarinet Quintet=====
+
+Website: [http://clarinetquintet.web.unc.edu/ The Clarinet Quintet]
+
+This online catalog is a continuing project to bring together all repertoire that exists for the clarinet quintet (defined as a string quartet plus a clarinet). The project seeks to offer complete, authoritative data relative to each composition and to demonstrate the totality of the genre. To that end, the site allows for, and welcomes, comments, verifiable corrections, and appropriate ancillary information that may help illuminate a better understanding of an individual work or the entirety of the repertoire.
+
+This online catalog evolved from the personal catalog of Donald L. Oehler.  Currently containing 600 works, it was developed over decades of a professional career. The project will continue to grow as works are regularly entered not only from Oehler's collected catalog listings but from the most recent and reliable data available for new works or newly discovered works. Currently (2015) the online catalog is approaching 400 entries." Each entry shows a facsimile of the first page and gives title concordances and other information about the work. The site's search boxes enables random access. Works can be grouped by period, country of origin, and key. 
 
 =====Classical String Quartets=====
 
@@ -234,6 +256,12 @@ Website: [http://orgs.usd.edu/nmm/ National Music Museum]
 
 The National Music Museum (Vermilion, South Dakota, US) possesses a highly diverse collection of instruments.  It also houses a program on instrument conservation.  The main components of the collections are (1) the Witten-Rawlins  collection of Northern Italian (Brescian-Cremonese) strings from the seventeenth century, (2) an extensive group of instruments manufactured in the US in the nineteenth and twentieth centuries, and (3) a substantial collection of instruments from other parts of the world. The NMM provides links to many other [http://orgs.usd.edu/nmm/collect.html#archives little-known collections].
 
+=====The Piano in Polish Collections=====
+
+Website: [http://www.piano.instruments.edu.pl/en/piano-makers The Piano in Polish Collections]
+
+This website contains databases (with copious photographs) of historic collections, instruments, and ephemera in several Polish collections including the [http://www.piano.instruments.edu.pl/en/collections-/collections/collection/7 Museum of Industrial History in Opatowic], the [http://www.piano.instruments.edu.pl/en/collections-/collections/collection/6 Andrzej Szwalbe Collection] in Ostromecko, and the [http://www.piano.instruments.edu.pl/en/collections-/collections/collection/5 Fryderyk Chopin Institute]in Warsaw. Many of the photographs in the [http://blog.instrumenty.edu.pl/ blog] contain sketches, pastels, lithographs, and paintings of musicians at work.
+
 =====Polish Folk Instruments=====
 
 Website: [http://instrumenty.edu.pl/pl/o-projekcie Polish Folk Instruments]
@@ -244,11 +272,11 @@ The Museum of Folk Instruments in Szydłowiec, established in 1968, houses the l
 
 ====Historical and Liturgical Calendars====
 
-=====Historic Calendars of Europe (HCAL)=====
+=====Historical Calendars of Europe (HCAL)=====
 
 Website: [http://hcal.ccarh.org/ Historic Calendars of Europe (HCAL)]
 
-Those looking to reconcile modern dates with those in use before the Gregorian calendar was adopted can derive a correct translation here.  Many more calendars were in use than those indicated here.  Adoption of the Gregorian (modern Western) calendar occurred between 1582 and 1926.  Standardized tools to generate early calendars (e.g. the Unix cal tool) ignore historical change and thus render incorrect results.  
+Those looking to reconcile modern dates with those in use before the Gregorian calendar was adopted can derive a correct translation here.  Many more calendars were in use than those indicated here.  Adoption of the Gregorian (modern Western) calendar occurred between 1582 and 1926.  Standardized tools to generate early calendars (e.g. the Unix cal tool) ignore historical change and thus render incorrect results.
 
 =====Liturgical Calendars=====
 
@@ -470,6 +498,16 @@ Database of 330,000 records from the &lt;i>Hofmeister Monatsberichte&lt;/i>, 182
 ===Libretto Portals===
 
 [[File:Rinucc-Arianna-1639.png|200px|thumb|right|&lt;small>Title-page of Rinuccini's Arianna, set to music by Monteverdi (Venice, 1639).  Braidense National Library, Milan, [http://www.braidense.it/rd/00497.pdf Corniani-Algarotti No. 0497].&lt;/small>]]
+
+====Corago Project====
+
+Website: [http://corago.unibo.it Corago Project]
+
+The Corago website contains multiple indices related to the history of opera. The [http://corago.unibo.it/libretti libretto search engine] is a comprehensive tool for locating information about librettos in catalogued collections. Hyperlinks to digitized librettos (see below) are inserted as appropriate. 
+
+A [http://corago.unibo.it/risultatoopere database of productions] continues up to present times. Clicking in the top row of the results orders results according to user preferences.  
+
+Corago is a collaborative project headed by Angelo Pompilio.  Institutional cooperation is provided by almost two dozen institutions in Northern Italy. The two largest libretto collections included are the Corniati-Algarotti (12,000 librettos) listed separately below and that of the Museo Internazionale e Biblioteca della Musica (11,000 librettos) in Bologna. Corago is the central search-engine for digitized libretti in the Bologna collection, but other pertinent materials can be found [http://www.museibologna.it/musica/documenti/53237 here].
 
 ====Corniani-Algarotti Collection====
 
