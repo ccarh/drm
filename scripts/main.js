@@ -72,7 +72,6 @@ document.addEventListener("keyup", function(event) {
 //
 
 document.addEventListener('keypress', function(event) {
-console.log("keyCode =", event.keyCode);
 	if ((typeof event.target.id !== 'undefined') &&
 			event.target.id.match(/search-text/i)) {
 		// don't process the keyboard command if searching for text
