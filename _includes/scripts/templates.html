@@ -293,6 +293,8 @@ Handlebars.registerHelper('image', function(url) {
 		filename = matches[1];
 		filename = filename.replace(/\.png$/, '.jpg');
 		filename = filename.replace(/\.PNG$/, '.jpg');
+		filename = filename.replace(/ /g, '_');
+		filename = filename.replace(/%20/g, '_');
 	}
 	var newurl = '/images/wiki/' + filename;
 	return '<a target="_new" href="' + url + '"><img src="' + newurl + '\"></a>';

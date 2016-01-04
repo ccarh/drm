@@ -1,3 +1,4 @@
+
 	{% if page.url == "/index.html" %}
 		<section class="page-header">
 		<h1 class="project-name">Digital Resources for Musicology</h1>
@@ -54,35 +55,34 @@
 
 <table style="margin-left:60px; margin-right: 60px;" class="no-print">
 <tr>
-<td class="links-top">
-
-<nobr>
-<span>
-    <a title="Archive of Digital Applications in Musicology" style="color:white;" href="http://adam.ccarh.org">ADAM</a>
-</span>
-
-|
-
-<span>
-    <a title="Electronic and Virtual Editions" style="color:white;" href="http://eve.ccarh.org">EVE</a>
-</span>
-</nobr>
-
+<td style="class="links-top">
+	<nobr>
+	<span>
+    	<a title="Archive of Digital Applications in Musicology" style="color:white;" href="http://adam.ccarh.org">ADAM</a>
+	</span>
+	
+	|
+	
+	<span>
+    	<a title="Electronic and Virtual Editions" style="color:white;" href="http://eve.ccarh.org">EVE</a>
+	</span>
+	</nobr>
 </td>
+
 <td style="width:100%; text-align:center;">
 
-<span style="position:relative; left:-50px;" class="myButton" onclick="goToSubmitForm();">
+<span style="" class="myButton" onclick="goToSubmitForm();">
 	Submit an entry
 </span>
 </td>
 
-<td>
+<td style="padding-right:5px;">
 <nobr>
-<span class="top-icons no-print" style="float:right; padding-right:2cm;">
-	<span style="padding-right:10px;" class="search-help">
+<span class="top-icons no-print">
+	<span style="padding-right:20px;" class="search-help">
 		<span class="glyphicon glyphicon-search"></span>
 	</span>
-	<span style="padding-right:10px;" class="keyboard-help">
+	<span style="padding-right:20px;" class="keyboard-help">
 		<span class="glyphicon glyphicon-th"></span>
 	</span>
 	<span onclick="printPage(event);" title="print" 
@@ -103,8 +103,9 @@
 	{% else %}
 	{{ page.url }}
 		<section style="height:100px; padding-left:15px;" class="page-header">
+		<center>
 		<table><tr><td>
-		<a href="/"><h1 class="project-name2">Digital Resources for Musicology</h1></a>
+		<a href="/"><h1 class="project-name2">Zigital Resources for Musicology</h1></a>
 		</td><td>
 		<h2 class="project-tagline2" style="padding-top:0; margin-top:0px;">
 		{% if page.title %}
@@ -113,7 +114,9 @@
 			{{ site.title }}
 		{% endif %}
 		</h2>
-		</td></tr></table>
+		</td></tr>
+		</table>
+		<center>
 	{% endif %}
 </section>
 

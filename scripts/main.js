@@ -684,6 +684,8 @@ function loadImageData(url) {
 	if (filename.match(/\.jpg$/i)) {
 		type = 'image/jpeg';
 	}
+	filename = filename.replace(/ /g, "_");
+	filename = filename.replace(/%20/g, "_");
 
 	var xhr = new XMLHttpRequest();
 	xhr.open('GET', '/images/wiki/' + filename, true);
