@@ -36,6 +36,7 @@ for (my $i=0; $i<@templates; $i++) {
    $content = getRawWikiFile("${base}Template:$templates[$i]&action=edit");
 	while ($content =~ /File:\s*([^|]+)\s*\|/g) {
 		$file = $1;
+      $file =~ s/\s/_/g;
 		$hex = md5_hex($file);
 		$hex =~ /^(.)/;
 		$first = $1;

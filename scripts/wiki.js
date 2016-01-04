@@ -88,7 +88,12 @@ function convertWebsiteLinks(output) {
 	var matches;
 	var m2;
 	var link;
+	var counter = 0;
 	while (matches = output.match(/Website:\s*\[(.*?)\]/i)) {
+		if (counter++ > 100) {
+			console.log("Improper formatting for", output);
+			break;
+		}
 		temp = matches[1];
 		if (m2 = temp.match(/^([^\s]+)/)) {
 			link = m2[1];
