@@ -742,7 +742,7 @@ function loadCategoryContent(index) {
 function parseCreditsContent(content) {
 	var credits = wiki2html(content);
 	credits = credits.replace(/<\/?small>/g, '');
-	credits = '<b>Credits:</b> &nbsp;&nbsp;' + credits;
+	credits = '<b>Credits:</b> &nbsp;' + credits;
 	setCredits(credits);
 }
 
