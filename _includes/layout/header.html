@@ -1,5 +1,4 @@
 
-	{% if page.url == "/index.html" %}
 		<section class="page-header">
 		<h1 class="project-name">Digital Resources for Musicology</h1>
 <style>
@@ -99,25 +98,6 @@
 
 <br>
 <br>
-
-	{% else %}
-	{{ page.url }}
-		<section style="height:100px; padding-left:15px;" class="page-header">
-		<center>
-		<table><tr><td>
-		<a href="/"><h1 class="project-name2">Digital Resources for Musicology</h1></a>
-		</td><td>
-		<h2 class="project-tagline2" style="padding-top:0; margin-top:0px;">
-		{% if page.title %}
-			{{ page.title }}
-		{% else %}
-			{{ site.title }}
-		{% endif %}
-		</h2>
-		</td></tr>
-		</table>
-		<center>
-	{% endif %}
 </section>
 
 
