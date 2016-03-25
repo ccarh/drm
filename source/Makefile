@@ -11,7 +11,7 @@
 
 .PHONY: drm eve
 
-all: drm eve
+all: drm
 
 
 drm:
