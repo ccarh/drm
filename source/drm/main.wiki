@@ -63,6 +63,11 @@ This website provides links to substantial open-access projects of use to musici
 {{DRM_images}}
  &lt;/div>
 
+== Copyright ==
+&lt;div class="mw-collapsible mw-collapsed">
+{{DRM_copyright}}
+&lt;/div>
+
 == Credits ==
 &lt;div class="mw-collapsible mw-collapsed">
 {{DRM_credits}}

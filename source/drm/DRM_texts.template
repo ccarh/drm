@@ -1,16 +1,22 @@
 
 
-===Deutsches Text Archiv===
+===Deutsches Textarchiv===
 
-Website: [http://www.deutschestextarchiv.de/list/ Deutsches Text Archiv]
+Website: [http://www.deutschestextarchiv.de/list/ Deutsches Textarchiv  (German Text Archive)]
 
-This carefully executed project aims to put the classic printed literature in German online. Its holdings are far better curated than the same titles in Google Books and other aggregation gateways.  Optically recognized text is shown side-by-side with the original image.  Books are categorized by century (according to date of publication).  Contains dramas ([http://de.wikipedia.org/wiki/Johann_Wolfgang_von_Goethe Goethe]), treatises ([http://de.wikipedia.org/wiki/Karl_Marx Karl Marx]), autobiographies ([http://en.wikipedia.org/wiki/Otto_von_Bismarck Otto von Bismark]), lyrics ([http://de.wikipedia.org/wiki/Barthold_Heinrich_Brockes Brockes], [http://de.wikipedia.org/wiki/Friedrich_Gottlieb_Klopstock Klopstock]), novels ([http://de.wikipedia.org/wiki/Jean_Paul Jean Paul]), legal writings, local history, travel literature, theology, satire, and a long list of short-run early newspapers.  The great strengths of the DTA include its internal search, its [http://www.deutschestextarchiv.de/book/view/trichter_ritterexercitienlexikon_1742/?hl=Matthe%C5%BFon&amp;p=158 side-by-side view of original and recognized text], and its tiered metadata structures.
+This carefully executed project aims to put the classic printed literature in German online. Its holdings are far better curated than the same titles in Google Books and other aggregation gateways.  Optically recognized text is shown side-by-side with the original image.  Books are categorized by century (according to date of publication).  Contains dramas ([http://de.wikipedia.org/wiki/Johann_Wolfgang_von_Goethe Goethe]), treatises ([http://de.wikipedia.org/wiki/Karl_Marx Karl Marx]), autobiographies ([http://en.wikipedia.org/wiki/Otto_von_Bismarck Otto von Bismark]), lyrics ([http://de.wikipedia.org/wiki/Barthold_Heinrich_Brockes Brockes], [http://de.wikipedia.org/wiki/Friedrich_Gottlieb_Klopstock Klopstock]), novels ([http://de.wikipedia.org/wiki/Jean_Paul Jean Paul]), legal writings, local history, travel literature, theology, satire, and a long list of short-run early newspapers.  DTA holdings are [http://www.tei-c.org/index.xml TEI]-complaint.  The great strengths of the DTA include its internal search, its [http://www.deutschestextarchiv.de/book/view/trichter_ritterexercitienlexikon_1742/?hl=Matthe%C5%BFon&amp;p=158 side-by-side view of original and recognized text], and its tiered metadata structures.
 
 ===Digital Libraries Gateway===
 
 Website: [http://international.loc.gov/intldl/find/digital_collaborations.html Collaborative Digital Libraries Gateway]
 
 This Library of Congress gateway for international projects gives an overview of collaborative projects with an American component and currently includes Brazil, France, the Netherlands, and Siberia.
+
+===Early English Books Online (EEBO)===
+
+Website: [http://quod.lib.umich.edu/e/eebogroup/ Early English Books Online (EEBO)] 
+
+Early English Books Online offers a digitized image of every text published in English between 1483 and 1700.  At its core it is commercial, but several universities support searches of the material. More than 60,000 texts are searchable at the University Michigan site linked above.  Publication metadata are made available under the auspices of the Text Creation Partnership.
 
 ===Medieval Nordic Text Archive===
 
@@ -44,6 +50,18 @@ The Packard Humanities Institute has encoded and in some cases translated a larg
 Website: [http://www.rousseauonline.ch/tdm.php Rousseau Online: Contents]
 
 Rousseau's writings contain countless items of interest.  Here you can find the text of Pygmalion, Rousseau's &lt;i>Essay on Modern Music&lt;/i>, his letters to Charles Burney and Messieur Raynal, the &lt;i>Dictionnaire de la Musique&lt;/i>, and a host of miscellaneous writings from all periods of his life.  The script is modern.  ePub and PDF formats are both supported.
+
+===TextGrid Repository===
+
+Website: [https://textgridrep.org TextGrid Repository]
+
+The TextGrid Repository contains metadata concerning a wude-ranging  miscellany of verse, prose, drama, and other writings.  Verse is the largest category, with 118,000 items at present. The other three combined amount to roughly 66,000 items. The "grid" is formed by hyperlinked metadata. The objects themselves are in various other locations but will eventually be directly downloadable.
+
+===Théâtre classique===
+
+Website: [http://http://www.theatre-classique.fr/pages/programmes/PageEdition.php Théâtre classique (Classic Theater)]
+
+Classic Theater is an umbrella website focused on French dramas from the sixteenth, seventeenth, and eighteenth centuries. Full texts (852) in HTML, PDF, and sometimes other formats are available for the works of [https://en.wikipedia.org/wiki/Thomas_Corneille Thomas Corneille], [https://en.wikipedia.org/wiki/Denis_Diderot Denis Diderot], [https://en.wikipedia.org/wiki/Jean_de_La_Fontaine Jean de La Fontaine], [https://en.wikipedia.org/wiki/Pierre_de_Marivaux Pierre de Marivaux], [https://en.wikipedia.org/wiki/Moli%C3%A8re Molière] (Jean-Baptiste Poquelin), [https://en.wikipedia.org/wiki/Jean_Racine Jean Racine], [https://en.wikipedia.org/wiki/Voltaire Voltaire] (François-Marie Arouet), and many other dramatists. All texts are [http://www.tei-c.org/index.xml TEI]-compliant.  Materials can be located by place, date, author, and several other rubrics. Among its dependent sites, the &lt;i>Pièces des registres de la Comédie Française&lt;/i>  (1060) gives genre and exact date for the performances of the Comédie from its founding in 1680 up to the Revolution.  This project is a collaboration with the [http://cfregisters.org Comédie Française Registers Project]. It builds on the work of the the [http://www.cesar.org.uk/ Calendrier Électronique des Spectacles sous l’Ancien Régime et sous la Révolution] (listed separately under structured databases).
 
 ===Text Collections Online===
 

@@ -6,20 +6,28 @@ Website: [http://www2.bne.es/CANT_web/irBuscadorPentagrama.do?lang=es_ES Cantora
 
 This search site for individual chants found in Canorales (choir books) of Spanish libraries can be searched by text or musical incipit. (Click on the musical staff and enter at least two notes to see how the music search works.)  The [http://www2.bne.es/CANT_web/irBuscadorAvanzado.do advanced search] (Busqueda avanzada) provides a dozen fields, including feast days.  
 
-===Cantus Ultimus===
+===Cantus Index===
 
-Website: [http://cantus.uwaterloo.ca/ Cantus Ultimus]
+Website: [http://cantus.uwaterloo.ca/ Cantus Index]
 
-This aggregation site at the University of Waterloo (CA) performs melodic searches in several collections of chant data encoded according the the principles of the Cantus database but expanding from antiphoners and breviaries to manuscript sources containing Mass sections and sequences. The databases currently searched are these:
+This aggregation at the University of Waterloo (CA) performs melodic searches in several collections of chant data encoded according the principles of the Cantus database network.  It is expanding from antiphoners and breviaries to manuscript sources containing Mass sections and sequences. The databases currently searched are these:
 
 * [http://cantusdatabase.org/ CANTUS] (now maintained by Debra Lacoste, University of Waterloo)
 * [http://pemdatabase.eu/compositions Portuguese Early Music Database] (Manuel Pedro Ferreira, Lisbon)
-* Slovakian Early Music Database (Eva Veselovskà, Bratislava)
+* [http://cantus.sk/ Slovakian Early Music Database] (Eva Veselovskà, Bratislava)
 * [http://wiki.ccarh.org/index.php?title=Template:DRM_databases&amp;action=edit&amp;section=20 Gradualia Project] (Gàbor Kiss, Budapest)
 * [http://cantusbohemiae.cz/ Fontes Cantus Bohemiae] (Jan Kolacek and David Eben, Prague)
-* Cantus Planus in Polonia (Bartosz Izbicki, Warsaw) 
+* [http://cantus.edu.pl/ Cantus Planus in Polonia] (Bartosz Izbicki, Warsaw) 
 
 User contributions are welcomed.
+
+===Dutch Song Database and Search Engine (Nedelandse Liederenbank)===
+
+Website: [http://www.liederenbank.nl/searchmusic/piano.php? Liederenbank (Dutch Song Search Engine)]
+
+The Dutch Song database (Nederlandse Liederenbank) lists 150,000 songs in Dutch and Flemish from the middle ages through the 20th century. It includes love songs, satirical songs, Beggar songs, psalms and other religious songs, folksongs, children's songs, holiday songs, and much else. Among the other searches supported, its [http://www.liederenbank.nl/searchmusic/piano.php?&amp;lan=en melodic search engine] is particularly effective.  
+
+Sources include sources for all these songs are songbooks, songsheets (broadsides), song manuscripts and fieldwork recordings.  The Meertens Institute (Amsterdam) compiled the database, which is now maintained by the Centre for Documentation and Research on Dutch Song. The impetus for starting the project came from the Utrecht ensemble Camerata Trajectina, which has now donated its recordings to the website. In 2014 the project was awarded the Dutch Data Prize in Humanities and Social Sciences.
 
 ===&lt;i>e-manuscripta&lt;/i>===
 
@@ -113,3 +121,15 @@ The &lt;i>Themefinder&lt;/i> search engine was prototyped at CCARH in 1996 by Da
 Incipits can be searched at five points on a continuing from the most specific to the fuzziest.  Filter for meter, mode, and key may be used.  MIDI files are available for each entry. Help menus are available at the website.  Those interested in contributing an encoded repertory to &lt;i>Themefinder&lt;/i> should describe the existing repertory and format in a query letter.
 
 Related literature: [https://ccrma.stanford.edu/~craig/papers/04/ismir2004slf.pdf "Search-Effectiveness Measures for Symbolic Music Queries in Very Large Databases"] (Craig Stuart Sapp, Yi-Wen Liu, and Eleanor Selfridge-Field, ISMIR Proceedings 2004)
+
+===World Digital Library===
+
+[[File:Orestes408_edited-1.png|160px|thumb|left|&lt;small>A fragment from a chorus in Euripedes' &lt;i>Orestes&lt;/i> in the [https://www.wdl.org/en/item/4309/#q=musical+scores Austrian National Library&lt;/small>].]]
+
+Website: [http://www.wdl.org World Digital Library]
+
+This UNESCO-sponsored listing of digitized sources includes a number of significant musical works in single-item digitizations.  The first chorus of Euripedes' &lt;i>Orestes&lt;/i> (408 BCE, from the Austrian National Library) represents the oldest contribution found here.  Although the source is necessarily deteriorated, vocal and instrumental symbols are found within it. 
+
+[[File:Paradiso.PNG|320px|thumb|right|&lt;small>The start of the third part (&lt;i>Paradise&lt;/i>) of Dante Alighieri's &lt;i>Divine Comedy&lt;/i> as copied by Giovanni Boccaccio (after 1348) in the [https://www.wdl.org/en/item/10650/view/1/255/ Ricciardiana Library, Florence&lt;/small>].]]
+
+Other WDL holdings include numerous sacred vocal works from the Ars Nova and Renaissance, German operettas, and twentieth-century sheet music.  Other highlights include more than 2,700 historical maps from all parts of the world, a handful of treatises on music and music theory (including later colored drawings of St. Jerome's "Instruments of Hieronymous" (before 420 CE) and a seventeenth-century manual on the Chinese zither (&lt;i>quin&lt;/i>).
