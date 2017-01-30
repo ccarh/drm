@@ -80,11 +80,17 @@ The VolksLiedWerke is assembled from collections originating in Austria's states
 
 ====Sacred and Liturgical Music====
 
-=====CANTUS: A Database for Latin Ecclesiastical Chant===== 
+=====Antiphonale Synopticum=====
 
-Website: [http://cantusdatabase.org/ CANTUS (Database)]
+Website: [http://gregorianik.uni-regensburg.de Antiphonale Synopticum]
 
-CANTUS is a large, steadily growing umbrella site for indices of Latin ecclesiastical chant.  Originally a project of the Cantus Planus study group of the International Musicological Society, its original home was the Catholic University of America (Washington, DC) under Ruth Steiner.  Debra Lacoste (University of Waterloo) is its current project manager. Jan Kolacek (Charles University, Prague) is its current developer.  Users can search by textual incipit, keyword, saints’ name, liturgical occasion, and chant identification number.  Tools for browsing, analysis, and data-entry are provided. Several further listings pertain to the CANTUS Index Group--a series of projects employing the same structure and methodology.
+The Antiphonale Synopticum project (currently in German only) is the most recent addition to the Cantus Index Network–a series of connected, online projects employing the same structure and methodology. Based at the Universität Regensburg, it is directed by Harald Buchinger.  It seeks to support identification of textual and melodic variants.  Antiphonale Synopticum and its networked partners operate under the guidelines of the Cantus Planus Study Group of the International Musicological Society, which include the free and open exchange of data in electronic form.
+
+=====CANTUS Manuscript Database: A Database for Latin Ecclesiastical Chant===== 
+
+Website: [http://cantus.uwaterlook.ca/ Cantus Manuscript Database]
+
+Cantus is a large, steadily-growing resource containing inventories of medieval chant manuscripts and related analytical tools. Its original home was the Catholic University of America (Washington, DC) under Ruth Steiner. After a period at the University of Western Ontario (London) under Terence Bailey, the database was moved to the University of Waterloo where Debra Lacoste is the current project manager and Jan Koláček (Prague) is its web developer. It has recently expanded from inventories of antiphoners and breviaries to manuscript sources containing Mass chants, including sequences. By providing a searchable database of detailed information for (currently) over 160 medieval manuscripts and over 440,00 chants, the Cantus Manuscript Database is a useful digital archive for musicologists and other academic researchers, librarians, archivists, as well as performers of this early music. Users can search for chants by text, saints’ name or liturgical occasion, and Cantus ID number. Tools for browsing, analysis, and data-entry are provided. An introduction to the database can be found in a YouTube video by Lacoste (2014). The Cantus Manuscript Database is the flagship site in the Cantus Index Network–a series of connected, online projects employing the same structure and methodology. The Cantus Manuscript Database, Cantus Index, and its networked partners operate under the guidelines of the Cantus Planus Study Group of the International Musicological Society, which include the free and open exchange of data in electronic form.
 
 =====Cantus Fractus Database (&lt;i>Projetto Raphael&lt;/i>)=====
 
@@ -94,17 +100,11 @@ Website: [http://www.cantusfractus.org/ Cantus Fractus]
 
 An abiding problem in chant research is the evaluation of rhythm and proportion.  This website (in Italian) by Marco Gozzi explores interpretative methods for repertories that are viewable online in early prints and manuscripts.  A [http://www.cantusfractus.org/raph_1/database.htm search form] facilitates the retrieval of examples by source location.  Excellent leaf-by-leaf viewing tools are provided.
 
-=====Cantus Planus (Medieval Music Manuscripts Austria)=====
+=====Cantus Planus Regensburg=====
 
-Website: [http://cantusplanus.at Cantus Planus (Musikalische Quellen des Mittelalters)]
+Website: [http://www-musikwissenschaft.uni-r.de/cantus/ Cantus Planus Regensburg]
 
-The Cantus Planus website (officially entitled &lt;i>Musikalische Quellen des Mittelalters&lt;/i>, or Musical Sources of the Middle Ages), based at the Austrian Academy of Science, provides detailed information on medieval music manuscripts in the Austrian National Library, with basic information for manuscripts in all other Austrian libraries. Images for all manuscripts of the National Library plus full digitalizations of some special manuscripts (14,500 images) are provided. Access is also provided to the (manually compiled) database of Constantin Schneider (1928), which addresses more than 1,650 sources. Several other data resources are included. The project leader is Robert Klugseder.
-
-=====CANTUS Regensburg=====
-
-Website: [http://www-musikwissenschaft.uni-r.de/cantus/ CANTUS Regensburg]
-
-CANTUS Regensburg is a long-established web archive for medieval chant research. It includes various databases, e.g. Post Easter and Pentecost Alleluia, Responsory of the Dead (Ottosen), Advent Responsories (Hesbert), Medieval liturgical manuscripts in German and British libraries, medieval chant bibliography, and other pertinent tools.  The project is directed by David Hiley and Robert Klugseder.
+Cantus Planus Regensburg is a long-established web archive for medieval chant research. It includes downloadable data files and various databases, e.g. Post-Easter and Pentecost Alleluias, Responsories of the Dead (Ottosen), Advent Responsories (Hesbert), Medieval liturgical manuscripts in German and British libraries, and other pertinent tools such as David Hiley’s (et al) very useful medieval chant bibliographies. The project is directed by David Hiley and Robert Klugseder.
 
 =====Cantus Ultimus: See under Search Engines=====
 
@@ -114,27 +114,46 @@ Website: [http://www.oralhistoryofchant.ch/index.php/en/guided-tour ChantDigger]
 
 The online implementation of Max Haas's lengthy investigation of chant variants is recent. After loading the data one can search either by text or by melody.  A "canvas" offers a graph to map chant movement.
 
+=====&lt;i>Comparatio&lt;/i> (Chant Comparison)=====
+
+[[File:comparatio_Adoremus.png|300px|thumb|right|&lt;small>Setting of first two words of the antiphon "Adoremus Christum" from six of ten sources included in the &lt;i>Comparatio&lt;/i> database (Cantus No. 001006)&lt;/small>.]]
+
+Website: [http://comparatio.irht.cnrs.fr/ Comparatio (Chant Comparison)]
+
+&lt;i>Comparatio&lt;/i>, a member of the Cantus Index Network, presents transcriptions of selected chants in side-by-side views to facilitate the identification of liturgical traditions. It was developed at the Institut de recerche et d'histoire des textes (IRHT) of the Centre national de la recerche scientifique (CNRS) by Claire Maître. Comparatio and its networked partners operate under the guidelines of the Cantus Planus Study Group of the International Musicological Society, which include the free and open exchange of data in electronic form.
+
 =====Conductus: Online catalogue of poetry and musical settings===== 
 
 Website: [http://catalogue.conductus.ac.uk/#m-columnbrowser@||m-informationcontrol@url=html/home.php Conductus]
 
-Mark Everist's conductus cataogue, officially called CPI (&lt;I>Cantus pulcriorem invenire&lt;/i>), contains 866 works found in 547  sources (start of 2015).  It facilitates search by title, source, form, style of setting, stanza, poet, language, poetic structure (several subfields), and terminal accent. Sources listed are digitized and viewable online.  Cross-listed to DIAMM and RISM.
+Mark Everist's conductus catalogue, officially called CPI (&lt;I>Cantus pulcriorem invenire&lt;/i>), contains 866 works found in 547  sources (start of 2015).  It facilitates search by title, source, form, style of setting, stanza, poet, language, poetic structure (several subfields), and terminal accent. Sources listed are digitized and viewable online.  Cross-listed to DIAMM and RISM.
 
 =====Fontes Cantus Bohemiae=====
 
 Website: [http://cantusbohemiae.cz/ Fontes Cantus Bohemiae]
 
-This collaboration aims to inventory chant sources in Czech regions of Central Europe. Data representing 7,200 chants from the 12th-14th centuries have been uploaded to date in CANTUS-compatible formats.
+Fontes Cantus Bohemiae is a member of the Cantus Index Network–a series of connected, online projects employing the same structure and methodology. This site aims to inventory chant sources in Czech regions of Central Europe. Data representing 7,200 chants from the 12th-14th centuries have been uploaded to date in CANTUS-compatible formats.
+
+FCB and its networked partners operate under the guidelines of the Cantus Planus Study Group of the International Musicological Society, which include the free and open exchange of data in electronic form.
+
+=====Gregorien=====
+
+Websites: [http://gregorien.info Gregorian Chant Texts (search in German, chants in Latin)] 
+Website: [http://gregorien.info/en Gregorian Chant Texts (search in English, chants in Latin)]
+
+Under the [http://gregorien.info/fr Répertoire] tab of the [http://www.gregorien.be/ Académie de Chant grégorien], the website Gregorien.info contains thousands of chant texts, their sources, and translations. The site is linked to the Cantus Index Network, and is now owned and directed by Inga Behrendt. The history of the development of the website is here. Gregorien.info and its networked partners operate under the guidelines of the Cantus Planus Study Group of the International Musicological Society, which include the free and open exchange of data in electronic form.
 
 =====Hungarian Chant Database=====
 
 Website: [http://gradualia.eu/ Hungarian Chant Database]
 
-This CANTUS-related project stems from the earlier CAO-ECE ([http://gradualia.eu/cao-ece Corpus Antiphonalium Officii - Ecclesiarum Centralis Europae]) work, which was designed to inventory and compare medieval Central European Office repertories. The component parts are these:
+The Hungarian Chant Database is a member of the Cantus Index Network–a series of connected, online projects employing the same structure and methodology. The Hungarian Chant Database stems from the earlier CAO-ECE (Corpus Antiphonalium Officii - Ecclesiarum Centralis Europae) work, which was designed to inventory and compare medieval Central European Office repertories. The component parts are these: 
 
-(1) CAO-ECE, the original component, was intended to facilitate studies of change in liturgical traditions over time and study other relationships within the liturgical Office of the middle ages.  
+(1) CAO-ECE, the original component, was intended to facilitate studies of change in liturgical traditions over time and the study of other relationships within the liturgical Office of the middle ages. 
 
-(2)  [http://gradualia.eu/sources Gradualia], the newer component, brings similar capabilities to the medieval Mass but with greater attention to source material.
+(2) &lt;i>Gradualia&lt;/i>, the newer component, brought similar capabilities to the medieval Mass but with greater attention to source material.
+
+The HCD and its networked partners operate under the guidelines of the Cantus Planus Study Group of the International Musicological Society, which include the free and open exchange of data in electronic form.
 
 =====Hymn Tune Index=====
 
@@ -157,6 +176,12 @@ Records for &lt;i>c&lt;/i>.40,000 settings of the Ordinary of the Mass from 1400
 Website: [http://sscm-jscm.org/instrumenta/instrumenta-volumes/instrumenta-volume-2/ Mass, Office, and Holy Week Music Printed in Italy (1516-1770)]
 
 This online catologue by Jeffrey Kurtzman and Anne Schnoebelen in the &lt;i>Journal of Seventeenth-Century Music&lt;/i> (JSCM) &lt;i>Instrumenta&lt;/i> series contains 2,004 listings of printed music for the Mass and Office. The resource provides complete verbal material (title pages, dedications, prefaces, indices, contents by text incipits, liturgical and performance rubrics, and all other verbal material with the exception of full texts), most in diplomatic transcription, of all known prints of this repertoire. The remarks include format, sources consulted and other information of particular note.  Entries, in pdf format, are fully searchable with lengthy indices of less obvious terms in all orthographical variants.
+
+=====Medieval Music Manuscripts, Austria=====
+
+Website: [http://cantusplanus.at Medieval Muisic Manuscripts, Austria]
+
+The CantusPlanus.at website (officially entitled &lt;i>Musikalische Quellen des Mittelalters&lt;/i>, or Musical Sources of the Middle Ages in the Austrian National Library), based at the Austrian Academy of Science, provides both detailed information on medieval music manuscripts in the Austrian National Library and basic information for manuscripts in all other Austrian libraries. Images for all manuscripts of the National Library plus full digitizations of some other special manuscripts (14,500 images) are provided. There is also access to the (manually-compiled) database of Constantin Schneider (1928), which addresses more than 1,650 sources. Several other data resources are included. Although not officially connected to the Cantus Index Network or Cantus Manuscript Database, several codices have been inventoried according to “Cantus” standards. The project leader is Robert Klugseder.
 
 =====Medieval Music Database (MMD)=====
 
@@ -202,9 +227,9 @@ Most pages contain explanations in both Spanish and English.  The search page (i
 
 =====Plainchant Sources in Poland=====
 
-Website: [http://cantus.edu.pl/ Plainchant Sources in Poland]
+Website: [http://cantus.edu.pl/ Plainchant Sources in Poland (Cantus Planus in Polonia)]
 
-This member of the CANTUS Index Group provides access to both Mass and Office sources in a range of libraries in Poland.  It is based at the Polish Academy of Sciences in collaboration with other institutions and is directed by Bartosz Izbichi. Within Poland it is cross-linked with several music-bibliography sites.  
+This member of the Cantus Index Network provides access to both Mass and Office sources in a range of libraries in Poland. It is based at the Polish Academy of Sciences in collaboration with other institutions and is directed by Bartosz Izbicki. Within Poland it is cross-linked with several music-bibliography sites. Cantus Planus in Polonia and its networked partners operate under the guidelines of the Cantus Planus Study Group of the International Musicological Society, which include the free and open exchange of data in electronic form.
 
 =====Portuguese Early Music (PEM) Database=====
 
@@ -212,7 +237,7 @@ Website: [http://pemdatabase.eu/compositions Portuguese Early Music Database (PE
 
 [[File:Cancion-small.jpg|200px|thumb|left|&lt;small>Illumination from an early Portuguese cancional.&lt;/small>]]
 
-The Portuguese Early Music Database (PEM) is a model website in that it links Portuguese music manuscript listings with both RISM entries and the CANTUS database.  PEM is searchable by genre, feast, and composer.  The digital holdings of the Centro de Estudios de Sociologia e Estética Musical consist overwhelmingly of short sacred vocal works found sources that are extremely fragile and therefore well served by digitization. Manuscripts come mainly from the 14th–16th centuries.  All sources are reproduced in color.  A full listing is [http://pemdatabase.eu/archive/4160 here].  PEM also maintains a list of links for early [http://pemdatabase.eu/links sacred-music projects].
+The Portuguese Early Music Database (PEM) links Portuguese music manuscript listings with both RISM entries and the Cantus Manuscript Database (and its main catalogue, the Cantus Index). PEM is searchable by genre, feast, and composer. The digital holdings of the Centro de Estudios de Sociologia e Estética Musical consist overwhelmingly of short sacred vocal works found sources that are extremely fragile and therefore well served by digitization. Manuscripts are mainly from the 14th–16th centuries. All sources are reproduced in color. A full listing is here. PEM also maintains a list of links for early sacred-music projects. PEM and its networked partners operate under the guidelines of the Cantus Planus Study Group of the International Musicological Society, which include the free and open exchange of data in electronic form.
 
 =====Printed Sacred Music Database=====
 
@@ -236,7 +261,13 @@ This database, hosted at the University of Michigan, contains entries on c. 14,0
 
 Website: [http://cantus.sk/ Slovak Early Music Database]
 
-This member of the CANTUS family focuses on manuscript sources (some of them fragmentary) and some early prints from the elventh to the sixteenth centuries. Based at the Slovak Academy of Sciences, it is directed by Eva Veselovska.  The database, on which other Slovak institutions collaborate, currently offers 600 items, which can be searched by title, feast, and other rubrics.  Source images are available at high resolution.
+The Slovak Early Music Database is a member of the Cantus Index Network–a series of connected, online projects employing the same structure and methodology. The SEMD focuses on manuscript sources (some of them fragmentary) and some early prints from the eleventh to the sixteenth centuries. Based at the Slovak Academy of Sciences, it is directed by Eva Veselovská. The database, on which other Slovak institutions collaborate, currently offers over 300 items (manuscripts or fragments) which can be searched by title, feast, and other rubrics. Source images are available at high resolution. The Slovak Early Music Database and its networked partners operate under the guidelines of the Cantus Planus Study Group of the International Musicological Society, which include the free and open exchange of data in electronic form.
+
+=====Spanish Early Music Manuscripts (Musica Hispanica)=====
+
+Website: [http://musicahispanica.edu Spanish Early Music Manuscripts (Musica Hispanica)]
+
+Spanish Early Music Manuscripts is a member of the Cantus Index Network–a series of connected, online projects employing the same structure and methodology. SEMM focuses on manuscript sources from medieval Spain, and endeavours to catalogue the “old Hispanic” chants in surviving antiphoners, breviaries, graduals and missals. Carmen Julia Gutiérrez is its project manager. SEMM and its networked partners operate under the guidelines of the Cantus Planus Study Group of the International Musicological Society, which include the free and open exchange of data in electronic form.
 
 ====Instrumental Music====
 
@@ -311,6 +342,12 @@ Those looking to reconcile modern dates with those in use before the Gregorian c
 Many sights offer these modern calendars with various degrees of refinement, but they are not appropriate for historical use.  There can be local variations in the days of minor saints.  See such sites as [http://www.liturgyoffice.org.uk/Calendar/ Liturgy Office] (UK); the [https://www.cpg.org/global/online-resources/liturgical-calendar/ Liturgical Calendar Online]; [http://www.goarch.org/chapel/calendar Greek Orthodox].  Some cultures maintain separate civic and religious calendars and thus impose an additional level of complexity to the reconciliation of dates.  Orthodox Jewish culture offers one example.  In simpler circumstances, the [http://www.etz-hayim.com/calendars/ Etz Hayim] website offers instructive examples on the reconciliation of Christian and Jewish dating systems. The [http://muslimvoices.org/islamic-calendar/ Muslim calendar] is complicated in a global context because of its dependence on (the time of) the initial visibility of a new moon, in combination of adherents across many times zones.  Additional cultures and religions, including [http://utbf.org/en/resources/calendar/ Buddhism] and [http://oca.org/fs/paschal-cycle Eastern Orthodoxy], are included in Santa Clara University's [http://www.scu.edu/cas/religiousstudies/news/calendars.cfm Calendars of the World's Religions] website.
 
 ====Other Rubrics====
+
+=====Germania Sacra=====
+
+Website: [http://personendatenbank.germania-sacra.de/index/browse/ Germania Sacra]
+
+Germania Sacra has several facets to what is essentially a database of personnel in German churches and monasteries from the medieval through early modern periods. Primary emphasis is placed on earlier period.  The register of people (linked here) gives the flavor of the whole.  It contains 4,000 listings (2016).
 
 =====Medici Archive Project=====
 

@@ -8,16 +8,21 @@ This search site for individual chants found in Canorales (choir books) of Spani
 
 ===Cantus Index===
 
-Website: [http://cantus.uwaterloo.ca/ Cantus Index]
+Website: [http://cantusindex.org Cantus Index]
 
-This aggregation at the University of Waterloo (CA) performs melodic searches in several collections of chant data encoded according the principles of the Cantus database network.  It is expanding from antiphoners and breviaries to manuscript sources containing Mass sections and sequences. The databases currently searched are these:
+The Cantus Index, managed at the University of Waterloo (CA), is a network of 11  international projects (as of 2016) that have adopted the data format and identifier system of the Cantus Manuscript Database. These projects are devoted the creation and distribution of electronic inventories of medieval chant manuscripts.  With the Cantus Index as the “hub,” the Index provides a central catalogue of chant texts and melodies for the Office and Mass. Searches in Cantus Index of both texts and melodies return results in all partner databases. The projects currently searched include these separately listed repositories:
 
-* [http://cantusdatabase.org/ CANTUS] (now maintained by Debra Lacoste, University of Waterloo)
-* [http://pemdatabase.eu/compositions Portuguese Early Music Database] (Manuel Pedro Ferreira, Lisbon)
-* [http://cantus.sk/ Slovakian Early Music Database] (Eva Veselovskà, Bratislava)
-* [http://wiki.ccarh.org/index.php?title=Template:DRM_databases&amp;action=edit&amp;section=20 Gradualia Project] (Gàbor Kiss, Budapest)
-* [http://cantusbohemiae.cz/ Fontes Cantus Bohemiae] (Jan Kolacek and David Eben, Prague)
-* [http://cantus.edu.pl/ Cantus Planus in Polonia] (Bartosz Izbicki, Warsaw) 
+* [http://gregorianik.uni-regensburg.de/ Antiphonale Synopticum] (Harald Buchinger, Universität Regensburg, DE)
+* [http://cantusdatabase.org/ Cantus Manuscript Database] (Debra Lacoste, University of Waterloo, CA)
+* [http://cantus.edu.pl/ Cantus Planus in Polonia] (Bartosz Izbicki, Warszawa, Poland) 
+* [https://cantus.simssa.ca/ Cantus Ultimus] (Ichiro Fujinaga, McGill University, Montréal, CA)
+* [http://comparatio.irht.cnrs.fr/ Comparatio] (Claire Maître, CNRS, Paris, FR)
+* [http://cantusbohemiae.cz/ Fontes Cantus Bohemiae] (Jan Koláček and David Eben, Prague, CZ)
+* [http://gregorien.info/ Gregorien.info] (Inga Behrendt, xx, DE)
+* [http://hunchant.eu/ Hungarian Chant Database] (Gàbor Kiss, Budapest, HU)
+* [http://musicahispanica.eu/ Musica Hispanica] (Carmen Julia Guttiérez, Universidad Complutense, Madrid, ES)
+* [http://pemdatabase.eu/ Portuguese Early Music Database] (Manuel Pedro Ferreira, Lisbon, PT) 
+* [http://cantus.sk/ Slovakian Early Music Database] (Eva Veselovskà, Bratislava, SK)
 
 User contributions are welcomed.
 
@@ -115,6 +120,12 @@ The United Kingdom RISM site has a number of special features: cross-links with 
 Website: [http://dla.library.upenn.edu/dla/schoenberg/index.html Schoenberg Database of Manuscripts]
 
 This project of the Schoenberg Institute of Manuscript Studies at the University of Pennsylvania is for medieval studies what RISM is for music studies: It provides a comprehensive inventory of manuscripts up to the year 1600.  Listings can currently be focused on any of 26 categories of description including date, place, language, library, provenance, liturgical use, vendor, artist, and many physical descriptors.  Within each category searches can be narrowed by the same and similar terms. Although many of the items of musical relevance listed here may appear in DIAMM and other inventories, much of the information appears to be complementary. Although no links to digitized sources are given, the database has the inherent value of providing a rapid impression of the prevalence and/or spread of certain kinds of materials. As one example, almost 15,000 [https://en.wikipedia.org/wiki/Book_of_hours Books of Hours] are listed. The advanced search feature is elegantly articulated to support with myriad text and numeric search combinations.  The beta version has been online since August 2016. Periodic uploads are planned.
+
+===SIMSSA===
+
+Website: [https://simssa.ca/ SIMSSA]
+
+The Single Interface for Music Score Searching and Analysis project (SIMSSA), based at McGill University, is teaching computers to recognize the musical symbols in digital images of musical scores. Scans of music prints and manuscripts are processed, and their contents (both text and music) are entered into a searchable format that can be studied, analyzed, and performed. Projects include &lt;i>Cantus Ultimus&lt;/i>, the searchable &lt;i>Liber Usualis&lt;/i>, and Elvis- the Electronic Locator of Vertical Interval Successions (ELVIS).
 
 ===&lt;i>Themefinder&lt;/i>: Music-Incipit Search===
 
