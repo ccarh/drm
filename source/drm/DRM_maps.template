@@ -25,17 +25,31 @@ Website: [http://www.fas.harvard.edu/~chgis/index.html China Historical GIS]
 
 When the China Historical GIS (Graphical Information System) was founded at Harvard University in 2001, its ambition was to provide mapping coordinates and related information for more than two millennia--from 221 BCE (the time of unification) to 1911 CE (the end of the dynastic period). It collaborates with several other projects and responds to those requiring specific historical time-slices and finite geographical areas.  Part of what China Historical GIS captures is the changing boundaries ("instances") of populations and linguistic groups.
 
+===Georeferencer===
+
+Website: [http://showcase.iiif.io/showcase/georeferencer/ Georeferencer]
+
+Georeferencer is commercial software that is heavily used by research libraries to facilitate the overlay of scanned maps with modern identifications.  The links above shows an application used by the British Library. Details of subscription options for individual researchers are shown [https://www.georeferencer.com/pricing/ here].  It is useful for comparing maps of the same places in different historical timeframes.
+
 ===Getty Thesaurus of Geographic Names===
 
 Website: [http://www.getty.edu/research/tools/vocabularies/tgn/ Getty Thesaurus of Geographic Names]
 
-Anyone who has to reconcile place names on maps with place names in literary or historical sources (including composer biographers, opera libretti, and ordinary literature in battle-weary countries) will know the problem of names that are not the same.  This Thesaurus of Geographic Names goes a long way in filling the gap.  Since the TGN continues to evolve, please read the help guide and explore the hierarchy display before using the search box.  
+Anyone who has to reconcile place names on maps with place names in literary or historical sources (including composer biographers, opera libretti, and ordinary literature in battle-weary countries) will know the problem of names that are not the same.  This Thesaurus of Geographic Names goes a long way in filling the gap.  Since the TGN continues to evolve, please read the help guide and explore the hierarchy display before using the search box.
 
 ===Munich Digitalization Center (Maps)===
 
 Website: [http://www.digital-collections.de/index.html?c=sammlung&amp;projekt=1352889503&amp;l=en Maps at the Munich Digitalization Center]
 
 This collection of almost 3,000 early maps ranges in date from 1500 to the early twentieth century.  It covers all of Europe and beyond with a primary concentration on areas lying today in Germany, Austria, and the Low Countries.
+
+===Old Maps Online===
+
+[[File:Prolemy2ndcent.jpg|thumb|right|400dpi|&lt;small>Mesopotamia, Babylonia, and other Middle Eastern regions based on a second-century map by Ptolemy as rendered by Lienhart Hol (1482) in &lt;i>Quarta Asiae taubla continet Cyprum &amp; Syrium &amp; Iudea &amp; vtraq. Arabia petream &amp; deserta ac Mesopotamia &amp; Babilonia&lt;/i>. Map reproduction courtesy of the Norman B. Leventhal Map Center at the Boston Public Library.&lt;/small>]]  
+
+Website: [http://www.oldmapsonline.org Old Maps Online (OMO)]
+
+Old Maps Online contains more than 400,000 maps. A collaboration of many national libraries, the project is currently maintained by volunteers in cooperation on the framework originally developed by Klokan Technologies GmbH. OMO accepts contributions of old maps. It includes atlases, globes, topographical maps, and other geographic paraphernalia. The graphical engine is designed to accommodate geo-referenced overlays on modern maps.
 
 ===Pelagios (Graeco-Roman Antiquity)===
 
