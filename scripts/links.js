@@ -248,6 +248,7 @@ function setCategoryRaw(index, content) {
 	var i;
 	for (i=0; i<lines.length; i++) {
 		if (lines[i].match(/^==/)) {
+			lines[i] = lines[i].replace(/&lt;big>/, "").replace(/&lt;\/big>/, "");
 			counter++;
 			rawlinks[counter] = '';
 		}
