@@ -47,11 +47,17 @@ Website: [http://www.europeana.eu Europeana]
 
 This umbrella site for European digitization projects covers a great deal besides music.  To start, limit the search by an obvious word for music (&lt;i>musique&lt;/i>, &lt;i>musica&lt;/i>, &lt;i>Musik&lt;/i>, etc.).  This will give you an idea of how to further limit the search. Europeana is updated often.  Among the items that should be visible are music prints, manuscripts, newspapers dedicated to music, sheet-music, audio files, etc.  Since Europeana is an aggregation, it provides links back to the sponsoring libraries that hold the original sources.  The site can be searched in many languages.
 
+===&lt;big>European History Primary Sources&lt;/big>===
+
+Website: [http://primary-sources.eui.eu/portal/virtuelle-fachbibliothek-osteuropa European History Primary Sources, or Virtuelle Fachbibliothek Osteuropea]
+
+The focus of his comprehensive site is the "history, language, literature, politics and culture of East, Central East and South East European countries and regions."  It offers access both directly and indirectly through search engines. EHPS can also search across resources, a capability that other forms of access do not usually offer. It provides links to country-based websites.  The music "topic" search produces random results among which are some that may not be familiar from other umbrella resources.  The alternative [https://www.osmikon.de/servicemenue/ueber-uns/vifaost-nachfolger-osmikon/ Osmikon] interface is in German.
+
 ===&lt;big>Gallica&lt;/big>===
 
 Website: [http://gallica.bnf.fr Gallica]
 
-&lt;i>Gallica&lt;/i> provides access to an enormous array of digitized materials from all periods of French history and many aspects of French musical life in addition to great quantities of non-musical material.  Among its highlights are  illuminated manuscripts containing the poetry (much of it set to music by Guillaume Machaut), manuscripts of the operas Francesco Cavalli composed for the wedding of Louis XIV (1660-62), a very large amount of music printed in France in the eighteenth and nineteenth centuries, and important documentation for theatrical history.
+&lt;i>Gallica&lt;/i> provides access to an enormous array of digitized materials from all periods of French history and many aspects of French musical life in addition to great quantities of non-musical material.  Among its highlights are  illuminated manuscripts containing the poetry (much of it set to music by Guillaume Machaut), manuscripts of the operas Francesco Cavalli composed for the wedding of Louis XIV (1660-62), a very large amount of music printed in France in the eighteenth and nineteenth centuries, and important documentation for theatrical history.  Although the quantity of material is enormous, the search tools allow for precise articulation with distinctions between scores, manuscripts, recordings, press reports, and commentary.  Gallica is, in addition, a national resourcce with links to materials in all French provinces.
 
 ===&lt;big>Global Chant&lt;/big>===
 
@@ -72,6 +78,12 @@ Website: [http://www.internetculturale.it/opencms/opencms/it/main/esplora/index.
 
 An umbrella site for digitized materials in Italian libraries.  The riches of Italy's collective Internet Culturale (cultural internet) are difficult to overstate.  A vast span of different kinds of graphically reproduced material will be found here.  All of it is accompanied by generous supplies of metadata from cataloguing records.  While one may be able to find a specific item such as an opera, one may also discover on a different spoke a list of all the works in which the singer of an aria appeared.  Users can create accounts to collect previous discoveries in one place.
 
+====&lt;big>OSMIKON&lt;/big>====
+
+Website: [https://www.osmikon.de/metaopac/refineSearch.do?id=author_facet&amp;methodToCall=filterSearch&amp;subval=CenterForWorldMusic OSMIKON]
+
+This search engine (in German) for literature on world music concentrates on music from South, Central, and Eastern Europe but covers myriad other places (Bolivia, Bulgaria, Vietnam, Bollywood dance) and theoretical perspectives on a broad range of topics.  It forms part of the [https://www.osmikon.de/servicemenue/ueber-uns/vifaost-nachfolger-osmikon/ Virtuelle Fachbibliothek Osteuropa (Virtual Library of Eastern Europe)]. Searches for the word "Musik" serve as an orientation.
+
 ===&lt;big>Machaut (Mirador) Viewer&lt;/big>===
 
 Website: [http://machautsociety.org/static_pages/mirador.html Machaut (Mirador) Viewer]
@@ -90,11 +102,11 @@ Website: [http://www.musicbrainz.org MusicBrainz Database]
 
 The MusicBrainz Database is an open-source reference for recordings providing relational searches for artists, releases, recordings, works, labels, and connections between them.  Users can annotate, tag, and rate individual items.  This open-source database is downloadable. The host MetaBrainz Foundation offers a sliding scale of memberships progressing from academic to commercial.
 
-===&lt;big>Musiconn (Successor of ViFaMusik)&lt;/big>===
+===&lt;big>Musiconn Score Search&lt;/big>===
 
-Website: [https://www.musiconn.de/aus-vifamusik-wird-musiconn Musiconn]
+Website: [https://https://scoresearch.musiconn.de/ScoreSearch/ Musiconn Score Search]
 
-The Musiconn website succeeds the comprehensive ViFaMusik umbrella site, which operated for a decade FROM 2011. It serve the aim of serving all aspects of musicology and related research insofar as the sources exist in German libraries.  (Musiconn is based as the Bavarian State Library, Munich, and has been extensively funded by various German government sources.) Its collection of scans of out-of-copyright complete editions is well known.  It also provides access to books and periodicals as well as full-text searches.  (Some linked sources require subscriptions.)
+The  Musiconn Score Search is the latest in a series of note-search engines. It attempts to search manuscript and printed sources included in the ViFaMusik website.  It is a very ambitious project, but the search mechanisms are works in progress. It currently (9/22) lacks enharmonic discrimination and does not anchor searches to any bar or voice. Some of the notation displayed is confused by ledger lines.  When it works correctly, it may link the user to an exact location in an old print, which, because it is out-of-copyright, may be downloaded.
 
 ===&lt;big>Musiekschatten (Music Treasures)&lt;/big>===
 
