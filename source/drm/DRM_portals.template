@@ -127,35 +127,37 @@ Website: [http://www.peachnote.com/#!nt=singleNoteAffine&amp;npq=62+0+1+2+0+-2+-
 
 This MIDI-based search system developed by Vladimir Vero plumbs a number of score aggregations, such as [http://imslp.org/ ISMLP] to produce a general overview of short melodic phrases.
 
-===&lt;big>RISM Music Manuscript Inventory&lt;/big>===
+===&lt;big>RISM: Répertoire International des Sources Musicales/International Repertory of Musical Sources &lt;/big>===
 
-Website: [https://opac.rism.info/metaopac/start.do?View=rism&amp;Language=en RISM Music Manuscript Inventory]
+RISM, founded in 1952, seeks to provide access to musical sources, both manuscript and in print. It increasingly includes writings on music theory and printed libretti. Now in its eighth decade, a major overhaul in 2022 offers a new working paradigm. Recent efforts have also focused on linking textual and musical content in searches. Additional details can be found in a dedicated issue of [https://rism.info/new_publications/2022/11/10/fontes-special-issue-in-celebration-of-risms-seventieth-anniversary.html &lt;i>Fontes Artis Musicae&lt;/i>].  Search interfaces are offered in English, French, and German.      
 
-This inventory of musical manuscripts in roughly 60 countries was begun in 1952. It is still growing (under the management of the Répertoire International des Sources Musicales). Coordinated cataloging in based at the RISM Zantralredaktion in Frankfurt, database management and processing at the Berlin State Library, and online implementation at the Bavarian State Library, Munich. RISM's numerous merits are easily discovered through in use. A RISM [http://www.rism.info/ blog] keeps registered users informed of current activities. RISM has working groups on [http://www.rism.info/en/international.html most continents]. Much material currently contained in [http://www.rism.info/en/publications.html RISM books] will (with updating) find its way online over the coming years. Those interested in contributing to RISM's efforts may contact a local representative by looking [http://www.rism.info/en/international/working-group-overview.html here]. Other RISM cataloguing projects are in transition to online presentations.  One of them (A1: &lt;i>Printed anthologies of music before 1800&lt;/i>) are now integrated in the RISM OPAC (online catalogue sited above). Several country-specific websites sited below offer alternative organizations and search tools for holdings. Some also include related  materials or an expanded date range. 
+====RISM user resources====
 
-====&lt;big>RISM France (RISM FR)&lt;/big>====
+RISM has these search tools:
 
-Website: [http://neuma.huma-num.fr/corpus/rism RISM France (RISM FR)]
+* [https://rism.info/ RISM Info] gives news announcements and a central portal to pursue organizational information. Many important announcements of source discoveries have appeared here in recent years.  
 
-RISM France, under the direction of Laurence Decobert, is currently cataloguing music manuscripts up to 1800 in the Bibiliothèque Nationale de France.  Holdings are particularly rich in works by Joseph and Michael Haydn, Chr. W. Gluck, Fr-J. Gossec, and J-Ph. Rameau. At present close to 1,350 manuscripts have been entered. Entries have links to several formats including MIDI files (and displays) of musical incipits.
+* [https://opac.rism.info) RISM Opac] is the online catalogue for musical incipits from printed and manuscript sources. It now offers a combined catalogue based on dozens of  separate national projects. In July 2023 it included citations to almost 1,500,000 musical sources. Several [https://opac.rism.info/main-menu-/kachelmenu/help help guides] are available.
 
-====&lt;big>RISM Ireland (RISM IE)&lt;/big>====
+* [https://rism.online/about RISM Online] enables word searches across all RISM properties including musical-incipit searches.  Searches can be confined to holdings of one country.  Word searches are useful for finding individual contributions to pastiches and other hand-to-classify works.  RISM Online also reports
 
-Website: [http://www.rism-ie.org/ RISM Ireland (RISM IE)
+====RISM Operations====
 
-The Society of Musicology in Ireland (Eire) is the sponsor of this cataloging initiative. Its search tools are modeled on those of the UK site. At present works by 265 composers are represented. Associated collections with listings in progress include [http://www.rism-ie.org/pages/countryhouses Music in the Irish Country House] and [http://www.rism-ie.org/pages/nationallibrary Music in the National Library of Ireland].
+RISM now has multiple administrative structures.  
 
-====&lt;big>RISM Switzerland (RISM CH)&lt;/big>====
+* RISM Info has branches for [https://rism.info/community/muscat.html MUSCAT], the course-based catalogue, and [https://rism.info/working-groups.html working groups]. MUSCAT is responsible for coordinating information of different kinds and from different national collections. Substantial contributions from France, Germany, Switzerland, and the United Kingdom formed the original core of the database. Roughly half of sources anticipated in the complete inventory are currently available for online access. Working groups, currently operating in 35 countries, identify and catalogue sources. Those interested in contributing to RISM's efforts may contact a local representative by looking [http://www.rism.info/en/international/working-group-overview.html here].  Some working-group catalogues can still be found online.  
+  
+* The [https://rism.info/editorial-center.html RISM Editorial Center], or Zentralredaktion, in Frankfurt supports editorial groups and provides help with enabling software.
 
-Website: [http://www.rism-ch.org RISM Switzerland]
+* The [https://rism.digital/ RISM Digital Center], established in 2021 in Bern, manages the development of MUSCAT and interfaces with servers in Berlin and Munich. The digital center, which is supported by the Swiss National Science Foundation, also develops and maintains Verovio, an open-source program for rendering scores employing MEI markup. {{Humdrum Verovio Viewer}}
 
-The RISM Switzerland is the Swiss database of the Repertoire International des Sources Musicales (http://www.rism.info). This database contains additional material that is not listed in the international database (http://opac.rism.info), including sources from the 19th and 20th century.
+====RISM Musical Incipit Search and Online Digital Score Links====
 
-====&lt;big>RISM United Kingdom (RISM UK)&lt;/big>====
+Website: [https://opac.rism.info/metaopac/start.do?View=rism&amp;SearchType=2&amp;Language=en RISM Advanced Incipit Search]
 
-Website: [http://uk.rism-ch.org/catalog RISM United Kingdom (RISM UK)]
+Two of the most often used features of the RISM catalogue are its musical-incipit search tool (at the Advanced link shown above) and its link to manuscript scores digitized by holding libraries. Most of the online-source links come from sources in such places as Dresden and Berlin, with many more locations awaiting catalogue links. When it comes to finding sources of uncertain authorship, the incipit search has proved its worth many times over.  
 
-The United Kingdom RISM site has a number of special features: cross-links with [http://www.rism.org.uk/manuscripts?strategy=index&amp;search_1=%22early+music+online%22&amp;search_b=Go! Early Music Online]; an impressive [https://picasaweb.google.com/musicmss?fgl=true&amp;pli=1 image gallery], useful for quick comparison of handwriting and paper; a lookup table for [http://www.rism.org.uk/places places of publication]; and useful [http://www.rism.org.uk/manuscripts?strategy=index collection-level clusters] of indexing.  UK manuscripts were the earliest sources to be catalogued by RISM, and the depth of information reflects more than 50 years of accrual.  The newly revised site takes advantage of important modernization features.
+The incipit search tool, with its sliders for fuzzy searches, was modeled on the Themefinder search (https://themefinder.org) developed at {{CCARH}} in 1996-1999 by David Huron, Craig Sapp, and Andreas Kornstaedt. Laurent Pugin instituted to slider interface, and the graphical keyboard was introduced by the Munich RISM office. The integrated whole was implemented in MUSCAT in 2010, then subject to numerous tests, comparisons, and revisions.
 
 ===&lt;big>Schoenberg Database of Manuscripts&lt;/big>===
 
