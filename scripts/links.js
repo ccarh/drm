@@ -247,10 +247,14 @@ function setCategoryRaw(index, content) {
 	rawlinks[0] = '';
 	var i;
 	for (i=0; i<lines.length; i++) {
-		if (lines[i].match(/^==/)) {
+		if (lines[i].match(/^===(?!=)/)) {
 			lines[i] = lines[i].replace(/&lt;big>/, "").replace(/&lt;\/big>/, "");
 			counter++;
 			rawlinks[counter] = '';
+		} else if (lines[i].match(/^====(?!=)/)) {
+			lines[i] = lines[i].replace(/&lt;big>/, "").replace(/&lt;\/big>/, "");
+			lines[i] = lines[i].replace(/^====/, "<h4>");
+			lines[i] = lines[i].replace(/====\s*$/, "</h4>");
 		}
 		rawlinks[counter] += lines[i] + '\n';
 	}

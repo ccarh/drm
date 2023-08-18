@@ -125,9 +125,9 @@ Alexander Street's Open Music Music interleaved open-access and licensed-access 
 
 Website: [http://www.peachnote.com/#!nt=singleNoteAffine&amp;npq=62+0+1+2+0+-2+-1+-2 Peachnote n-Gram Viewer]
 
-This MIDI-based search system developed by Vladimir Vero plumbs a number of score aggregations, such as [http://imslp.org/ ISMLP] to produce a general overview of short melodic phrases.
+This MIDI-based search system developed by Vladimir Vero plumbs a number of score aggregations, such as [http://imslp.org/ IMSLP] to produce a general overview of short melodic phrases.
 
-===&lt;big>RISM: Répertoire International des Sources Musicales/International Repertory of Musical Sources &lt;/big>===
+===&lt;big>RISM: Répertoire International des Sources Musicales&lt;/big>===
 
 RISM, founded in 1952, seeks to provide access to musical sources, both manuscript and in print. It increasingly includes writings on music theory and printed libretti. Now in its eighth decade, a major overhaul in 2022 offers a new working paradigm. Recent efforts have also focused on linking textual and musical content in searches. Additional details can be found in a dedicated issue of [https://rism.info/new_publications/2022/11/10/fontes-special-issue-in-celebration-of-risms-seventieth-anniversary.html &lt;i>Fontes Artis Musicae&lt;/i>].  Search interfaces are offered in English, French, and German.      
 
@@ -135,9 +135,9 @@ RISM, founded in 1952, seeks to provide access to musical sources, both manuscri
 
 RISM has these search tools:
 
-* [https://rism.info/ RISM Info] gives news announcements and a central portal to pursue organizational information. Many important announcements of source discoveries have appeared here in recent years.  
+* [https://rism.info RISM Info] gives news announcements and a central portal to pursue organizational information. Many important announcements of source discoveries have appeared here in recent years.  
 
-* [https://opac.rism.info) RISM Opac] is the online catalogue for musical incipits from printed and manuscript sources. It now offers a combined catalogue based on dozens of  separate national projects. In July 2023 it included citations to almost 1,500,000 musical sources. Several [https://opac.rism.info/main-menu-/kachelmenu/help help guides] are available.
+* [https://opac.rism.info RISM OPAC] is the online catalogue for musical incipits from printed and manuscript sources. It now offers a combined catalogue based on dozens of  separate national projects. In July 2023 it included citations to almost 1,500,000 musical sources. Several [https://opac.rism.info/main-menu-/kachelmenu/help help guides] are available.
 
 * [https://rism.online/about RISM Online] enables word searches across all RISM properties including musical-incipit searches.  Searches can be confined to holdings of one country.  Word searches are useful for finding individual contributions to pastiches and other hand-to-classify works.  RISM Online also reports
 
@@ -149,7 +149,7 @@ RISM now has multiple administrative structures.
   
 * The [https://rism.info/editorial-center.html RISM Editorial Center], or Zentralredaktion, in Frankfurt supports editorial groups and provides help with enabling software.
 
-* The [https://rism.digital/ RISM Digital Center], established in 2021 in Bern, manages the development of MUSCAT and interfaces with servers in Berlin and Munich. The digital center, which is supported by the Swiss National Science Foundation, also develops and maintains Verovio, an open-source program for rendering scores employing MEI markup. {{Humdrum Verovio Viewer}}
+* The [https://rism.digital/ RISM Digital Center], established in 2021 in Bern, manages the development of MUSCAT and interfaces with servers in Berlin and Munich. The digital center, which is supported by the Swiss National Science Foundation, also develops and maintains Verovio, an open-source MEI score renderer as well as interfaces to other digital musical score formats such as [https://verovio.humdrum.org Humdrum]
 
 ====RISM Musical Incipit Search and Online Digital Score Links====
 
@@ -157,7 +157,7 @@ Website: [https://opac.rism.info/metaopac/start.do?View=rism&amp;SearchType=2&am
 
 Two of the most often used features of the RISM catalogue are its musical-incipit search tool (at the Advanced link shown above) and its link to manuscript scores digitized by holding libraries. Most of the online-source links come from sources in such places as Dresden and Berlin, with many more locations awaiting catalogue links. When it comes to finding sources of uncertain authorship, the incipit search has proved its worth many times over.  
 
-The incipit search tool, with its sliders for fuzzy searches, was modeled on the Themefinder search (https://themefinder.org) developed at {{CCARH}} in 1996-1999 by David Huron, Craig Sapp, and Andreas Kornstaedt. Laurent Pugin instituted to slider interface, and the graphical keyboard was introduced by the Munich RISM office. The integrated whole was implemented in MUSCAT in 2010, then subject to numerous tests, comparisons, and revisions.
+The incipit search tool, with its sliders for fuzzy searches, was modeled on the [https://www.themefinder.org Themefinder] search developed at [https://wiki.ccarh.org CCARH] in 1996–1999 by David Huron, Craig Sapp, and Andreas Kornstaedt. Laurent Pugin instituted to slider interface, and the graphical keyboard was introduced by the Munich RISM office. The integrated whole was implemented in MUSCAT in 2010, then subject to numerous tests, comparisons, and revisions.
 
 ===&lt;big>Schoenberg Database of Manuscripts&lt;/big>===
 
