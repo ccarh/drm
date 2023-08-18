@@ -256,6 +256,7 @@ function setCategoryRaw(index, content) {
 			lines[i] = lines[i].replace(/^====/, "<h4>");
 			lines[i] = lines[i].replace(/====\s*$/, "</h4>");
 		}
+		lines[i] = lines[i].replace(/&ndash;/g, "–");
 		rawlinks[counter] += lines[i] + '\n';
 	}
 
