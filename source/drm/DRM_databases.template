@@ -10,7 +10,7 @@ Databases containing material of value to musicologists have been in creation fo
 
 Website: [http://www.bodley.ox.ac.uk/ballads/project.htm Bodleian Broadside Ballads Project]
 
-The Bodleian broadside ballads project, which was developed mainly from 1995 to 2000, spans the history of the genre.  A [http://bodley24.bodley.ox.ac.uk/cgi-bin/acwwweng/maske.pl?db === ballads search form] enables users to access the &lt;i>allegro Catalogue of Ballads&lt;/i> by sheet or ballad title, first line, and tune name as well as publisher, date, and other parameters.
+The Bodleian broadside ballads project, which was developed mainly from 1995 to 2000, spans the history of the genre.  A [http://bodley24.bodley.ox.ac.uk/cgi-bin/acwwweng/maske.pl?db=ballads search form] enables users to access the &lt;i>allegro Catalogue of Ballads&lt;/i> by sheet or ballad title, first line, and tune name as well as publisher, date, and other parameters.
 
 
 
@@ -92,7 +92,7 @@ Under development since 1997, HUAPALA is a website consisting mainly of texts de
 
 === Loire Valley Chanson Sources === 
 
-Website: http://www.goldbergstiftung.de/forum/index_de.php?a === forum&amp;f === 39
+Website: http://www.goldbergstiftung.de/forum/index_de.php?a=forum&amp;f=39
 
 The Goldberg Foundation has set up a system of hyperlinks to digitized resources for this subsector of the chanson repertory.  As a collaborative project, it is somewhat uneven in its offerings.  In compensation, comments can be appended to listings.
 
@@ -605,7 +605,7 @@ This database of concerts (from 1841) itemizes musical programs given at many ve
 
 [[File:BWV_1001_BerlinE-W.jpg|260px|thumb|left|&lt;small>The first music folio from J. S. Bach's unaccompanied suite for cello BWV 1001 in the Deutsche Staatsbibliothek Mus. ms. P 268. (Three other manuscript sources for this work are available at the site).&lt;/small>]]
 
-Website: http://www.bachdigital.de/content/index.xml?lang === en
+Website: http://www.bachdigital.de/content/index.xml?lang=en
 
 &lt;i>Bach Digital&lt;/i>, based in Leipzig, is a one-stop shop for a catalogue of work by J.S. Bach (BWV); of scanned manuscripts; and of a database of manuscripts associated with the Bach family. When complete, it is intended to serve a wide variety of needs of scholars and interests of a wider music audience.  An earlier &lt;i>Datenbank der Bach-Quellen&lt;/i> (Database of Bach Sources) operates under the auspices of Göttingen's Johann-Sebastian-Bach Institute [http://gwdu64.gwdg.de/pls/bach/qu$.startup here].
 
@@ -613,7 +613,7 @@ Website: http://www.bachdigital.de/content/index.xml?lang === en
 
 === Max Bruch Archive === 
 
-Website: https://musikwissenschaft.phil-fak.uni-koeln.de/index.php?id === 13144
+Website: https://musikwissenschaft.phil-fak.uni-koeln.de/index.php?id=13144
 
 This online archive documenting the life of Max Bruch (1838-1020) contains letters (&lt;i>c&lt;/i>5000 of them), compositions, and other relevant materials. It was assembled at the University of Cologne between 2012 and 2021.
 
@@ -650,9 +650,9 @@ The heterogeneity of this collection (782 items) represents the full array of Co
 
 === Fux Online === 
 
-Website: http://www.fux-online.at/cms_seite.php?content === 0&amp;menu === 1
+Website: http://www.fux-online.at/cms_seite.php?content=0&amp;menu=1
 
-Fux Online is a growing compendium of information about Johann Joseph Fux (c. 1660-1741), Austria's much revered master of counterpoint.  Fux wrote his &lt;i>Gradus ad Parnassum&lt;/i> of 1725 in Latin. Only after his death did a German translation by L. CH. Mizler bring it to broader attention. The original work was dedicated to his employer, the [https://en.wikipedia.org/wiki/Charles_VI,_Holy_Roman_Emperor Emperor Charles VI]. The &lt;i>Gradus ad Parnassus&lt;/i> (&lt;i>Steps to Mt. Parnassus&lt;/i>, the home of the Nine Muses) is considered the fount of [https://en.wikipedia.org/wiki/Counterpoint#Species_counterpoint species counterpoint].  It attracted such students as [https://en.wikipedia.org/wiki/Georg_Christoph_Wagenseil G. Ch. Wagenseil] and [https://en.wikipedia.org/wiki/Jan_Dismas_Zelenka J. D. Zelenka]. The approach was strongly influential on composers of the later eighteenth century.  It is not generally regarded as descriptive of sixteenth-century Roman practice, although it distills observable practices of that time.  Fux Online complements that standing image of Fux with coverage of his sacred vocal music and introduces a new critical edition of Fux's music by [http://www.hollitzer.at/wissenschaft/programm/uebersicht/programm/johann-joseph-fux-werke.html?no_cache === 1&amp;cHash === ae4ac2e98b9d3ef5abaf716bc10d4bd5 Hollitzer Verlag], which will include 600 works.
+Fux Online is a growing compendium of information about Johann Joseph Fux (c. 1660-1741), Austria's much revered master of counterpoint.  Fux wrote his &lt;i>Gradus ad Parnassum&lt;/i> of 1725 in Latin. Only after his death did a German translation by L. CH. Mizler bring it to broader attention. The original work was dedicated to his employer, the [https://en.wikipedia.org/wiki/Charles_VI,_Holy_Roman_Emperor Emperor Charles VI]. The &lt;i>Gradus ad Parnassus&lt;/i> (&lt;i>Steps to Mt. Parnassus&lt;/i>, the home of the Nine Muses) is considered the fount of [https://en.wikipedia.org/wiki/Counterpoint#Species_counterpoint species counterpoint].  It attracted such students as [https://en.wikipedia.org/wiki/Georg_Christoph_Wagenseil G. Ch. Wagenseil] and [https://en.wikipedia.org/wiki/Jan_Dismas_Zelenka J. D. Zelenka]. The approach was strongly influential on composers of the later eighteenth century.  It is not generally regarded as descriptive of sixteenth-century Roman practice, although it distills observable practices of that time.  Fux Online complements that standing image of Fux with coverage of his sacred vocal music and introduces a new critical edition of Fux's music by [http://www.hollitzer.at/wissenschaft/programm/uebersicht/programm/johann-joseph-fux-werke.html?no_cache=1&amp;cHash=ae4ac2e98b9d3ef5abaf716bc10d4bd5 Hollitzer Verlag], which will include 600 works.
 
 
 
@@ -666,7 +666,7 @@ The Handel Reference Database (HRD) provides a continuously updated version of t
 
 === Lassus Manuscript Database === 
 
-Website: https://lasso-handschriften.badw.de/metaopac/start.do?View === lasso
+Website: https://lasso-handschriften.badw.de/metaopac/start.do?View=lasso
 
 More than 470 prints of Lassus's compositions up to 1687, but many titles known from the prints cannot today be verified against surviving manuscripts. This inventory of manuscripts follows on from Horst Leuchtmann and Bernhold Schmid's inventory of printed works (Kassel, 2001) and attempts to clarify the status of both surviving and lost titles. It supports single-parameter and Boolean (multiple-criteria) searches.
 
@@ -706,7 +706,7 @@ The aim of this collaborative project, managed by Dexter Edge and David Black, i
 
 === Ricordi Historical Archives: Verdi Correspondence and Memorabilia === 
 
-Website: http://www.internetculturale.it/opencms/opencms/it/ricercaMag.jsp?opCha__descSourceLevel2 === AND+OR&amp;opCha__title === AND&amp;searchType === avanzato&amp;channel__creator === &amp;opCha__typeDigitale === AND+OR&amp;opCha__collectionText === AND&amp;channel__issuedYear_from === &amp;opCha__typeLivello === AND&amp;opCha__language === AND+OR&amp;opCha__creator === AND&amp;channel__location === %22Archivio+storico+Ricordi%22&amp;opCha__subject === AND&amp;channel__subject === &amp;channel__title === &amp;imageField2.x === 6&amp;opCha__agency === AND+OR&amp;opCha__issuedYear === AND&amp;imageField2.y === 16&amp;opCha__publisher === AND&amp;opCha__location === AND&amp;channel__collectionText === &amp;opCha__typeTipo === AND+OR&amp;opCha__contributor === AND&amp;channel__typeLivello === &amp;channel__publisher === &amp;q === &amp;channel__issuedYear_until === &amp;channel__contributor === &amp;__meta_subjectString === verdi%2C+giuseppe+-+lettere+e+carteggi
+Website: http://www.internetculturale.it/opencms/opencms/it/ricercaMag.jsp?opCha__descSourceLevel2=AND+OR&amp;opCha__title=AND&amp;searchType=avanzato&amp;channel__creator=&amp;opCha__typeDigitale=AND+OR&amp;opCha__collectionText=AND&amp;channel__issuedYear_from=&amp;opCha__typeLivello=AND&amp;opCha__language=AND+OR&amp;opCha__creator=AND&amp;channel__location=%22Archivio+storico+Ricordi%22&amp;opCha__subject=AND&amp;channel__subject=&amp;channel__title=&amp;imageField2.x=6&amp;opCha__agency=AND+OR&amp;opCha__issuedYear=AND&amp;imageField2.y=16&amp;opCha__publisher=AND&amp;opCha__location=AND&amp;channel__collectionText=&amp;opCha__typeTipo=AND+OR&amp;opCha__contributor=AND&amp;channel__typeLivello=&amp;channel__publisher=&amp;q=&amp;channel__issuedYear_until=&amp;channel__contributor=&amp;__meta_subjectString=verdi%2C+giuseppe+-+lettere+e+carteggi
 
 This great bulk of items in this miscellany (1786 of 2092), which includes correspondence, scenery designs, pertains to Verdi and his dealings with Giovanni, Tito, and Giulio Ricordi, deals with librettists, casting, staging, and other production details, 1849-1893.   One letter (1897) is from Giacomo Puccini.
 
@@ -758,7 +758,7 @@ Between 1803 and the end of his life, Louis (Ludwig) Spohr (1786-1859) was const
 
 === Giuseppe Verdi Correspondence (Braidense Library) === 
 
-Website: http://www.internetculturale.it/opencms/opencms/it/ricercaMag.jsp?searchType === avanzato&amp;q === &amp;opCha__creator === AND&amp;channel__creator === &amp;opCha__title === AND&amp;channel__title === &amp;opCha__contributor === AND&amp;channel__contributor === &amp;opCha__issuedYear === AND&amp;channel__issuedYear_from === &amp;channel__issuedYear_until === &amp;opCha__publisher === AND&amp;channel__publisher === &amp;opCha__subject === AND&amp;channel__subject === &amp;opCha__language === AND+OR&amp;opCha__typeTipo === AND+OR&amp;opCha__typeLivello === AND&amp;channel__typeLivello === &amp;opCha__typeDigitale === AND+OR&amp;opCha__location === AND&amp;channel__location === &amp;opCha__collectionText === AND&amp;channel__collectionText === Bicentenario+Verdiano+2013.+Materiali+e+documenti+della+Biblioteca+nazionale+Braidense&amp;opCha__agency === AND+OR&amp;opCha__descSourceLevel2 === AND+OR&amp;imageField2.x === 12&amp;imageField2.y === 7 
+Website: http://www.internetculturale.it/opencms/opencms/it/ricercaMag.jsp?searchType=avanzato&amp;q=&amp;opCha__creator=AND&amp;channel__creator=&amp;opCha__title=AND&amp;channel__title=&amp;opCha__contributor=AND&amp;channel__contributor=&amp;opCha__issuedYear=AND&amp;channel__issuedYear_from=&amp;channel__issuedYear_until=&amp;opCha__publisher=AND&amp;channel__publisher=&amp;opCha__subject=AND&amp;channel__subject=&amp;opCha__language=AND+OR&amp;opCha__typeTipo=AND+OR&amp;opCha__typeLivello=AND&amp;channel__typeLivello=&amp;opCha__typeDigitale=AND+OR&amp;opCha__location=AND&amp;channel__location=&amp;opCha__collectionText=AND&amp;channel__collectionText=Bicentenario+Verdiano+2013.+Materiali+e+documenti+della+Biblioteca+nazionale+Braidense&amp;opCha__agency=AND+OR&amp;opCha__descSourceLevel2=AND+OR&amp;imageField2.x=12&amp;imageField2.y=7 
 
 This collection of letters (1838–1883) especially concerns the countess Clara Maffei and Verdi's wife, Giuseppina Strepponi.  It was placed online for the Verdi centenary in 2013 by the Braidense National Library in Milan.  (See also the Arrigo Boito Archives above).
 
@@ -780,7 +780,7 @@ The Danish National Digital Sheet Music Archive is a model operation.  Note the 
 
 === Darmstadt University and State Library Digital Manuscript Collection === 
 
-Website: http://tudigit.ulb.tu-darmstadt.de/show/_md_search?md_query_cat === sammlung&amp;md_query_var === sammlung23&amp;md_query_sort === sort_shelfLocator_sdocval+asc 
+Website: http://tudigit.ulb.tu-darmstadt.de/show/_md_search?md_query_cat=sammlung&amp;md_query_var=sammlung23&amp;md_query_sort=sort_shelfLocator_sdocval+asc 
 
 This collection is rich in musical autographs by Christoph Graupner (1683-1760), who served the Landgrave Ernst Ludwig of Hesse-Darmstadt (1667-1739) for decades and produced enormous quantities of music throughout his tenure. He was well informed about the music of his peers and often arranged their works for his court's use.  Florian Heyerich maintains a complementary  [www.graupner-digital.org Graupner website].
 
@@ -788,19 +788,15 @@ This collection is rich in musical autographs by Christoph Graupner (1683-1760),
 
 === Early Music Online === 
 
-Website: http://digirep.rhul.ac.uk/access/search.do?pg.e === true&amp;pg_pp === 10&amp;pg_pg === 1&amp;hier.topic === 52facdbd-19ce-2b92-dbd5-434289d29e8b&amp;qs.tq === &amp;sort_s === RANK
+Website: http://digirep.rhul.ac.uk/access/search.do?pg.e=true&amp;pg_pp=10&amp;pg_pg=1&amp;hier.topic=52facdbd-19ce-2b92-dbd5-434289d29e8b&amp;qs.tq=&amp;sort_s=RANK
 
 Early Music Online is a digital repository of music in printed anthologies principally from the sixteenth century.  Based on holdings in the British Library and related to one series of RISM listings, the digitized volumes of EMO include madrigals, sacred songs, music "concerted by voices and instruments," and pedagogical works.
 
-
-
 === National Library of Scotland === 
 
-Website: http://digital.nls.uk/special-collections-of-printed-music/pageturner.cfm?id === 97135481
+Website: http://digital.nls.uk/special-collections-of-printed-music/pageturner.cfm?id=97135481
 
 These digitized sources provide access to digitized copies of the Inglis collection of printed music, memoirs, lyrics to Scottish folksongs, musical magazines, and Scottish keyboard music.
-
-
 
 === Singakademie Music Archives === 
 
@@ -874,13 +870,13 @@ Among his 590 compositions, Johan Peter Emilius Hartmann (1805-1900) demonstrate
 
 Website: https://www.uni-heidelberg.de/en/newsroom/franz-liszt-digital
 
-This recently launched project to catalogue all Lizst (1811-1885), based at the University of Heidelberg, emphasizes resources in Dresden and Weimar, where the composer spent some periods of his life.  Christiane Wiesenfeldt is the director. Liszt's father ws a musician in the Esterhazy court in Sopron (Hungary today, Austria then). He is remembered today for his many innovations in musical form and harmony and for his many friendship with composers and writers.  Some early fruits of the project have been made available by RISM.  See [https://opac.rism.info/metaopac/search?View === rism&amp;View === rism&amp;author === Liszt,%20Franz Lizst resources listed by RISM].
+This recently launched project to catalogue all Lizst (1811-1885), based at the University of Heidelberg, emphasizes resources in Dresden and Weimar, where the composer spent some periods of his life.  Christiane Wiesenfeldt is the director. Liszt's father ws a musician in the Esterhazy court in Sopron (Hungary today, Austria then). He is remembered today for his many innovations in musical form and harmony and for his many friendship with composers and writers.  Some early fruits of the project have been made available by RISM.  See [https://opac.rism.info/metaopac/search?View=rism&amp;View=rism&amp;author=Liszt,%20Franz Lizst resources listed by RISM].
 
 
 
 === Catalogue of Carl Nielsen's Works === 
 
-[[File:Nielsen_MasKarade-Ov-1905.png|400px|thumb|right|&lt;small> The incipit for the overture of Carl Nielsen's Maskarade, a comic opera composed in 1905 [http://www.kb.dk/dcm/cnw/document.xq?doc === cnw0002.xml Carl Nielsen Works Catalogue].&lt;/small>]]
+[[File:Nielsen_MasKarade-Ov-1905.png|400px|thumb|right|&lt;small> The incipit for the overture of Carl Nielsen's Maskarade, a comic opera composed in 1905 [http://www.kb.dk/dcm/cnw/document.xq?doc=cnw0002.xml Carl Nielsen Works Catalogue].&lt;/small>]]
 
 Website: http://www.kb.dk/dcm/cnw/navigation.xq
 
@@ -928,7 +924,7 @@ Images, sound files, and videos on the internet offer great scope for ethnomusic
 
 === OSMIKON === 
 
-Website: https://www.osmikon.de/metaopac/refineSearch.do?id === author_facet&amp;methodToCall === filterSearch&amp;subval === CenterForWorldMusic
+Website: https://www.osmikon.de/metaopac/refineSearch.do?id=author_facet&amp;methodToCall=filterSearch&amp;subval=CenterForWorldMusic
 
 This search engine (in German) for literature on world music concentrates on music from South, Central, and Eastern Europe but covers myriad other places (Bolivia, Bulgaria, Vietnam, Bollywood dance) and theoretical perspectives on a broad range of topics.  It forms part of the [https://www.osmikon.de/servicemenue/ueber-uns/vifaost-nachfolger-osmikon/ Virtuelle Fachbibliothek Osteuropa (Virtual Library of Eastern Europe)]. Searches for the word "Musik" serve as an orientation.
 
@@ -944,10 +940,10 @@ This database of sounds, hosted by the Department of Science and Technology of t
 
 === UNC Middle Eastern Music === 
 
-[[File:OldPersian.png|200px|thumb|right|&lt;small>Old Persian system of musical notation of the [http://farabisoft.com/Pages/FarabiSchool/TheoryDetails.aspx?lang === en&amp;PID === 6&amp;SID === 36 Farabi School.]&lt;/small>]]
-[[File:ModPersianTransc.png|180px|thumb|right|&lt;small>Modern transcription of the above Persian notation from the [http://farabisoft.com/Pages/FarabiSchool/TheoryDetails.aspx?lang === en&amp;PID === 6&amp;SID === 36 Farabi School].&lt;/small>]]
+[[File:OldPersian.png|200px|thumb|right|&lt;small>Old Persian system of musical notation of the [http://farabisoft.com/Pages/FarabiSchool/TheoryDetails.aspx?lang=en&amp;PID=6&amp;SID=36 Farabi School.]&lt;/small>]]
+[[File:ModPersianTransc.png|180px|thumb|right|&lt;small>Modern transcription of the above Persian notation from the [http://farabisoft.com/Pages/FarabiSchool/TheoryDetails.aspx?lang=en&amp;PID=6&amp;SID=36 Farabi School].&lt;/small>]]
 
-Website: http://guides.lib.unc.edu/c.php?g === 9254&amp;p === 45825
+Website: http://guides.lib.unc.edu/c.php?g=9254&amp;p=45825
 
 The University of North Carolina offers top-down collections of selected repertories from Egyptian, Turkish, Iraqi, and classical Persian music.  Each site varies from the others.  Explanatory material concerning composers, instruments, styles, and cultural emphases are general to most.  The Farabi site also discusses theoretical concepts in Persian classical music.  The Turkish one contains many sound examples.
 
@@ -1009,7 +1005,7 @@ Although the search form shows only four fields, the name field (nome) will acce
 
 === Russian Opera Libretti === 
 
-Website: https://dpul.princeton.edu/russian-opera-libretti/catalog?per_page === 50&amp;q === &amp;search_field === all_fields&amp;sort === sort_title
+Website: https://dpul.princeton.edu/russian-opera-libretti/catalog?per_page=50&amp;q=&amp;search_field=all_fields&amp;sort=sort_title
 
 The Russian Opera Libretti collection at Princeton University contains scripts for operas published between 1815 and 1916.  Most works are well known.  Works set to music by Donisetti, Meyerbeer, Mussorgsky, Scriabin, Tchaikovsky, Verdi, and Wagner are included. 
 
@@ -1027,7 +1023,7 @@ The Rostock music dealer Albert Schatz (1839-1910) intended to write a history o
 
 Website: http://libretti.digitale-sammlungen.de/de/fs1/start/static.html
 
-The new (2014) VifaMusik Libretto Portal searches across component collections held in the [http://daten.digitale-sammlungen.de/~db/ausgaben/uni_ausgabe.html?projekt === 1266488950&amp;recherche === ja&amp;ordnung === sig&amp;l === de Bavarian State Library] (5600 items), the Frankfurt University Library, and the Library of the [http://daten.digitale-sammlungen.de/~db/ausgaben/uni_ausgabe.html?projekt === 1257945153&amp;recherche === ja&amp;ordnung === sig&amp;l === de German Institute in Rome] (1500 titles).  One can search by composer, librettist, and so forth.  Since the term &lt;i>libretto&lt;/i> referred to any small book, texts for oratorios, cantatas, serenatas, ballets, and so forth occur in some of the constituent collections.
+The new (2014) VifaMusik Libretto Portal searches across component collections held in the [http://daten.digitale-sammlungen.de/~db/ausgaben/uni_ausgabe.html?projekt=1266488950&amp;recherche=ja&amp;ordnung=sig&amp;l=de Bavarian State Library] (5600 items), the Frankfurt University Library, and the Library of the [http://daten.digitale-sammlungen.de/~db/ausgaben/uni_ausgabe.html?projekt=1257945153&amp;recherche=ja&amp;ordnung=sig&amp;l=de German Institute in Rome] (1500 titles).  One can search by composer, librettist, and so forth.  Since the term &lt;i>libretto&lt;/i> referred to any small book, texts for oratorios, cantatas, serenatas, ballets, and so forth occur in some of the constituent collections.
 
 
 
