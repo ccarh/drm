@@ -1,7 +1,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Fri Sep 18 21:43:49 PDT 2015
-// Last Modified: Sun Sep 20 20:10:37 PDT 2015
+// Last Modified: Sat Aug 19 17:54:32 CEST 2023
 // Filename:      scripts/wiki.js
 // Syntax:        JavaScript 1.8.5/ECMAScript 5.1
 // vim:           ts=3 hlsearch
@@ -26,19 +26,19 @@ function wiki2html(content) {
 		output = output.replace(/\b--\b/gm, '&ndash;');
 	}
 
-	var swaping;
-	var matches;
-	var temp;
-	var m2;
-	var url;
-	var link;
-	var text;
-	var newtext;
-   var counter = 0;
+	let swaping;
+	let matches;
+	let temp;
+	let m2;
+	let url;
+	let link;
+	let text;
+	let newtext;
+   let counter = 0;
 	output = convertWebsiteLinks(output);
 
 	while (matches = output.match(/\[\[File:(.*?)\]\]/m)) {
-		var imagedata = getImageContent(matches[1]);
+		let imagedata = getImageContent(matches[1]);
 		output = output.replace('[[File:' + matches[1] + ']]', imagedata);
 	}
 
@@ -59,11 +59,11 @@ function wiki2html(content) {
 function addBlankLines(input) {
 	input = input.replace(/\s+$/, '');
 	input = input.replace(/^\s+/, '');
-	var lines = input.split(/\n/);
-	var output = '';
-	var i;
+	let lines = input.split(/\n/);
+	let output = '';
+	let i;
 
-	for (var i=0; i<lines.length; i++) {
+	for (let i=0; i<lines.length; i++) {
 		if (lines[i].match(/^\s*$/)) {
 			if ((i < lines.length-1) && (!lines[i+1].match(/^\s*$/))) {
 				output += '<div class="paragraph"></div>\n';
@@ -81,48 +81,103 @@ function addBlankLines(input) {
 
 //////////////////////////////
 //
-// convertWebsiteLinks --
+// convertWebsiteLinks -- Website links can have two forms in the Wikipages:
+//
+// Raw:
+//    Website: http://some.location.org
+// Wiki:
+//    Website: [http://some.location.org Name of URL]
+//
+// Preferrably using the Raw form.
 //
 
-function convertWebsiteLinks(output) {
-	var matches;
-	var m2;
-	var link;
-	var counter = 0;
-	while (matches = output.match(/Website:\s*\[(.*?)\]/i)) {
-		if (counter++ > 100) {
-			console.log("Improper formatting for", output);
-			break;
-		}
-		temp = matches[1];
-		if (m2 = temp.match(/^([^\s]+)/)) {
-			link = m2[1];
-			link = link.replace(/\/$/, '');
-			var len = link.length;
-			if (len < 70 ) {
-				output = output.replace(/Website.*?\]/,
-						'<div class="entry-link">' +
-						'<a class="website" target="_new" href="' + link + '">' + link + '</a>' + 
-						'</div>');
-			} else if (len < 100) {
-				output = output.replace(/Website.*?\]/,
-						'<div class="entry-link">' +
-						'<small>' + 
-						'<a class="website" target="_new" href="' + link + '">' + link + '</a>' +
-						'</small>' +
-						'</div>');
-			} else {
-				var linkname = 'Website';
-				var matches;
-				if (matches = link.match(/^(.*:\/\/[^\/]+)/)) {
-					linkname = matches[1];
-				}
-				output = output.replace(/Website.*?\]/,
-						'<div class=entry-link">' +
-						'<a class="website-long" target="_new" href="' + link + '">' + 
-							linkname + '</a>' +
-						'</div>');
+function convertWebsiteLinks(input) {
+	let matches;
+	let m2;
+	let link;
+	let counter = 0;
+	let lines = input.split("\n");
+
+	for (let i=0; i<lines.length; i++) {
+		let line = lines[i];
+		matches = line.match(/Website:\s*\[(.*?)\]/i);
+		if (matches) {
+			lines[i] = replaceWikiLink(line);
+		} else {
+			matches = line.match(/Website:\s*([^\s]*?)\s*$/i);
+			if (matches) {	
+				lines[i] = replaceLink(line);
 			}
+		} 
+	}
+
+	let output = lines.join("\n");
+	return output;
+}
+
+
+
+//////////////////////////////
+//
+// replaceLink --
+//
+
+function replaceLink(output) {
+	let matches = output.match(/Website:\s*([^\s]*?\s*$)/i);
+	if (!matches) {
+		return output;
+	}
+	let link = matches[1];
+	let len = link.length;
+	if (len < 70 ) {
+		output = `<div class="entry-link"><a class="website" target="_new" href=${link}">${link}</a></div>`;
+	} else {
+		output = `<div class="entry-link"><small><a class="website" target="_new" href="${link}">${link}</a></small></div>`;
+	}
+	return output;
+}
+
+
+
+//////////////////////////////
+//
+// replaceWikiLink --
+//
+
+function replaceWikiLink(output) {
+	let matches = output.match(/Website:\s*\[(.*?)\]/i);
+	if (!matches) {
+		return output;
+	}
+
+	temp = matches[1];
+	if (m2 = temp.match(/^([^\s]+)/)) {
+		link = m2[1];
+		link = link.replace(/\/$/, '');
+		let len = link.length;
+		if (len < 70 ) {
+			output = output.replace(/Website.*?\]/,
+					'<div class="entry-link">' +
+					'<a class="website" target="_new" href="' + link + '">' + link + '</a>' + 
+					'</div>');
+		} else if (len < 100) {
+			output = output.replace(/Website.*?\]/,
+					'<div class="entry-link">' +
+					'<small>' + 
+					'<a class="website" target="_new" href="' + link + '">' + link + '</a>' +
+					'</small>' +
+					'</div>');
+		} else {
+			let linkname = link;
+			let matches;
+			if (matches = link.match(/^(.*:\/\/[^\/]+)/)) {
+				linkname = matches[1];
+			}
+			output = output.replace(/Website.*?\]/,
+					'<div class=entry-link">' +
+					'<a class="website-long" target="_new" href="' + link + '">' + 
+						linkname + '</a>' +
+					'</div>');
 		}
 	}
 	return output;
@@ -136,17 +191,16 @@ function convertWebsiteLinks(output) {
 //
 
 function convertExternalLinksToHyperlinks(output) {
-	var counter = 0;
+	let counter = 0;
 	while (matches = output.match(/\[([^\]]+)\]/m)) {
 		temp = matches[1];
 		temp = temp.replace(/^\s+/, '');
 		temp = temp.replace(/\s+$/, '');
 		if (m2 = temp.match(/^(.*?)\s+(.*)$/)) {
-			var link = m2[1];
-			var text = m2[2];
+			let link = m2[1];
+			let text = m2[2];
+			output = output.replace(`[${matches[1]}]`, `<a target="_new" href="${link}">${text}</a>`);
 		}
-		output = output.replace('[' + matches[1] + ']', 
-					'<a target="_new" href="' + link + '">' + text + '</a>');
 		if (counter++ > 100) { break; }
 	}
 	return output;
@@ -161,13 +215,13 @@ function convertExternalLinksToHyperlinks(output) {
 //
 
 function convertInternalLinksToHyperlinks(output) {
-	var counter = 0;
-	var matches;
-	var m2;
-   var link;
-	var text;
-	var url;
-	var newtext;
+	let counter = 0;
+	let matches;
+	let m2;
+   let link;
+	let text;
+	let url;
+	let newtext;
 	while (matches = output.match(/\[\[([^\]]+)\]\]/)) {
 		temp = matches[1];
 		if (m2 = temp.match(/^\s*([^\s]+)\s*\|\s*(.*)\s*$/m)) {
@@ -180,7 +234,7 @@ function convertInternalLinksToHyperlinks(output) {
 			output = output.replace('[[' + matches[1] + ']]', newtext);
 		} else {
 			text = temp;
-         var xurl = temp.replace(/\s+$/m, '');
+         let xurl = temp.replace(/\s+$/m, '');
          xurl = xurl.replace(/^\s+/m, '');
          xurl = xurl.replace(/^\s/m, '_');
 			url  = baseurlwiki + '/' + xurl;
@@ -249,12 +303,12 @@ function cleanURL(url) {
 
 
 function getImageContent(input) {
-	var parameters     = input.split(/\|/);
-	var filename       = parameters[0].replace(/^\s+/, '').replace(/\s+$/, '');
-	var md5sum         = CryptoJS.MD5(filename).toString(CryptoJS.enc.Hex);
-	var first          = md5sum.substr(0, 1);
-	var second         = md5sum.substr(0, 2);
-	var settings       = {};
+	let parameters     = input.split(/\|/);
+	let filename       = parameters[0].replace(/^\s+/, '').replace(/\s+$/, '');
+	let md5sum         = CryptoJS.MD5(filename).toString(CryptoJS.enc.Hex);
+	let first          = md5sum.substr(0, 1);
+	let second         = md5sum.substr(0, 2);
+	let settings       = {};
 	settings.width     = getWidth(parameters);
 	settings.placement = getPlacement(parameters);
 	settings.caption   = parameters[parameters.length-1];
@@ -273,9 +327,9 @@ function getImageContent(input) {
 //
 
 function getWidth(parameters) {
-	var output = '';
-	var matches;
-	for (var i=0; i<parameters.length; i++) {
+	let output = '';
+	let matches;
+	for (let i=0; i<parameters.length; i++) {
 		if (matches = parameters[i].match(/^\s*(\d+)px\s*$/)) {
 			output = matches[1];
 			break;
@@ -292,9 +346,9 @@ function getWidth(parameters) {
 //
 
 function getPlacement(parameters) {
-	var output = 'tleft';
-	var matches;
-	for (var i=0; i<parameters.length; i++) {
+	let output = 'tleft';
+	let matches;
+	for (let i=0; i<parameters.length; i++) {
 		if (matches = parameters[i].match(/^\s*(right)\s*$/)) {
 			output = 'tright';
 			break;

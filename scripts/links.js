@@ -616,7 +616,7 @@ function getHeadings(file) {
 //
 // == Digitized Music Manuscripts ==
 //  &lt;div class="mw-collapsible mw-collapsed">
-// {{DRM_manuscripts}}
+// {{DRM_manuscripts_by_composer}}
 //  &lt;/div>
 //
 

@@ -4,64 +4,64 @@ __NOTOC__
 This website provides links to substantial open-access projects of use to musicians and musicologists. With a burgeoning number of digital resources available, remembering titles of sites and pathways to them can be difficult. Digital Resources in Musicology (DRM) is organized topically and provides a rapid search tool for specialties within heterogeneous collections. Neither the links nor their descriptions are exhaustive. Older projects predating the development of the internet are listed at [[ADAM|ADAM: Archive of Digital Applications in Musicology]]. Curated digital and hybrid editions are itemized at [[EVE_%28Electronic_and_Virtual_Editions%29|EVE: Electronic and Virtual Editions]]. Harvard's [http://guides.library.harvard.edu/onmusic/resources Online Resources for Music Scholars] offer a somewhat different, largely complementary mix of projects. On placement by category, please see our FAQ (Frequently Asked Questions list).
 
 == Digitized Music Manuscripts ==
- &lt;div class="mw-collapsible mw-collapsed">
+&lt;div class="mw-collapsible mw-collapsed">
 {{DRM_manuscripts}}
- &lt;/div>
+&lt;/div>
 
 == Digital Score Reprints ==
- &lt;div class="mw-collapsible mw-collapsed">
+&lt;div class="mw-collapsible mw-collapsed">
 {{DRM_reprints}}
- &lt;/div>
+&lt;/div>
 
 == Repertory- and Genre-Based Projects ==
 &lt;div class="mw-collapsible mw-collapsed">
 {{DRM_genre}}
- &lt;/div>
+&lt;/div>
 
 == Structured Databases ==
 &lt;div class="mw-collapsible mw-collapsed">
 {{DRM_databases}}
- &lt;/div>
+&lt;/div>
 
 == Portals and Search Engines for Music ==
 &lt;div class="mw-collapsible mw-collapsed">
 {{DRM_portals}}
- &lt;/div>
+&lt;/div>
 
 == Resources for Music Theory ==
 &lt;div class="mw-collapsible mw-collapsed">
 {{DRM_music_theory}}
- &lt;/div>
+&lt;/div>
 
 == Historical Audio and Video ==
 &lt;div class="mw-collapsible mw-collapsed">
 {{DRM_audio_video}}
- &lt;/div>
+&lt;/div>
 
 == Historical Maps ==
 &lt;div class="mw-collapsible mw-collapsed">
 {{DRM_maps}}
- &lt;/div>
+&lt;/div>
 
 == Early Newspapers ==
 &lt;div class="mw-collapsible mw-collapsed">
 {{DRM_newspapers}}
- &lt;/div>
+&lt;/div>
 
 == Music Magazines ==
 &lt;div class="mw-collapsible mw-collapsed">
 {{DRM_magazines}}
- &lt;/div>
+&lt;/div>
 
 == Large Humanities Digital Corpora ==
 &lt;div class="mw-collapsible mw-collapsed">
 {{DRM_texts}}
- &lt;/div>
+&lt;/div>
 
 == Image Banks ==
 &lt;div class="mw-collapsible mw-collapsed">
 {{DRM_images}}
- &lt;/div>
+&lt;/div>
 
 == Copyright ==
 &lt;div class="mw-collapsible mw-collapsed">
@@ -71,4 +71,4 @@ This website provides links to substantial open-access projects of use to musici
 == Credits ==
 &lt;div class="mw-collapsible mw-collapsed">
 {{DRM_credits}}
- &lt;/div>
+&lt;/div>
