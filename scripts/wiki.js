@@ -130,7 +130,7 @@ function replaceLink(output) {
 	let link = matches[1];
 	let len = link.length;
 	if (len < 70 ) {
-		output = `<div class="entry-link"><a class="website" target="_new" href=${link}">${link}</a></div>`;
+		output = `<div class="entry-link"><a class="website" target="_new" href="${link}">${link}</a></div>`;
 	} else {
 		output = `<div class="entry-link"><small><a class="website" target="_new" href="${link}">${link}</a></small></div>`;
 	}
